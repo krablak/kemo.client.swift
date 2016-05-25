@@ -21,8 +21,8 @@
 		9A8331351C6FA1040082B2AE /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8331341C6FA1040082B2AE /* TestUtils.swift */; };
 		9A9940921C84E17100FB0559 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9940911C84E17100FB0559 /* Logging.swift */; };
 		9A9940941C8ADA1500FB0559 /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9940931C8ADA1500FB0559 /* NetworkingTests.swift */; };
-		9AA641851C6BC6DC00DB83A1 /* EncryptionParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA641841C6BC6DC00DB83A1 /* EncryptionParts.swift */; };
-		9AA641871C6BD9BC00DB83A1 /* EncryptionPartsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA641861C6BD9BC00DB83A1 /* EncryptionPartsTests.swift */; };
+		9AA641851C6BC6DC00DB83A1 /* EncryptionBasicImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA641841C6BC6DC00DB83A1 /* EncryptionBasicImpl.swift */; };
+		9AA641871C6BD9BC00DB83A1 /* EncryptionBasicImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA641861C6BD9BC00DB83A1 /* EncryptionBasicImplTests.swift */; };
 		AFF1D77B95EEB48F4348F5FD /* Pods_KemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB09B74D9ECA5BE769948D1D /* Pods_KemoCore.framework */; };
 		EC53115FF0DD84CD97BA10D1 /* Pods_KemoCoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD63E4F66F43FFC5D6FD125 /* Pods_KemoCoreTests.framework */; };
 /* End PBXBuildFile section */
@@ -101,8 +101,8 @@
 		9A8331341C6FA1040082B2AE /* TestUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 		9A9940911C84E17100FB0559 /* Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 		9A9940931C8ADA1500FB0559 /* NetworkingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
-		9AA641841C6BC6DC00DB83A1 /* EncryptionParts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncryptionParts.swift; sourceTree = "<group>"; };
-		9AA641861C6BD9BC00DB83A1 /* EncryptionPartsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncryptionPartsTests.swift; sourceTree = "<group>"; };
+		9AA641841C6BC6DC00DB83A1 /* EncryptionBasicImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncryptionBasicImpl.swift; sourceTree = "<group>"; };
+		9AA641861C6BD9BC00DB83A1 /* EncryptionBasicImplTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncryptionBasicImplTests.swift; sourceTree = "<group>"; };
 		9AA6418A1C6D0CEE00DB83A1 /* Experiments.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Experiments.playground; path = ../KemoCorePlaygrounds/Experiments.playground; sourceTree = "<group>"; };
 		9AC0CBDD1CE26B7D001AB297 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		A7E264DC07B861CA16B614FD /* Pods-KemoCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KemoCore.release.xcconfig"; path = "Pods/Target Support Files/Pods-KemoCore/Pods-KemoCore.release.xcconfig"; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 				9A275B6E1C6A7BED001EB564 /* KemoCore.h */,
 				9A275B701C6A7BED001EB564 /* Info.plist */,
 				9A275B851C6A7E7D001EB564 /* EncryptionApi.swift */,
-				9AA641841C6BC6DC00DB83A1 /* EncryptionParts.swift */,
+				9AA641841C6BC6DC00DB83A1 /* EncryptionBasicImpl.swift */,
 				9A0EFD6B1C6FBB130070A6F7 /* Utils.swift */,
 				9A34BF721C73C63200C013FF /* Networking.swift */,
 				9A9940911C84E17100FB0559 /* Logging.swift */,
@@ -189,7 +189,7 @@
 				9A275B7A1C6A7BED001EB564 /* KemoCoreTests.swift */,
 				9A275B7C1C6A7BED001EB564 /* Info.plist */,
 				9A275B8B1C6A88BA001EB564 /* EncryptionApiTests.swift */,
-				9AA641861C6BD9BC00DB83A1 /* EncryptionPartsTests.swift */,
+				9AA641861C6BD9BC00DB83A1 /* EncryptionBasicImplTests.swift */,
 				9A8331341C6FA1040082B2AE /* TestUtils.swift */,
 				9A0EFD6D1C6FC5A50070A6F7 /* UtilsTests.swift */,
 				9A9940931C8ADA1500FB0559 /* NetworkingTests.swift */,
@@ -459,7 +459,7 @@
 				9A3EF2111C935E7E00E4AF8C /* Messaging.swift in Sources */,
 				9A9940921C84E17100FB0559 /* Logging.swift in Sources */,
 				9A0EFD6C1C6FBB130070A6F7 /* Utils.swift in Sources */,
-				9AA641851C6BC6DC00DB83A1 /* EncryptionParts.swift in Sources */,
+				9AA641851C6BC6DC00DB83A1 /* EncryptionBasicImpl.swift in Sources */,
 				9A275B861C6A7E7E001EB564 /* EncryptionApi.swift in Sources */,
 				9A34BF731C73C63200C013FF /* Networking.swift in Sources */,
 			);
@@ -473,7 +473,7 @@
 				9A275B7B1C6A7BED001EB564 /* KemoCoreTests.swift in Sources */,
 				9A275B8C1C6A88BA001EB564 /* EncryptionApiTests.swift in Sources */,
 				9A3EF20F1C8F618300E4AF8C /* UtilsConversionTest.swift in Sources */,
-				9AA641871C6BD9BC00DB83A1 /* EncryptionPartsTests.swift in Sources */,
+				9AA641871C6BD9BC00DB83A1 /* EncryptionBasicImplTests.swift in Sources */,
 				9A8331351C6FA1040082B2AE /* TestUtils.swift in Sources */,
 				9A9940941C8ADA1500FB0559 /* NetworkingTests.swift in Sources */,
 			);
