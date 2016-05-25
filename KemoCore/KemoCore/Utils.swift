@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import CryptoSwift
 
 public func naiveEncChain(key: [UInt8]) -> EncryptionChain {
 	let chain = EncryptionChain()
-	chain.add(SimpleEncryption(key: key))
-	chain.add(AESEncryption(key: key))
+	chain.add(KemoEncryption(key: key))
+	chain.add(Dummy())
 	return chain
 }
 

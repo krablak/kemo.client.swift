@@ -8,13 +8,29 @@
 
 import Foundation
 
+/*
+ Defines one part of encyrption chain.
+ */
 public protocol EncryptionPart {
 
-	func encrypt(data: [UInt8]) -> [UInt8];
+	func encrypt(data: [UInt8]) -> [UInt8]
 
-	func decrypt(data: [UInt8]) -> [UInt8];
+	func decrypt(data: [UInt8]) -> [UInt8]
+
 }
 
+/*
+ Defines component responsible for creating sessing path from key.
+ */
+public protocol SessionPathProvider {
+
+	func provide(key: [UInt8]) -> String
+
+}
+
+/*
+ Defines chain of encryption parts responsible for encryption/decryption.
+ */
 public class EncryptionChain {
 
 	var encryptionParts: [EncryptionPart] = []
@@ -42,5 +58,4 @@ public class EncryptionChain {
 		return modifiedData
 	}
 }
-
 
