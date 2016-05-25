@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9A275B451C6A7B67001EB564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A275B441C6A7B67001EB564 /* AppDelegate.swift */; };
+		9A275B471C6A7B67001EB564 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A275B461C6A7B67001EB564 /* ViewController.swift */; };
+		9A275B491C6A7B67001EB564 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A275B481C6A7B67001EB564 /* Assets.xcassets */; };
+		9A275B4C1C6A7B67001EB564 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A275B4A1C6A7B67001EB564 /* Main.storyboard */; };
+		9A275B571C6A7B68001EB564 /* KemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A275B561C6A7B68001EB564 /* KemoAppTests.swift */; };
+		9A275B881C6A7EE6001EB564 /* KemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A275B871C6A7EE6001EB564 /* KemoCore.framework */; };
+		9A275B891C6A7EE6001EB564 /* KemoCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A275B871C6A7EE6001EB564 /* KemoCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9A3EF2131C943B5E00E4AF8C /* Messaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EF2121C943B5E00E4AF8C /* Messaging.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9A275B531C6A7B67001EB564 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A275B391C6A7B67001EB564 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A275B401C6A7B67001EB564;
+			remoteInfo = KemoApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9A275B8A1C6A7EE6001EB564 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9A275B891C6A7EE6001EB564 /* KemoCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9A275B411C6A7B67001EB564 /* KemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A275B441C6A7B67001EB564 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9A275B461C6A7B67001EB564 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9A275B481C6A7B67001EB564 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9A275B4B1C6A7B67001EB564 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9A275B4D1C6A7B67001EB564 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A275B521C6A7B67001EB564 /* KemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A275B561C6A7B68001EB564 /* KemoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KemoAppTests.swift; sourceTree = "<group>"; };
+		9A275B581C6A7B68001EB564 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A275B871C6A7EE6001EB564 /* KemoCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = KemoCore.framework; path = "/Users/krablak/Library/Developer/Xcode/DerivedData/Kemo-faqxzrkqzxskmncbvysyqjfcghnr/Build/Products/Debug/KemoCore.framework"; sourceTree = "<absolute>"; };
+		9A3EF2121C943B5E00E4AF8C /* Messaging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messaging.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A275B3E1C6A7B67001EB564 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A275B881C6A7EE6001EB564 /* KemoCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A275B4F1C6A7B67001EB564 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9A275B381C6A7B67001EB564 = {
+			isa = PBXGroup;
+			children = (
+				9A275B871C6A7EE6001EB564 /* KemoCore.framework */,
+				9A275B431C6A7B67001EB564 /* KemoApp */,
+				9A275B551C6A7B68001EB564 /* KemoAppTests */,
+				9A275B421C6A7B67001EB564 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9A275B421C6A7B67001EB564 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A275B411C6A7B67001EB564 /* KemoApp.app */,
+				9A275B521C6A7B67001EB564 /* KemoAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A275B431C6A7B67001EB564 /* KemoApp */ = {
+			isa = PBXGroup;
+			children = (
+				9A275B441C6A7B67001EB564 /* AppDelegate.swift */,
+				9A275B461C6A7B67001EB564 /* ViewController.swift */,
+				9A275B481C6A7B67001EB564 /* Assets.xcassets */,
+				9A275B4A1C6A7B67001EB564 /* Main.storyboard */,
+				9A275B4D1C6A7B67001EB564 /* Info.plist */,
+				9A3EF2121C943B5E00E4AF8C /* Messaging.swift */,
+			);
+			path = KemoApp;
+			sourceTree = "<group>";
+		};
+		9A275B551C6A7B68001EB564 /* KemoAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				9A275B561C6A7B68001EB564 /* KemoAppTests.swift */,
+				9A275B581C6A7B68001EB564 /* Info.plist */,
+			);
+			path = KemoAppTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9A275B401C6A7B67001EB564 /* KemoApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A275B5B1C6A7B68001EB564 /* Build configuration list for PBXNativeTarget "KemoApp" */;
+			buildPhases = (
+				9A275B3D1C6A7B67001EB564 /* Sources */,
+				9A275B3E1C6A7B67001EB564 /* Frameworks */,
+				9A275B3F1C6A7B67001EB564 /* Resources */,
+				9A275B8A1C6A7EE6001EB564 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KemoApp;
+			productName = KemoApp;
+			productReference = 9A275B411C6A7B67001EB564 /* KemoApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9A275B511C6A7B67001EB564 /* KemoAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A275B5E1C6A7B68001EB564 /* Build configuration list for PBXNativeTarget "KemoAppTests" */;
+			buildPhases = (
+				9A275B4E1C6A7B67001EB564 /* Sources */,
+				9A275B4F1C6A7B67001EB564 /* Frameworks */,
+				9A275B501C6A7B67001EB564 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A275B541C6A7B67001EB564 /* PBXTargetDependency */,
+			);
+			name = KemoAppTests;
+			productName = KemoAppTests;
+			productReference = 9A275B521C6A7B67001EB564 /* KemoAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A275B391C6A7B67001EB564 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = PyJunkies;
+				TargetAttributes = {
+					9A275B401C6A7B67001EB564 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					9A275B511C6A7B67001EB564 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 9A275B401C6A7B67001EB564;
+					};
+				};
+			};
+			buildConfigurationList = 9A275B3C1C6A7B67001EB564 /* Build configuration list for PBXProject "KemoApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9A275B381C6A7B67001EB564;
+			productRefGroup = 9A275B421C6A7B67001EB564 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A275B401C6A7B67001EB564 /* KemoApp */,
+				9A275B511C6A7B67001EB564 /* KemoAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9A275B3F1C6A7B67001EB564 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A275B491C6A7B67001EB564 /* Assets.xcassets in Resources */,
+				9A275B4C1C6A7B67001EB564 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A275B501C6A7B67001EB564 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A275B3D1C6A7B67001EB564 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A275B471C6A7B67001EB564 /* ViewController.swift in Sources */,
+				9A275B451C6A7B67001EB564 /* AppDelegate.swift in Sources */,
+				9A3EF2131C943B5E00E4AF8C /* Messaging.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A275B4E1C6A7B67001EB564 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A275B571C6A7B68001EB564 /* KemoAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A275B541C6A7B67001EB564 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A275B401C6A7B67001EB564 /* KemoApp */;
+			targetProxy = 9A275B531C6A7B67001EB564 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9A275B4A1C6A7B67001EB564 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A275B4B1C6A7B67001EB564 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9A275B591C6A7B68001EB564 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9A275B5A1C6A7B68001EB564 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9A275B5C1C6A7B68001EB564 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = KemoApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pyjunkies.KemoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9A275B5D1C6A7B68001EB564 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = KemoApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pyjunkies.KemoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9A275B5F1C6A7B68001EB564 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = KemoAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pyjunkies.KemoAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KemoApp.app/Contents/MacOS/KemoApp";
+			};
+			name = Debug;
+		};
+		9A275B601C6A7B68001EB564 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = KemoAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pyjunkies.KemoAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KemoApp.app/Contents/MacOS/KemoApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A275B3C1C6A7B67001EB564 /* Build configuration list for PBXProject "KemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A275B591C6A7B68001EB564 /* Debug */,
+				9A275B5A1C6A7B68001EB564 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A275B5B1C6A7B68001EB564 /* Build configuration list for PBXNativeTarget "KemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A275B5C1C6A7B68001EB564 /* Debug */,
+				9A275B5D1C6A7B68001EB564 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A275B5E1C6A7B68001EB564 /* Build configuration list for PBXNativeTarget "KemoAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A275B5F1C6A7B68001EB564 /* Debug */,
+				9A275B601C6A7B68001EB564 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A275B391C6A7B67001EB564 /* Project object */;
+}
