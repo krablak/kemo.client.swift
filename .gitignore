@@ -1,0 +1,10 @@
+Kemo.xcworkspace/xcuserdata/krablak.xcuserdatad
+KemoServer/undertow/.metadata
+KemoServer/undertow/.recommenders
+.classpath
+.project
+KemoServer/undertow/kemo-performance/.gradle
+KemoServer/undertow/kemo-performance/.settings
+KemoServer/undertow/kemo-server/.gradle
+KemoServer/undertow/kemo-server/.settings
+KemoCore/build

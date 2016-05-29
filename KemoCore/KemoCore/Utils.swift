@@ -62,10 +62,29 @@ public struct Conversions {
 		}
 		return toBytes(decodedData);
 	}
-	
-	static func toBytes(nsData: NSData)->[UInt8]{
+
+	static func toBytes(nsData: NSData) -> [UInt8] {
 		var bytes = [UInt8](count: nsData.length, repeatedValue: 0)
 		nsData.getBytes(&bytes, length: nsData.length)
 		return bytes
 	}
+
+	public static func toBytesFromHexStr(str: String) -> [UInt8] {
+		var byteArray = [UInt8]()
+		var charsGen = str.characters.generate()
+		while let firstChar = charsGen.next() {
+			if let nextChar = charsGen.next() {
+				if let num = UInt8("\(firstChar)\(nextChar)", radix: 16) {
+					byteArray.append(num)
+				}
+			}
+		}
+		return byteArray
+	}
+}
+
+public struct KemoCharacterSets{
+	
+	public static let SessionKeyAllowedCharacterSet =  NSCharacterSet(charactersInString:"=\"#%/<>?@\\^`{|}+").invertedSet
+
 }

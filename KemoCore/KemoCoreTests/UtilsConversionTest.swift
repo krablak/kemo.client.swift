@@ -25,10 +25,18 @@ class UtilsConversionTest: XCTestCase {
 		let bytesStr = Conversions.toBytesFromBase64(bytesAsBase64)
 		XCTAssertEqual(bytes, bytesStr)
 	}
-	
+
 	func testWrongToBytesFromBase64() {
 		let nonBase64Res = Conversions.toBytesFromBase64("non64bytes")
 		XCTAssertEqual([], nonBase64Res)
+	}
+
+	func testToBytesFromHexStr() {
+		XCTAssertEqual([0], Conversions.toBytesFromHexStr("00"))
+		XCTAssertEqual([0, 1], Conversions.toBytesFromHexStr("0001"))
+		XCTAssertEqual([0, 1, 10], Conversions.toBytesFromHexStr("00010A"))
+		XCTAssertEqual([0, 1, 10, 255], Conversions.toBytesFromHexStr("00010AFF"))
+		XCTAssertEqual([0, 1, 10, 255], Conversions.toBytesFromHexStr("00010AFFA"))
 	}
 }
 

@@ -35,17 +35,17 @@ public class KemoEncryption: EncryptionPart {
 	private let key: [UInt8]
 
 	public init(key: [UInt8]) {
-		// Salt key
-		let saltedKey = Conversions.toBytes("clientenc") + key + Conversions.toBytes("salt")
 		// Create sha256 diggest
-		self.key = saltedKey.sha256()
+		self.key = key.sha256()
 	}
 
 	public func encrypt(data: [UInt8]) -> [UInt8] {
 		// Prepare IV 16 bytes long
 		let iv = AES.randomIV(AES.blockSize)
+		// Prepare cipher
+		let cipher = createCipher(iv)
 		// Encrypt data
-		let encrypted = try! data.encrypt(AES(key: self.key, iv: iv))
+		let encrypted = try! data.encrypt(cipher)
 		// Join IV and encrypted data
 		return iv + encrypted
 	}
@@ -55,8 +55,39 @@ public class KemoEncryption: EncryptionPart {
 		let iv = Array(data[0 ... 15])
 		// Get raw data
 		let rawData: [UInt8] = Array(data[16 ..< data.count])
-		// Do decryption
-		return try! rawData.decrypt(AES(key: self.key, iv: iv))
+		// Prepare cipher
+		let cipher = createCipher(iv)
+		// Perform decryption
+		let decryptedBytes: [UInt8] = try! cipher.decrypt(rawData)
+		return decryptedBytes
 	}
+
+	/*
+	 Unified cipher instance creation.
+	 */
+	private func createCipher(iv: [UInt8]) -> AES {
+		return try! AES(key: self.key, iv: iv, blockMode: .CFB, padding: PKCS7())
+	}
+}
+
+public class KemoSessionPathProvider: SessionPathProvider {
+
+	public init() {
+	}
+
+	public func provide(key: [UInt8]) -> String {
+		// Perform basic salting
+		let saltedKey = "littlebitof" + Conversions.toStr(key) + "salt"
+		// Create hash in hexa string
+		let hashStr = saltedKey.sha256()
+		// Convert hash to bytes
+		let hash = Conversions.toBytesFromHexStr(hashStr)
+		// Convert bytes to base64 string
+		let base64Hash = Conversions.toBase64Str(hash)
+		// Encode to URL form
+		let urlBase64Hash = base64Hash.stringByAddingPercentEncodingWithAllowedCharacters(KemoCharacterSets.SessionKeyAllowedCharacterSet)!
+		return urlBase64Hash
+	}
+
 }
 

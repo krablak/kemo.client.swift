@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>CryptoSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-KemoCore-KemoCoreTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-KemoCore.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Starscream.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>XCGLogger.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>34C073D448A23CA3A97EA55CC489BD6F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4C2BAB44D1879A973C26C143F64A3C56</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4F5669EEC109EC0CEC6F062986FDB044</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B076E3C58A69F0A6C6A9A234AC13C7F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EDDB96AE6236D08CEFFB8367B7B7D2F9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
