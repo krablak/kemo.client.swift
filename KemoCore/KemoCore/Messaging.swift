@@ -31,6 +31,8 @@ public class Messaging {
 		self.path = path
 		// Create initial client
 		self.client = KemoClient(host: "kemoundertow-krablak.rhcloud.com", sessionPath: path, onMessage: onMessage)
+		
+		
 	}
 
 	public func changeKey(key: String) {

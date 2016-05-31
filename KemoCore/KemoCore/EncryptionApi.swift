@@ -9,53 +9,23 @@
 import Foundation
 
 /*
- Defines one part of encyrption chain.
+ Defines basic functions required for secured data transmission.
  */
-public protocol EncryptionPart {
+public protocol EncryptionApi {
 
-	func encrypt(data: [UInt8]) -> [UInt8]
+	/*
+	 Encrypts data using given key.
+	 */
+	static func encrypt(key: [UInt8], data: [UInt8]) -> [UInt8]
 
-	func decrypt(data: [UInt8]) -> [UInt8]
+	/*
+	 Decrypts encrypted data using given key.
+	 */
+	static func decrypt(key: [UInt8], data: [UInt8]) -> [UInt8]
 
-}
-
-/*
- Defines component responsible for creating sessing path from key.
- */
-public protocol SessionPathProvider {
-
-	func provide(key: [UInt8]) -> String
-
-}
-
-/*
- Defines chain of encryption parts responsible for encryption/decryption.
- */
-public class EncryptionChain {
-
-	var encryptionParts: [EncryptionPart] = []
-
-	public init() { }
-
-	public func add(encryptionPart: EncryptionPart) -> EncryptionChain {
-		self.encryptionParts.append(encryptionPart)
-		return self
-	}
-
-	public func encrypt(data: [UInt8]) -> [UInt8] {
-		var modifiedData = data
-		for curPart in self.encryptionParts {
-			modifiedData = curPart.encrypt(modifiedData)
-		}
-		return modifiedData
-	}
-
-	public func decrypt(data: [UInt8]) -> [UInt8] {
-		var modifiedData = data
-		for i in(0 ... self.encryptionParts.count - 1).reverse() {
-			modifiedData = self.encryptionParts[i].decrypt(modifiedData)
-		}
-		return modifiedData
-	}
+	/*
+	 Prepares unique messaging URL path part.
+	 */
+	static func toSessionPath(key: [UInt8]) -> String
 }
 

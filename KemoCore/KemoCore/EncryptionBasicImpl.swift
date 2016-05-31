@@ -11,71 +11,39 @@
 import Foundation
 import CryptoSwift
 
-/*
- Empty encyrption part component. Leaves data unmodified.
- */
-public class Dummy: EncryptionPart {
+public class DefaultEncryption: EncryptionApi {
 
-	public init() { }
-
-	public func encrypt(data: [UInt8]) -> [UInt8] {
-		return data
-	}
-
-	public func decrypt(data: [UInt8]) -> [UInt8] {
-		return data
-	}
-}
-
-/*
- Performs encryption and decryption of raw data like kemo.client.encryption.js implementation.
- */
-public class KemoEncryption: EncryptionPart {
-
-	private let key: [UInt8]
-
-	public init(key: [UInt8]) {
-		// Create sha256 diggest
-		self.key = key.sha256()
-	}
-
-	public func encrypt(data: [UInt8]) -> [UInt8] {
+	public static func encrypt(key: [UInt8], data: [UInt8]) -> [UInt8] {
 		// Prepare IV 16 bytes long
 		let iv = AES.randomIV(AES.blockSize)
 		// Prepare cipher
-		let cipher = createCipher(iv)
+		let cipher = createCipher(key, iv: iv)
 		// Encrypt data
 		let encrypted = try! data.encrypt(cipher)
 		// Join IV and encrypted data
 		return iv + encrypted
 	}
 
-	public func decrypt(data: [UInt8]) -> [UInt8] {
+	public static func decrypt(key: [UInt8], data: [UInt8]) -> [UInt8] {
 		// Get IV
 		let iv = Array(data[0 ... 15])
 		// Get raw data
 		let rawData: [UInt8] = Array(data[16 ..< data.count])
 		// Prepare cipher
-		let cipher = createCipher(iv)
+		let cipher = createCipher(key, iv: iv)
 		// Perform decryption
 		let decryptedBytes: [UInt8] = try! cipher.decrypt(rawData)
 		return decryptedBytes
 	}
 
 	/*
-	 Unified cipher instance creation.
+	 Unified way of cipher preparation for encryption and decryption.
 	 */
-	private func createCipher(iv: [UInt8]) -> AES {
-		return try! AES(key: self.key, iv: iv, blockMode: .CFB, padding: PKCS7())
-	}
-}
-
-public class KemoSessionPathProvider: SessionPathProvider {
-
-	public init() {
+	private static func createCipher(key: [UInt8], iv: [UInt8]) -> AES {
+		return try! AES(key: key.sha256(), iv: iv, blockMode: .CFB, padding: PKCS7())
 	}
 
-	public func provide(key: [UInt8]) -> String {
+	public static func toSessionPath(key: [UInt8]) -> String {
 		// Perform basic salting
 		let saltedKey = "littlebitof" + Conversions.toStr(key) + "salt"
 		// Create hash in hexa string
@@ -88,6 +56,5 @@ public class KemoSessionPathProvider: SessionPathProvider {
 		let urlBase64Hash = base64Hash.stringByAddingPercentEncodingWithAllowedCharacters(KemoCharacterSets.SessionKeyAllowedCharacterSet)!
 		return urlBase64Hash
 	}
-
 }
 

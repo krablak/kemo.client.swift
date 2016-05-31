@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8D34C0427A00BF4DFAE82C29 /* Pods_KemoCore_KemoCoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCD13DBEC08C0BFD470F891 /* Pods_KemoCore_KemoCoreTests.framework */; };
 		9A0EFD6C1C6FBB130070A6F7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0EFD6B1C6FBB130070A6F7 /* Utils.swift */; };
-		9A0EFD6E1C6FC5A50070A6F7 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0EFD6D1C6FC5A50070A6F7 /* UtilsTests.swift */; };
 		9A275B6F1C6A7BED001EB564 /* KemoCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A275B6E1C6A7BED001EB564 /* KemoCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9A275B761C6A7BED001EB564 /* KemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A275B6B1C6A7BED001EB564 /* KemoCore.framework */; };
 		9A275B7B1C6A7BED001EB564 /* KemoCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A275B7A1C6A7BED001EB564 /* KemoCoreTests.swift */; };
@@ -86,7 +85,6 @@
 		655DE88F41F0BD0B20B24D63 /* Pods-KemoCoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KemoCoreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KemoCoreTests/Pods-KemoCoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8DB652387E4ABAE26A84828C /* Pods-KemoCore-KemoCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KemoCore-KemoCoreTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KemoCore-KemoCoreTests/Pods-KemoCore-KemoCoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		9A0EFD6B1C6FBB130070A6F7 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		9A0EFD6D1C6FC5A50070A6F7 /* UtilsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
 		9A275B6B1C6A7BED001EB564 /* KemoCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KemoCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A275B6E1C6A7BED001EB564 /* KemoCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KemoCore.h; sourceTree = "<group>"; };
 		9A275B701C6A7BED001EB564 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -191,7 +189,6 @@
 				9A275B8B1C6A88BA001EB564 /* EncryptionApiTests.swift */,
 				9AA641861C6BD9BC00DB83A1 /* EncryptionBasicImplTests.swift */,
 				9A8331341C6FA1040082B2AE /* TestUtils.swift */,
-				9A0EFD6D1C6FC5A50070A6F7 /* UtilsTests.swift */,
 				9A9940931C8ADA1500FB0559 /* NetworkingTests.swift */,
 				9A3EF20E1C8F618300E4AF8C /* UtilsConversionTest.swift */,
 			);
@@ -469,7 +466,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A0EFD6E1C6FC5A50070A6F7 /* UtilsTests.swift in Sources */,
 				9A275B7B1C6A7BED001EB564 /* KemoCoreTests.swift in Sources */,
 				9A275B8C1C6A88BA001EB564 /* EncryptionApiTests.swift in Sources */,
 				9A3EF20F1C8F618300E4AF8C /* UtilsConversionTest.swift in Sources */,

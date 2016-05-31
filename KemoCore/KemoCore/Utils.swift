@@ -9,18 +9,7 @@
 import Foundation
 import CryptoSwift
 
-public func naiveEncChain(key: [UInt8]) -> EncryptionChain {
-	let chain = EncryptionChain()
-	chain.add(KemoEncryption(key: key))
-	chain.add(Dummy())
-	return chain
-}
-
-public func asKey32(key: [UInt8]) -> [UInt8] {
-	return key.sha256()
-}
-
-// Provides basic coverstion functions
+// Provides basic coversion functions
 public struct Conversions {
 
 	public static func toBytes(str: String) -> [UInt8] {
