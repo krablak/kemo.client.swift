@@ -43,7 +43,7 @@ public class KemoClient: WebSocketDelegate {
 	private var socket: WebSocket
 
 	// Function called on received message
-	private let onMessage: (message: String) -> Void
+	private var onMessage: (message: String) -> Void
 
 	// Messages queued when client was not yet connected
 	private var sendQueue: [String] = []
@@ -68,6 +68,8 @@ public class KemoClient: WebSocketDelegate {
 		log.debug("Disconnecting...")
 		self.readyState = ReadyState.CLOSING
 		self.socket.disconnect()
+		log.debug("Removing on message function")
+		self.onMessage = { String in }
 	}
 
 	public func send(message: String) {

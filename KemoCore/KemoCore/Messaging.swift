@@ -20,31 +20,51 @@ public class Messaging {
 	private let onMessage: (message: String) -> Void
 
 	// Encryption key
-	private var key: String
+	private var key: [UInt8]
 
-	// Messaging path
-	private var path: String
-
-	public init(key: String, path: String, onMessage: (message: String) -> Void) {
+	public init(key: String, onMessage: (message: String) -> Void) {
+		log.debug("Creating new messaging component.")
 		self.onMessage = onMessage
-		self.key = key
-		self.path = path
-		// Create initial client
-		self.client = KemoClient(host: "kemoundertow-krablak.rhcloud.com", sessionPath: path, onMessage: onMessage)
-		
-		
+		// Get key as bytes
+		self.key = Messaging.saltEncKey(key)
+		// Create session path from given key
+		let sessionPath = DefaultEncryption.toSessionPath(Conversions.toBytes(key))
+		// Create initial client instance
+		self.client = KemoClient(host: "kemoundertow-krablak.rhcloud.com", sessionPath: sessionPath, onMessage: onMessageInternal)
+		self.client?.connect()
 	}
 
 	public func changeKey(key: String) {
+		log.debug("Changing messaging key.")
+		self.key = Messaging.saltEncKey(key)
 
+		// Disconnect current client
+		log.debug("Shutting down current client")
+		self.client?.disconnect()
+
+		// Create new client and connect
+		log.debug("Creating new networking client instance.")
+		let sessionPath = DefaultEncryption.toSessionPath(self.key)
+		self.client = KemoClient(host: "kemoundertow-krablak.rhcloud.com", sessionPath: sessionPath, onMessage: self.onMessage)
+		self.client?.connect()
 	}
 
 	public func send(message: String) {
-
+		log.debug("Sending message")
+		let encryptedMessageBytes = DefaultEncryption.encrypt(self.key, data: Conversions.toBytes(message))
+		let encryptedMessage = Conversions.toBase64Str(encryptedMessageBytes)
+		self.client?.send(encryptedMessage)
 	}
 
-	public func onMessage(onMessage: (message: String) -> Void) {
+	private static func saltEncKey(key: String) -> [UInt8] {
+		return Conversions.toBytes("clientenc\(key)salt")
+	}
 
+	private func onMessageInternal(message: String) {
+		let messageBytes = Conversions.toBytesFromBase64(message)
+		let decryptedBytes = DefaultEncryption.decrypt(self.key, data: messageBytes)
+		let decryptedStr = Conversions.toStr(decryptedBytes)
+		self.onMessage(message: decryptedStr)
 	}
 
 }
