@@ -26,9 +26,9 @@ public class Messaging {
 		log.debug("Creating new messaging component.")
 		self.onMessage = onMessage
 		// Get key as bytes
-		self.key = Messaging.saltEncKey(key)
+		self.key = Conversions.toBytes(key)
 		// Create session path from given key
-		let sessionPath = DefaultEncryption.toSessionPath(Conversions.toBytes(key))
+		let sessionPath = DefaultEncryption.toSessionPath(Conversions.toBytes(key), saltFn: Salts.saltSessionPath)
 		// Create initial client instance
 		self.client = KemoClient(host: "kemoundertow-krablak.rhcloud.com", sessionPath: sessionPath, onMessage: onMessageInternal)
 		self.client?.connect()
@@ -36,7 +36,7 @@ public class Messaging {
 
 	public func changeKey(key: String) {
 		log.debug("Changing messaging key.")
-		self.key = Messaging.saltEncKey(key)
+		self.key = Conversions.toBytes(key)
 
 		// Disconnect current client
 		log.debug("Shutting down current client")
@@ -44,25 +44,22 @@ public class Messaging {
 
 		// Create new client and connect
 		log.debug("Creating new networking client instance.")
-		let sessionPath = DefaultEncryption.toSessionPath(self.key)
+		let sessionPath = DefaultEncryption.toSessionPath(self.key, saltFn: Salts.saltSessionPath)
 		self.client = KemoClient(host: "kemoundertow-krablak.rhcloud.com", sessionPath: sessionPath, onMessage: self.onMessage)
 		self.client?.connect()
 	}
 
 	public func send(message: String) {
 		log.debug("Sending message")
-		let encryptedMessageBytes = DefaultEncryption.encrypt(self.key, data: Conversions.toBytes(message))
+		let encryptedMessageBytes = DefaultEncryption.encrypt(self.key, keySaltFn: Salts.saltEncKey, data: Conversions.toBytes(message))
 		let encryptedMessage = Conversions.toBase64Str(encryptedMessageBytes)
 		self.client?.send(encryptedMessage)
 	}
 
-	private static func saltEncKey(key: String) -> [UInt8] {
-		return Conversions.toBytes("clientenc\(key)salt")
-	}
 
 	private func onMessageInternal(message: String) {
 		let messageBytes = Conversions.toBytesFromBase64(message)
-		let decryptedBytes = DefaultEncryption.decrypt(self.key, data: messageBytes)
+		let decryptedBytes = DefaultEncryption.decrypt(self.key, keySaltFn: Salts.saltEncKey, data: messageBytes)
 		let decryptedStr = Conversions.toStr(decryptedBytes)
 		self.onMessage(message: decryptedStr)
 	}

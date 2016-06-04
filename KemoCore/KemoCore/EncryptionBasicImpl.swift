@@ -13,24 +13,28 @@ import CryptoSwift
 
 public class DefaultEncryption: EncryptionApi {
 
-	public static func encrypt(key: [UInt8], data: [UInt8]) -> [UInt8] {
+	public static func encrypt(key: [UInt8], keySaltFn: (key: [UInt8]) -> [UInt8], data: [UInt8]) -> [UInt8] {
 		// Prepare IV 16 bytes long
 		let iv = AES.randomIV(AES.blockSize)
+		// Salt key
+		let saltedKey = keySaltFn(key: key)
 		// Prepare cipher
-		let cipher = createCipher(key, iv: iv)
+		let cipher = createCipher(saltedKey, iv: iv)
 		// Encrypt data
 		let encrypted = try! data.encrypt(cipher)
 		// Join IV and encrypted data
 		return iv + encrypted
 	}
 
-	public static func decrypt(key: [UInt8], data: [UInt8]) -> [UInt8] {
+	public static func decrypt(key: [UInt8], keySaltFn: (key: [UInt8]) -> [UInt8], data: [UInt8]) -> [UInt8] {
 		// Get IV
 		let iv = Array(data[0 ... 15])
 		// Get raw data
 		let rawData: [UInt8] = Array(data[16 ..< data.count])
+		// Salt key
+		let saltedKey = keySaltFn(key: key)
 		// Prepare cipher
-		let cipher = createCipher(key, iv: iv)
+		let cipher = createCipher(saltedKey, iv: iv)
 		// Perform decryption
 		let decryptedBytes: [UInt8] = try! cipher.decrypt(rawData)
 		return decryptedBytes
@@ -43,9 +47,9 @@ public class DefaultEncryption: EncryptionApi {
 		return try! AES(key: key.sha256(), iv: iv, blockMode: .CFB, padding: PKCS7())
 	}
 
-	public static func toSessionPath(key: [UInt8]) -> String {
+	public static func toSessionPath(key: [UInt8], saltFn: (key: [UInt8]) -> [UInt8]) -> String {
 		// Perform basic salting
-		let saltedKey = "littlebitof" + Conversions.toStr(key) + "salt"
+		let saltedKey = Conversions.toStr(saltFn(key: key))
 		// Create hash in hexa string
 		let hashStr = saltedKey.sha256()
 		// Convert hash to bytes

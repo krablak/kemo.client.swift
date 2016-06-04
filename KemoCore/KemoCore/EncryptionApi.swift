@@ -16,16 +16,16 @@ public protocol EncryptionApi {
 	/*
 	 Encrypts data using given key.
 	 */
-	static func encrypt(key: [UInt8], data: [UInt8]) -> [UInt8]
+	static func encrypt(key: [UInt8], keySaltFn: (key: [UInt8]) -> [UInt8], data: [UInt8]) -> [UInt8]
 
 	/*
 	 Decrypts encrypted data using given key.
 	 */
-	static func decrypt(key: [UInt8], data: [UInt8]) -> [UInt8]
+	static func decrypt(key: [UInt8], keySaltFn: (key: [UInt8]) -> [UInt8], data: [UInt8]) -> [UInt8]
 
 	/*
 	 Prepares unique messaging URL path part.
 	 */
-	static func toSessionPath(key: [UInt8]) -> String
+	static func toSessionPath(key: [UInt8], saltFn: (key: [UInt8]) -> [UInt8]) -> String
 }
 
