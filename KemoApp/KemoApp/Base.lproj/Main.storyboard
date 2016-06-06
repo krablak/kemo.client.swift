@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -126,10 +126,10 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Kemo" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                    <window key="window" title="kemo.rocks" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="583" y="387" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
@@ -140,46 +140,28 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--kemo.rocks-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="KemoApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <viewController title="kemo.rocks" id="XfG-lQ-9wD" customClass="ViewController" customModule="KemoApp" sceneMemberID="viewController">
+                    <view key="view" id="m2S-Jp-Qdl" customClass="NSVisualEffectView">
+                        <rect key="frame" x="0.0" y="0.0" width="515" height="336"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView identifier="messagesTextBox" focusRingType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrE-HS-o5t">
-                                <rect key="frame" x="0.0" y="20" width="480" height="230"/>
-                                <clipView key="contentView" focusRingType="none" id="Boh-x3-415">
-                                    <rect key="frame" x="1" y="1" width="478" height="228"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <textView identifier="messageTextView" editable="NO" importsGraphics="NO" richText="NO" findStyle="panel" verticallyResizable="YES" allowsNonContiguousLayout="YES" id="7gi-Uf-8AF">
-                                            <rect key="frame" x="0.0" y="0.0" width="478" height="228"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="478" height="228"/>
-                                            <size key="maxSize" width="491" height="10000000"/>
-                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="478" height="228"/>
-                                            <size key="maxSize" width="491" height="10000000"/>
-                                        </textView>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="3Hw-26-M9j">
-                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="cQu-VO-cCB">
-                                    <rect key="frame" x="463" y="1" width="16" height="228"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
-                            <textField identifier="messageTextFld" focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dbw-lW-F4R">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" drawsBackground="YES" id="Naj-20-Gbh">
-                                    <font key="font" metaFont="system"/>
+                            <secureTextField identifier="kemoKeyFld" focusRingType="none" verticalHuggingPriority="750" id="zRk-v8-vrg">
+                                <rect key="frame" x="20" y="301" width="475" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" usesSingleLineMode="YES" bezelStyle="round" echosBullets="NO" id="neG-3H-peU">
+                                    <font key="font" metaFont="systemLight" size="13"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                </secureTextFieldCell>
+                            </secureTextField>
+                            <textField identifier="messageTextFld" focusRingType="none" verticalHuggingPriority="750" id="dbw-lW-F4R">
+                                <rect key="frame" x="20" y="20" width="475" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" bezelStyle="round" id="Naj-20-Gbh">
+                                    <font key="font" metaFont="systemLight" size="13"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -187,38 +169,47 @@
                                     <action selector="onMessageEnter:" target="XfG-lQ-9wD" id="DLW-87-45Z"/>
                                 </connections>
                             </textField>
-                            <secureTextField identifier="kemoKeyFld" focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zRk-v8-vrg">
-                                <rect key="frame" x="0.0" y="248" width="480" height="22"/>
-                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" drawsBackground="YES" usesSingleLineMode="YES" id="neG-3H-peU">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    <allowedInputSourceLocales>
-                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
-                                    </allowedInputSourceLocales>
-                                </secureTextFieldCell>
-                            </secureTextField>
+                            <scrollView identifier="messagesTextBox" focusRingType="none" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" scrollerKnobStyle="light" id="TrE-HS-o5t">
+                                <rect key="frame" x="20" y="52" width="475" height="241"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <clipView key="contentView" focusRingType="none" drawsBackground="NO" copiesOnScroll="NO" id="Boh-x3-415">
+                                    <rect key="frame" x="0.0" y="0.0" width="475" height="241"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView identifier="messageTextView" editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="NO" findStyle="panel" allowsNonContiguousLayout="YES" id="7gi-Uf-8AF">
+                                            <rect key="frame" x="0.0" y="0.0" width="475" height="241"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="475" height="241"/>
+                                            <size key="maxSize" width="491" height="10000000"/>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="475" height="241"/>
+                                            <size key="maxSize" width="491" height="10000000"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="3Hw-26-M9j">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="cQu-VO-cCB">
+                                    <rect key="frame" x="-100" y="-100" width="16" height="210"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="dbw-lW-F4R" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="437-jg-TLn"/>
-                            <constraint firstAttribute="trailing" secondItem="zRk-v8-vrg" secondAttribute="trailing" id="9TF-4O-iXf"/>
-                            <constraint firstAttribute="trailing" secondItem="dbw-lW-F4R" secondAttribute="trailing" id="Ql3-Yw-Ak6"/>
-                            <constraint firstAttribute="bottom" secondItem="dbw-lW-F4R" secondAttribute="bottom" id="TfC-rF-jJy"/>
-                            <constraint firstItem="TrE-HS-o5t" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="Z8c-5M-jvh"/>
-                            <constraint firstAttribute="bottom" secondItem="TrE-HS-o5t" secondAttribute="bottom" constant="20" id="bid-bT-uqi"/>
-                            <constraint firstItem="TrE-HS-o5t" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="izA-qh-LNm"/>
-                            <constraint firstItem="zRk-v8-vrg" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="l8V-pL-h8k"/>
-                            <constraint firstItem="zRk-v8-vrg" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="nMy-W5-8HC"/>
-                            <constraint firstAttribute="trailing" secondItem="TrE-HS-o5t" secondAttribute="trailing" id="p5B-0L-npV"/>
-                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="kemoKeyFld" destination="zRk-v8-vrg" id="xDe-Ut-fHZ"/>
+                        <outlet property="mainView" destination="m2S-Jp-Qdl" id="0Zn-I7-46Z"/>
+                        <outlet property="messageTextFld" destination="dbw-lW-F4R" id="dhW-Ke-Hlp"/>
                         <outlet property="messageTextView" destination="7gi-Uf-8AF" id="uZF-bg-fye"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="173.5" y="713"/>
         </scene>
     </scenes>
 </document>
