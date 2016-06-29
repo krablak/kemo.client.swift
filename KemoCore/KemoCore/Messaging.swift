@@ -29,39 +29,57 @@ public class Messaging {
 		self.key = Conversions.toBytes(key)
 		// Create session path from given key
 		let sessionPath = DefaultEncryption.toSessionPath(Conversions.toBytes(key), saltFn: Salts.saltSessionPath)
-		// Create initial client instance
-		self.client = KemoClient(host: "kemoundertow-krablak.rhcloud.com", sessionPath: sessionPath, onMessage: onMessageInternal)
-		self.client?.connect()
+		// Connect in background thread
+		dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+			// Create initial client instance
+			self.client = KemoClient(host: "kemoundertow-krablak.rhcloud.com", sessionPath: sessionPath, onMessage: self.onMessageInternal)
+			self.client?.connect()
+		}
 	}
 
 	public func changeKey(key: String) {
 		log.debug("Changing messaging key.")
-		self.key = Conversions.toBytes(key)
+		// Change key and reconnect in background thread
+		dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+			self.key = Conversions.toBytes(key)
 
-		// Disconnect current client
-		log.debug("Shutting down current client")
-		self.client?.disconnect()
+			// Disconnect current client
+			log.debug("Shutting down current client")
+			self.client?.disconnect()
 
-		// Create new client and connect
-		log.debug("Creating new networking client instance.")
-		let sessionPath = DefaultEncryption.toSessionPath(self.key, saltFn: Salts.saltSessionPath)
-		self.client = KemoClient(host: "kemoundertow-krablak.rhcloud.com", sessionPath: sessionPath, onMessage: self.onMessage)
-		self.client?.connect()
+			// Create new client and connect
+			log.debug("Creating new networking client instance.")
+			let sessionPath = DefaultEncryption.toSessionPath(self.key, saltFn: Salts.saltSessionPath)
+			self.client = KemoClient(host: "kemoundertow-krablak.rhcloud.com", sessionPath: sessionPath, onMessage: self.onMessageInternal)
+			self.client?.connect()
+		}
 	}
 
 	public func send(message: String) {
 		log.debug("Sending message")
-		let encryptedMessageBytes = DefaultEncryption.encrypt(self.key, keySaltFn: Salts.saltEncKey, data: Conversions.toBytes(message))
-		let encryptedMessage = Conversions.toBase64Str(encryptedMessageBytes)
-		self.client?.send(encryptedMessage)
+		dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+			let encryptedMessageBytes = DefaultEncryption.encrypt(self.key, keySaltFn: Salts.saltEncKey, data: Conversions.toBytes(message))
+			let encryptedMessage = Conversions.toBase64Str(encryptedMessageBytes)
+			self.client?.send(encryptedMessage)
+			log.debug("Message was sent")
+		}
 	}
 
-
 	private func onMessageInternal(message: String) {
-		let messageBytes = Conversions.toBytesFromBase64(message)
-		let decryptedBytes = DefaultEncryption.decrypt(self.key, keySaltFn: Salts.saltEncKey, data: messageBytes)
-		let decryptedStr = Conversions.toStr(decryptedBytes)
-		self.onMessage(message: decryptedStr)
+		dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+			log.debug("Receiving message")
+			let messageBytes = Conversions.toBytesFromBase64(message)
+			let decryptedBytes = DefaultEncryption.decrypt(self.key, keySaltFn: Salts.saltEncKey, data: messageBytes)
+			let decryptedStr = Conversions.toStr(decryptedBytes)
+			log.debug("Message was descrypted.")
+			// Do not block messaging and pass message to handler in separate task
+			dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0)) {
+				log.debug("Passing to message handler as separate background task.")
+				self.onMessage(message: decryptedStr)
+				log.debug("Passed to handler.")
+			}
+		}
+
 	}
 
 }

@@ -7,17 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56A6A8BA413833098CAB683E /* Pods_KemoApp_KemoAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E72002374EC3B02C9919991C /* Pods_KemoApp_KemoAppTests.framework */; };
+		9A0895BE1D20035D00255D45 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD1F1691D1FD859002BCEAC /* CryptoSwift.framework */; };
+		9A0895BF1D20035D00255D45 /* KemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */; };
+		9A0895C21D20035D00255D45 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0895C01D20035D00255D45 /* Starscream.framework */; };
+		9A0895C31D20035D00255D45 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0895C11D20035D00255D45 /* XCGLogger.framework */; };
 		9A275B451C6A7B67001EB564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A275B441C6A7B67001EB564 /* AppDelegate.swift */; };
 		9A275B471C6A7B67001EB564 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A275B461C6A7B67001EB564 /* ViewController.swift */; };
 		9A275B491C6A7B67001EB564 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A275B481C6A7B67001EB564 /* Assets.xcassets */; };
 		9A275B4C1C6A7B67001EB564 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A275B4A1C6A7B67001EB564 /* Main.storyboard */; };
 		9A275B571C6A7B68001EB564 /* KemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A275B561C6A7B68001EB564 /* KemoAppTests.swift */; };
 		9A3988C61D1560EC00372AE2 /* UITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3988C51D1560EC00372AE2 /* UITheme.swift */; };
-		9A3988C91D1B1B3800372AE2 /* ChatTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3988C81D1B1B3800372AE2 /* ChatTextView.swift */; };
+		9A3988C91D1B1B3800372AE2 /* UIComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3988C81D1B1B3800372AE2 /* UIComponents.swift */; };
 		9A3988CD1D1C65EC00372AE2 /* ThemedNSScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3988CC1D1C65EC00372AE2 /* ThemedNSScrollView.swift */; };
-		9A3988CF1D1E4AEE00372AE2 /* KemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */; };
-		9A3988D01D1E55FA00372AE2 /* Pods_KemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7204851D02B39E00B9B67E /* Pods_KemoCore.framework */; };
-		9A3988D11D1E55FB00372AE2 /* Pods_KemoCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7204851D02B39E00B9B67E /* Pods_KemoCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B065DBEDECB16F18CEA71E0A /* Pods_KemoAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 742309F436B665FB67F0ED9E /* Pods_KemoAppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,21 +33,15 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		9A3988D21D1E55FB00372AE2 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				9A3988D11D1E55FB00372AE2 /* Pods_KemoCore.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		1FFD435E7D2E235273C1A528 /* Pods-KemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KemoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KemoApp/Pods-KemoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		47823EC2D4A3B274CEDF9034 /* Pods-KemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KemoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-KemoApp/Pods-KemoApp.release.xcconfig"; sourceTree = "<group>"; };
+		67D68C8778E21FC3056FEBB4 /* Pods-KemoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KemoAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KemoAppTests/Pods-KemoAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		73DAA6BFC0C3386FB5F449BC /* Pods-KemoApp-KemoAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KemoApp-KemoAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KemoApp-KemoAppTests/Pods-KemoApp-KemoAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		742309F436B665FB67F0ED9E /* Pods_KemoAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KemoAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76870916B1C311D3DED65136 /* Pods_KemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A0895C01D20035D00255D45 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Kemo-cjxjdnpqzccphyfurikoqpvuvirs/Build/Products/Debug/Starscream/Starscream.framework"; sourceTree = "<group>"; };
+		9A0895C11D20035D00255D45 /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Kemo-cjxjdnpqzccphyfurikoqpvuvirs/Build/Products/Debug/XCGLogger/XCGLogger.framework"; sourceTree = "<group>"; };
 		9A275B411C6A7B67001EB564 /* KemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A275B441C6A7B67001EB564 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A275B461C6A7B67001EB564 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,10 +53,14 @@
 		9A275B581C6A7B68001EB564 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A275B871C6A7EE6001EB564 /* KemoCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = KemoCore.framework; path = "/Users/krablak/Library/Developer/Xcode/DerivedData/Kemo-faqxzrkqzxskmncbvysyqjfcghnr/Build/Products/Debug/KemoCore.framework"; sourceTree = "<absolute>"; };
 		9A3988C51D1560EC00372AE2 /* UITheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITheme.swift; sourceTree = "<group>"; };
-		9A3988C81D1B1B3800372AE2 /* ChatTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTextView.swift; sourceTree = "<group>"; };
+		9A3988C81D1B1B3800372AE2 /* UIComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIComponents.swift; sourceTree = "<group>"; };
 		9A3988CC1D1C65EC00372AE2 /* ThemedNSScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemedNSScrollView.swift; sourceTree = "<group>"; };
 		9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KemoCore.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Kemo-cjxjdnpqzccphyfurikoqpvuvirs/Build/Products/Debug/KemoCore.framework"; sourceTree = "<group>"; };
 		9A7204851D02B39E00B9B67E /* Pods_KemoCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_KemoCore.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Kemo-cjxjdnpqzccphyfurikoqpvuvirs/Build/Products/Debug/Pods_KemoCore.framework"; sourceTree = "<group>"; };
+		9AD1F1691D1FD859002BCEAC /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = CryptoSwift.framework; path = "/Users/krablak/Library/Developer/Xcode/DerivedData/Kemo-cjxjdnpqzccphyfurikoqpvuvirs/Build/Products/Debug/CryptoSwift/CryptoSwift.framework"; sourceTree = "<absolute>"; };
+		D45337BA8F85584124549EC3 /* Pods-KemoAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KemoAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KemoAppTests/Pods-KemoAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DD9C112C0F09C912D35F371E /* Pods-KemoApp-KemoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KemoApp-KemoAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KemoApp-KemoAppTests/Pods-KemoApp-KemoAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		E72002374EC3B02C9919991C /* Pods_KemoApp_KemoAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KemoApp_KemoAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +68,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A3988CF1D1E4AEE00372AE2 /* KemoCore.framework in Frameworks */,
-				9A3988D01D1E55FA00372AE2 /* Pods_KemoCore.framework in Frameworks */,
+				9A0895C21D20035D00255D45 /* Starscream.framework in Frameworks */,
+				9A0895C31D20035D00255D45 /* XCGLogger.framework in Frameworks */,
+				9A0895BE1D20035D00255D45 /* CryptoSwift.framework in Frameworks */,
+				9A0895BF1D20035D00255D45 /* KemoCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,21 +79,51 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B065DBEDECB16F18CEA71E0A /* Pods_KemoAppTests.framework in Frameworks */,
+				56A6A8BA413833098CAB683E /* Pods_KemoApp_KemoAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52B167AF281A90FC47C6834A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A0895C01D20035D00255D45 /* Starscream.framework */,
+				9A0895C11D20035D00255D45 /* XCGLogger.framework */,
+				76870916B1C311D3DED65136 /* Pods_KemoApp.framework */,
+				742309F436B665FB67F0ED9E /* Pods_KemoAppTests.framework */,
+				E72002374EC3B02C9919991C /* Pods_KemoApp_KemoAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		773C603EE7F07302E696434E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1FFD435E7D2E235273C1A528 /* Pods-KemoApp.debug.xcconfig */,
+				47823EC2D4A3B274CEDF9034 /* Pods-KemoApp.release.xcconfig */,
+				D45337BA8F85584124549EC3 /* Pods-KemoAppTests.debug.xcconfig */,
+				67D68C8778E21FC3056FEBB4 /* Pods-KemoAppTests.release.xcconfig */,
+				73DAA6BFC0C3386FB5F449BC /* Pods-KemoApp-KemoAppTests.debug.xcconfig */,
+				DD9C112C0F09C912D35F371E /* Pods-KemoApp-KemoAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9A275B381C6A7B67001EB564 = {
 			isa = PBXGroup;
 			children = (
+				9AD1F1691D1FD859002BCEAC /* CryptoSwift.framework */,
 				9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */,
 				9A7204851D02B39E00B9B67E /* Pods_KemoCore.framework */,
 				9A275B871C6A7EE6001EB564 /* KemoCore.framework */,
 				9A275B431C6A7B67001EB564 /* KemoApp */,
 				9A275B551C6A7B68001EB564 /* KemoAppTests */,
 				9A275B421C6A7B67001EB564 /* Products */,
+				773C603EE7F07302E696434E /* Pods */,
+				52B167AF281A90FC47C6834A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,7 +145,7 @@
 				9A275B4A1C6A7B67001EB564 /* Main.storyboard */,
 				9A275B4D1C6A7B67001EB564 /* Info.plist */,
 				9A3988C51D1560EC00372AE2 /* UITheme.swift */,
-				9A3988C81D1B1B3800372AE2 /* ChatTextView.swift */,
+				9A3988C81D1B1B3800372AE2 /* UIComponents.swift */,
 				9A3988CC1D1C65EC00372AE2 /* ThemedNSScrollView.swift */,
 			);
 			path = KemoApp;
@@ -134,10 +167,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A275B5B1C6A7B68001EB564 /* Build configuration list for PBXNativeTarget "KemoApp" */;
 			buildPhases = (
+				99CAE698E8AA8B7430EBC9D5 /* 📦 Check Pods Manifest.lock */,
 				9A275B3D1C6A7B67001EB564 /* Sources */,
 				9A275B3E1C6A7B67001EB564 /* Frameworks */,
 				9A275B3F1C6A7B67001EB564 /* Resources */,
-				9A3988D21D1E55FB00372AE2 /* Embed Frameworks */,
+				233638A821F1E4ADA828CFDE /* 📦 Embed Pods Frameworks */,
+				2821126E29E06657391D7B8E /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +187,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A275B5E1C6A7B68001EB564 /* Build configuration list for PBXNativeTarget "KemoAppTests" */;
 			buildPhases = (
+				FDD8DDBCD566839CD2214498 /* 📦 Check Pods Manifest.lock */,
 				9A275B4E1C6A7B67001EB564 /* Sources */,
 				9A275B4F1C6A7B67001EB564 /* Frameworks */,
 				9A275B501C6A7B67001EB564 /* Resources */,
+				633AD7ECD1FA84D5D539ED62 /* 📦 Embed Pods Frameworks */,
+				7493BDAE433DCDAD7973FA96 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -223,6 +261,99 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		233638A821F1E4ADA828CFDE /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KemoApp/Pods-KemoApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2821126E29E06657391D7B8E /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KemoApp/Pods-KemoApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		633AD7ECD1FA84D5D539ED62 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KemoApp-KemoAppTests/Pods-KemoApp-KemoAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7493BDAE433DCDAD7973FA96 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KemoApp-KemoAppTests/Pods-KemoApp-KemoAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99CAE698E8AA8B7430EBC9D5 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FDD8DDBCD566839CD2214498 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9A275B3D1C6A7B67001EB564 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -230,7 +361,7 @@
 			files = (
 				9A3988C61D1560EC00372AE2 /* UITheme.swift in Sources */,
 				9A3988CD1D1C65EC00372AE2 /* ThemedNSScrollView.swift in Sources */,
-				9A3988C91D1B1B3800372AE2 /* ChatTextView.swift in Sources */,
+				9A3988C91D1B1B3800372AE2 /* UIComponents.swift in Sources */,
 				9A275B471C6A7B67001EB564 /* ViewController.swift in Sources */,
 				9A275B451C6A7B67001EB564 /* AppDelegate.swift in Sources */,
 			);
@@ -348,6 +479,7 @@
 		};
 		9A275B5C1C6A7B68001EB564 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FFD435E7D2E235273C1A528 /* Pods-KemoApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -360,6 +492,7 @@
 		};
 		9A275B5D1C6A7B68001EB564 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47823EC2D4A3B274CEDF9034 /* Pods-KemoApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -372,6 +505,7 @@
 		};
 		9A275B5F1C6A7B68001EB564 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73DAA6BFC0C3386FB5F449BC /* Pods-KemoApp-KemoAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -385,6 +519,7 @@
 		};
 		9A275B601C6A7B68001EB564 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD9C112C0F09C912D35F371E /* Pods-KemoApp-KemoAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;

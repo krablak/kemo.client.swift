@@ -24,7 +24,11 @@ public struct Salts {
 	 Default salting of messaging session path key used across kemo implementation.
 	 */
 	public static func saltSessionPath(key: [UInt8]) -> [UInt8] {
-		return Conversions.toBytes("littlebitof") + key + Conversions.toBytes("salt")
+		if key.count == 0 {
+			return Conversions.toBytes("defaultkey")
+		} else {
+			return Conversions.toBytes("littlebitof") + key + Conversions.toBytes("salt")
+		}
 	}
 
 }

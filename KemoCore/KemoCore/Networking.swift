@@ -18,7 +18,7 @@ public class KemoClient: WebSocketDelegate {
 	/*
 	 Websocket state inspired by https://developer.mozilla.org/en-US/docs/Web/API/WebSocket ready state constants.
 	 */
-	enum ReadyState {
+	enum ReadyState: String {
 		// The connection is not yet open.
 		case CONNECTING
 		// The connection is open and ready to communicate.
@@ -81,11 +81,12 @@ public class KemoClient: WebSocketDelegate {
 				if (self.sendQueue.count < 100) {
 					// Add message to queue to be executed when client will be connected
 					self.sendQueue.append(message)
+					log.debug("Client state is '\(self.readyState.rawValue)'")
 				} else {
 					log.warning("Send queue is full and new messages cannot be accepted.")
 				}
 			} else {
-				log.warning("Client state is '\(self.readyState)' and message sending cannot be planned.")
+				log.warning("Client state is '\(self.readyState.rawValue)' and message sending cannot be planned.")
 			}
 		}
 	}
@@ -96,8 +97,12 @@ public class KemoClient: WebSocketDelegate {
 			log.debug("Client connection is open. Check complete.")
 		} else if (self.readyState == .CONNECTING) {
 			log.debug("Client is connecting right now. Check complete.")
+		} else if (self.readyState == .CLOSING) {
+			log.debug("Client is closing right now. Check complete.")
 		} else {
-
+			log.debug("Client is closed and needs to be connected.")
+			self.connect()
+			log.debug("Connection performed. Client state: '\(self.readyState.rawValue)' ")
 		}
 	}
 
@@ -111,6 +116,9 @@ public class KemoClient: WebSocketDelegate {
 				self.socket.writeString(queuedMessage!)
 			}
 		}
+		// Set proper inner state
+		self.readyState = ReadyState.OPEN
+		log.debug("Ready state changed to '\(self.readyState.rawValue)'")
 	}
 
 	public func websocketDidDisconnect(socket: WebSocket, error: NSError?) {

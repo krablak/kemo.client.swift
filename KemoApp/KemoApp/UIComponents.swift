@@ -61,7 +61,7 @@ public class ChatTextView: NSTextView {
 	 */
 	private func addMessage(message: String, attributes: [String: AnyObject]) {
 		// Create lined message from given string
-		let lineMessage = NSMutableAttributedString(string: "\n\(message)", attributes: theme.receiveTextAttrs())
+		let lineMessage = NSMutableAttributedString(string: "\n\(message)", attributes: attributes)
 		// Add message to known lines
 		self.lines.append(lineMessage)
 		// Remove old messages when maximal count of messages is exceeded
@@ -77,16 +77,28 @@ public class ChatTextView: NSTextView {
 		self.scrollToEndOfDocument(self)
 	}
 
-	/*
-	 Removes oldest message from view.
-	 */
-	private func removeOldestMessage() {
-	}
-
 	public override func viewDidEndLiveResize() {
 		// Scrolls chat view to have last bottom line visible.
 		self.scrollToEndOfDocument(self)
 	}
 
+}
+
+/*
+ Mini-helper for marking and resolving sent messages.
+ */
+class SentMessageMarker {
+
+	private var sentMessage = ""
+
+	init() { }
+
+	func isSent(message: String) -> Bool {
+		return self.sentMessage == message
+	}
+
+	func markAsSent(message: String) {
+		self.sentMessage = message
+	}
 
 }

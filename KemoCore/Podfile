@@ -1,5 +1,8 @@
 platform :osx, '10.11'
 
+workspace 'Kemo'
+#project 'KemoCore.xcodeproj'
+
 target 'KemoCore' do
 	use_frameworks!
 

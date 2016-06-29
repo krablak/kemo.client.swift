@@ -71,8 +71,9 @@ class DefaultEncryptionTests: XCTestCase {
 	}
 
 	func testSimplePathProvide() {
+		//				APRanEHwMc3S2YHeqeoUaF2Wg3nTfwlQbU%2BLMinoMvA%3D
 		XCTAssertEqual("APRanEHwMc3S2YHeqeoUaF2Wg3nTfwlQbU%2BLMinoMvA%3D", DefaultEncryption.toSessionPath(Conversions.toBytes("defaultKey"), saltFn: Salts.saltSessionPath))
-		XCTAssertEqual("YnnuDrV70Yfz2lNFBTWd%2BfFUQ4uFskD9MWeFX0Wy1v8%3D", DefaultEncryption.toSessionPath(Conversions.toBytes(""), saltFn: Salts.saltSessionPath))
+		XCTAssertEqual("a32WqNXEpu76mdllChG6m9xtaPcjM9sUJkYl9JeAefg%3D", DefaultEncryption.toSessionPath(Conversions.toBytes(""), saltFn: Salts.saltSessionPath))
 	}
 
 }

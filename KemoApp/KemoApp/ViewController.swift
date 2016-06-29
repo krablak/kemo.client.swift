@@ -7,10 +7,12 @@
 //
 
 import Cocoa
+import KemoCore
 
 class ViewController: NSViewController, UIComponents {
 
-	let PRESENTATION_MODE = false
+	// Temporary flag for case of making screenshots filled content
+	let PRESENTATION_MODE = true
 
 	@IBOutlet var messageTextView: ChatTextView!
 
@@ -22,30 +24,50 @@ class ViewController: NSViewController, UIComponents {
 
 	@IBOutlet weak var messageTextScrollView: NSScrollView!
 
+	// Instance of messaging component
+	var messaging: Messaging?
+
+	// Helper for identification of sent and received messages
+	var sentMarker = SentMessageMarker()
+
+	// View theme instance
+	var theme = UIThemeWhite()
+
+	@IBAction func onKeyChange(sender: NSSecureTextField) {
+		self.messaging!.changeKey(sender.stringValue)
+	}
+
 	@IBAction func onMessageEnter(sender: NSTextField) {
-		// Add entered message into chat view
-		self.messageTextView.addReceived(sender.stringValue)
-
-		func updateMessages(messages: [String]) {
-			debugPrint(messages)
-		}
-
-		// let session = MessagingSession(key: "hovnohovnohovno", serverConfig: ServerConfigs.LOCAL)
-		// session.send(sender.stringValue, onReceived: updateMessages)
+		// Try to send message
+		self.messaging!.send(sender.stringValue)
+		// Mark message as sent
+		sentMarker.markAsSent(sender.stringValue)
 
 		// Clean message text field
 		sender.stringValue = ""
 	}
 
-	// View theme instance
-	var theme = UIThemeWhite()
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
 
+	/*
+	 Internal method for adding received message into chat view.
+	 */
+	private func onReceivedMessage(message: String) {
+		// dispatch_sync(
+		dispatch_async(dispatch_get_main_queue()) {
+			if self.sentMarker.isSent(message) {
+				self.messageTextView.addSent(message)
+			} else {
+				self.messageTextView.addReceived(message)
+			}
+		}
+	}
+
 	override func viewDidAppear() {
 		super.viewDidAppear()
+
 		// Apply theme on current view
 		theme.apply(self)
 		// Set theme to chat view
@@ -55,6 +77,9 @@ class ViewController: NSViewController, UIComponents {
 
 		// Initial values
 		self.view.window?.title = "kemo.rocks"
+
+		// Messaging with empty default key
+		messaging = Messaging(key: "", onMessage: self.onReceivedMessage)
 
 		// View content for presentation mode
 		if PRESENTATION_MODE {
