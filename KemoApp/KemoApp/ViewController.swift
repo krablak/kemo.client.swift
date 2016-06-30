@@ -12,7 +12,7 @@ import KemoCore
 class ViewController: NSViewController, UIComponents {
 
 	// Temporary flag for case of making screenshots filled content
-	let PRESENTATION_MODE = true
+	let PRESENTATION_MODE = false
 
 	@IBOutlet var messageTextView: ChatTextView!
 
@@ -20,6 +20,8 @@ class ViewController: NSViewController, UIComponents {
 
 	@IBOutlet weak var kemoKeyFld: NSSecureTextField!
 
+	@IBOutlet weak var nickFld: NSTextField!
+	
 	@IBOutlet var mainView: NSView!
 
 	@IBOutlet weak var messageTextScrollView: NSScrollView!
@@ -38,10 +40,11 @@ class ViewController: NSViewController, UIComponents {
 	}
 
 	@IBAction func onMessageEnter(sender: NSTextField) {
+		let message = nickFld.stringValue != "" ? "[\(nickFld.stringValue)] \(sender.stringValue)" : sender.stringValue
 		// Try to send message
-		self.messaging!.send(sender.stringValue)
+		self.messaging!.send(message)
 		// Mark message as sent
-		sentMarker.markAsSent(sender.stringValue)
+		sentMarker.markAsSent(message)
 
 		// Clean message text field
 		sender.stringValue = ""
@@ -109,6 +112,10 @@ class ViewController: NSViewController, UIComponents {
 	 */
 	func getMainView() -> NSView {
 		return self.mainView!
+	}
+	
+	func getNickFld() -> NSTextField {
+		return self.nickFld
 	}
 
 	func getKeyField() -> NSSecureTextField {

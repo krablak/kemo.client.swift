@@ -16,6 +16,8 @@ protocol UIComponents {
 
 	func getMainView() -> NSView
 
+	func getNickFld() -> NSTextField
+
 	func getKeyField() -> NSSecureTextField
 
 	func getMessageTextView() -> NSTextView
@@ -23,6 +25,7 @@ protocol UIComponents {
 	func getMessageField() -> NSTextField
 
 	func getMessageTextScrollView() -> NSScrollView
+
 }
 
 /*
@@ -42,14 +45,14 @@ protocol UITheme {
  Default white colored theme.
  */
 public class UIThemeWhite: UITheme {
-	
+
 	// Components colors
 	var bgColor = NSColor.whiteColor()
 	var fieldLightBorderColor = NSColor.init(SRGBRed: 138.0 / 255.0, green: 138.0 / 255.0, blue: 138.0 / 255.0, alpha: 0.3)
 	var textViewBorderColor = NSColor.init(SRGBRed: 238.0 / 255.0, green: 238.0 / 255.0, blue: 238.0 / 255.0, alpha: 1.0)
 	var fieldMessageBorderColor = NSColor.init(SRGBRed: 85.0 / 255.0, green: 86.0 / 255.0, blue: 149.0 / 255.0, alpha: 1.0)
 	var fontColor = NSColor.init(SRGBRed: 51.0 / 255.0, green: 51.0 / 255.0, blue: 51.0 / 255.0, alpha: 1.0)
-	
+
 	// Chat text colors
 	var receivedTextColor = NSColor.init(SRGBRed: 51.0 / 255.0, green: 51.0 / 255.0, blue: 51.0 / 255.0, alpha: 1.0)
 	var sentTextColor = NSColor.init(SRGBRed: 130.0 / 255.0, green: 130.0 / 255.0, blue: 130.0 / 255.0, alpha: 1.0)
@@ -58,14 +61,23 @@ public class UIThemeWhite: UITheme {
 		// Window style
 		uiComponents.getMainView().window?.backgroundColor = bgColor
 		uiComponents.getMainView().window?.alphaValue = 1
+		
+		// Nickname field style
+		uiComponents.getNickFld().wantsLayer = true
+		uiComponents.getNickFld().layer?.borderColor = fieldLightBorderColor.CGColor
+		uiComponents.getNickFld().layer?.backgroundColor = bgColor.CGColor
+		uiComponents.getNickFld().layer?.cornerRadius = 3
+		uiComponents.getNickFld().layer?.borderWidth = 0
+		uiComponents.getNickFld().frame.size.height = 33
 
 		// Key field style
 		uiComponents.getKeyField().wantsLayer = true
 		uiComponents.getKeyField().layer?.borderColor = fieldLightBorderColor.CGColor
 		uiComponents.getKeyField().layer?.backgroundColor = bgColor.CGColor
 		uiComponents.getKeyField().layer?.cornerRadius = 3
-		uiComponents.getKeyField().layer?.borderWidth = 0
+		uiComponents.getKeyField().layer?.borderWidth = 1
 		uiComponents.getKeyField().frame.size.height = 33
+		uiComponents.getKeyField().textColor = fontColor
 
 		// Message text view style
 		uiComponents.getMessageTextView().wantsLayer = true
@@ -80,7 +92,6 @@ public class UIThemeWhite: UITheme {
 		uiComponents.getMessageTextScrollView().layer?.borderWidth = 1
 		uiComponents.getMessageTextScrollView().layer?.cornerRadius = 3
 		uiComponents.getMessageTextScrollView().layer?.displayIfNeeded()
-		
 
 		// New message field style
 		uiComponents.getMessageField().wantsLayer = true

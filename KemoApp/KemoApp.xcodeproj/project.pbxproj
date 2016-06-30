@@ -20,6 +20,8 @@
 		9A3988C61D1560EC00372AE2 /* UITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3988C51D1560EC00372AE2 /* UITheme.swift */; };
 		9A3988C91D1B1B3800372AE2 /* UIComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3988C81D1B1B3800372AE2 /* UIComponents.swift */; };
 		9A3988CD1D1C65EC00372AE2 /* ThemedNSScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3988CC1D1C65EC00372AE2 /* ThemedNSScrollView.swift */; };
+		9A88777C1D25926D00502168 /* KemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */; };
+		9A88777D1D25926D00502168 /* KemoCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B065DBEDECB16F18CEA71E0A /* Pods_KemoAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 742309F436B665FB67F0ED9E /* Pods_KemoAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,20 @@
 			remoteInfo = KemoApp;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9A88777B1D25922A00502168 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9A88777D1D25926D00502168 /* KemoCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1FFD435E7D2E235273C1A528 /* Pods-KemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KemoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KemoApp/Pods-KemoApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -72,6 +88,7 @@
 				9A0895C31D20035D00255D45 /* XCGLogger.framework in Frameworks */,
 				9A0895BE1D20035D00255D45 /* CryptoSwift.framework in Frameworks */,
 				9A0895BF1D20035D00255D45 /* KemoCore.framework in Frameworks */,
+				9A88777C1D25926D00502168 /* KemoCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +190,7 @@
 				9A275B3F1C6A7B67001EB564 /* Resources */,
 				233638A821F1E4ADA828CFDE /* 📦 Embed Pods Frameworks */,
 				2821126E29E06657391D7B8E /* 📦 Copy Pods Resources */,
+				9A88777B1D25922A00502168 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
