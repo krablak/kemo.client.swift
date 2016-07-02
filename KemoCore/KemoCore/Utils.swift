@@ -19,6 +19,14 @@ public struct Conversions {
 	public static func toStr(bytes: [UInt8]) -> String {
 		return String(bytes: bytes, encoding: NSUTF8StringEncoding)!
 	}
+	
+	public static func toStrOfChars(bytes: [UInt8]) -> String {
+		var str = ""
+		for curByte in bytes {
+			str = str + String(Character(UnicodeScalar(Int(curByte))))
+		}
+		return str
+	}
 
 	public static func toBytes(str: NSString) -> [UInt8] {
 		return Conversions.toBytes(String(str))

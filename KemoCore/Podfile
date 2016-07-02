@@ -7,12 +7,12 @@ target 'KemoCore' do
 	use_frameworks!
 
 	# Pods for KemoCore
-	pod 'CryptoSwift', '0.4.1'
+	pod 'CryptoSwift', '0.5.1'
 	pod 'XCGLogger', '3.3'
 	pod 'Starscream', '~> 1.1'
 
 	target 'KemoCoreTests' do
-		pod 'CryptoSwift', '0.4.1'
+		pod 'CryptoSwift', '0.5.1'
 		pod 'XCGLogger', '3.3'
 		pod 'Starscream', '~> 1.1'
 	end

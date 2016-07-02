@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		56A6A8BA413833098CAB683E /* Pods_KemoApp_KemoAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E72002374EC3B02C9919991C /* Pods_KemoApp_KemoAppTests.framework */; };
+		85EB585513969A9A99E2D1E7 /* Pods_KemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76870916B1C311D3DED65136 /* Pods_KemoApp.framework */; };
 		9A0895BE1D20035D00255D45 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD1F1691D1FD859002BCEAC /* CryptoSwift.framework */; };
 		9A0895BF1D20035D00255D45 /* KemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */; };
 		9A0895C21D20035D00255D45 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0895C01D20035D00255D45 /* Starscream.framework */; };
@@ -89,6 +90,7 @@
 				9A0895BE1D20035D00255D45 /* CryptoSwift.framework in Frameworks */,
 				9A0895BF1D20035D00255D45 /* KemoCore.framework in Frameworks */,
 				9A88777C1D25926D00502168 /* KemoCore.framework in Frameworks */,
+				85EB585513969A9A99E2D1E7 /* Pods_KemoApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
