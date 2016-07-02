@@ -89,7 +89,7 @@ class DefaultEncryptionTests: XCTestCase {
 		let expectedDecrypted = ""
 		let encrypted = "BNHOmO6taO0Nob9xqiiqIg=="
 
-		let encryptedBytes = Conversions.toBytesFromBase64(encrypted)
+		let encryptedBytes = Conversions.toBytes(encrypted)
 
 		let decrypted = DefaultEncryption.decrypt(Conversions.toBytes(key), keySaltFn: Salts.saltEncKey, data: encryptedBytes)
 

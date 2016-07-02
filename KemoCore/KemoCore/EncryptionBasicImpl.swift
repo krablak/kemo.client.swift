@@ -36,7 +36,9 @@ public class DefaultEncryption: EncryptionApi {
 
 	public static func decrypt(key: [UInt8], keySaltFn: (key: [UInt8]) -> [UInt8], data: [UInt8]) -> [UInt8] {
 		var decRes: [UInt8] = []
-		if data.count > 0 && key.count > 0 {
+		// Get salted key
+		let saltedKey = keySaltFn(key: key)
+		if data.count > 0 && saltedKey.count > 0 {
 			// Threat given bytes as base64 encoded string bytes
 			let decodedData = Conversions.toBytesFromBase64(Conversions.toStr(data))
 			// Get IV
@@ -44,8 +46,6 @@ public class DefaultEncryption: EncryptionApi {
 			// Get raw data
 			let rawData: [UInt8] = Array(decodedData[16 ..< decodedData.count])
 			if rawData.count > 0 {
-				// Salt key
-				let saltedKey = keySaltFn(key: key)
 				// Convert key to base64 string bytes
 				let keyBase64Bytes = Conversions.toBytes(Conversions.toBase64Str(saltedKey))
 				// Prepare cipher

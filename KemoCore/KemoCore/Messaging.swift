@@ -59,7 +59,7 @@ public class Messaging {
 		log.debug("Sending message")
 		dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
 			let encryptedMessageBytes = DefaultEncryption.encrypt(self.key, keySaltFn: Salts.saltEncKey, data: Conversions.toBytes(message))
-			let encryptedMessage = Conversions.toBase64Str(encryptedMessageBytes)
+			let encryptedMessage = Conversions.toStr(encryptedMessageBytes)
 			self.client?.send(encryptedMessage)
 			log.debug("Message was sent")
 		}
@@ -68,7 +68,7 @@ public class Messaging {
 	private func onMessageInternal(message: String) {
 		dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
 			log.debug("Receiving message")
-			let messageBytes = Conversions.toBytesFromBase64(message)
+			let messageBytes = Conversions.toBytes(message)
 			let decryptedBytes = DefaultEncryption.decrypt(self.key, keySaltFn: Salts.saltEncKey, data: messageBytes)
 			let decryptedStr = Conversions.toStr(decryptedBytes)
 			log.debug("Message was descrypted.")
