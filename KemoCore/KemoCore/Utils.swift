@@ -13,19 +13,11 @@ import CryptoSwift
 public struct Conversions {
 
 	public static func toBytes(str: String) -> [UInt8] {
-		var byteArray = [UInt8]()
-		for char in str.utf8 {
-			byteArray += [char]
-		}
-		return byteArray
+		return [UInt8](str.utf8)
 	}
 
 	public static func toStr(bytes: [UInt8]) -> String {
-		var str = ""
-		for curByte in bytes {
-			str = str + String(Character(UnicodeScalar(Int(curByte))))
-		}
-		return str
+		return String(bytes: bytes, encoding: NSUTF8StringEncoding)!
 	}
 
 	public static func toBytes(str: NSString) -> [UInt8] {
@@ -33,7 +25,7 @@ public struct Conversions {
 	}
 
 	public static func toBase64Str(bytes: [UInt8]) -> String {
-		return NSData(bytes: bytes).base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+		return NSData(bytes: bytes).base64EncodedStringWithOptions([])
 	}
 
 	public static func toStrFromBase64(base64Str: String) -> String {
