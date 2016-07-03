@@ -21,7 +21,7 @@ class ViewController: NSViewController, UIComponents {
 	@IBOutlet weak var kemoKeyFld: NSSecureTextField!
 
 	@IBOutlet weak var nickFld: NSTextField!
-	
+
 	@IBOutlet var mainView: NSView!
 
 	@IBOutlet weak var messageTextScrollView: NSScrollView!
@@ -64,6 +64,17 @@ class ViewController: NSViewController, UIComponents {
 				self.messageTextView.addSent(message)
 			} else {
 				self.messageTextView.addReceived(message)
+				// Clean up old notificatios
+				NSUserNotificationCenter.defaultUserNotificationCenter().removeAllDeliveredNotifications()
+				// Show only new last notification
+				let notification = NSUserNotification()
+				notification.title = "Hey!⚡️"
+				notification.informativeText = "Message received!"
+				notification.soundName = NSUserNotificationDefaultSoundName
+				NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
+
+				NSApplication.sharedApplication().dockTile.badgeLabel = "✉️"
+				NSApplication.sharedApplication().dockTile.display()
 			}
 		}
 	}
@@ -80,6 +91,8 @@ class ViewController: NSViewController, UIComponents {
 
 		// Initial values
 		self.view.window?.title = "kemo.rocks"
+
+		// messageTextFld.lockFocus()
 
 		// Messaging with empty default key
 		messaging = Messaging(key: "", onMessage: self.onReceivedMessage)
@@ -113,7 +126,7 @@ class ViewController: NSViewController, UIComponents {
 	func getMainView() -> NSView {
 		return self.mainView!
 	}
-	
+
 	func getNickFld() -> NSTextField {
 		return self.nickFld
 	}
