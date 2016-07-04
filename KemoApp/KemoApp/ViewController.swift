@@ -9,7 +9,7 @@
 import Cocoa
 import KemoCore
 
-class ViewController: NSViewController, UIComponents {
+class ViewController: NSViewController, UIComponents, NSWindowDelegate {
 
 	// Temporary flag for case of making screenshots filled content
 	let PRESENTATION_MODE = false
@@ -50,10 +50,6 @@ class ViewController: NSViewController, UIComponents {
 		sender.stringValue = ""
 	}
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
-	}
-
 	/*
 	 Internal method for adding received message into chat view.
 	 */
@@ -64,19 +60,13 @@ class ViewController: NSViewController, UIComponents {
 				self.messageTextView.addSent(message)
 			} else {
 				self.messageTextView.addReceived(message)
-				// Clean up old notificatios
-				NSUserNotificationCenter.defaultUserNotificationCenter().removeAllDeliveredNotifications()
-				// Show only new last notification
-				let notification = NSUserNotification()
-				notification.title = "Hey!⚡️"
-				notification.informativeText = "Message received!"
-				notification.soundName = NSUserNotificationDefaultSoundName
-				NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
-
-				NSApplication.sharedApplication().dockTile.badgeLabel = "✉️"
-				NSApplication.sharedApplication().dockTile.display()
+				Notifications.onReceived(message, window: self.view.window!)
 			}
 		}
+	}
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
 	}
 
 	override func viewDidAppear() {
@@ -91,6 +81,7 @@ class ViewController: NSViewController, UIComponents {
 
 		// Initial values
 		self.view.window?.title = "kemo.rocks"
+		self.view.window?.delegate = self
 
 		// messageTextFld.lockFocus()
 
@@ -118,6 +109,13 @@ class ViewController: NSViewController, UIComponents {
 
 			messageTextFld.stringValue = "Just watch it grow, sir."
 		}
+	}
+
+	/*
+	 NSWindowDelegate methods.
+	 */
+	func windowDidBecomeKey(notification: NSNotification) {
+		Notifications.hide(self.view.window!)
 	}
 
 	/*

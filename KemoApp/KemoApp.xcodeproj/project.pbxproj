@@ -19,6 +19,7 @@
 		9A3988C61D1560EC00372AE2 /* UITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3988C51D1560EC00372AE2 /* UITheme.swift */; };
 		9A3988C91D1B1B3800372AE2 /* UIComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3988C81D1B1B3800372AE2 /* UIComponents.swift */; };
 		9A3988CD1D1C65EC00372AE2 /* ThemedNSScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3988CC1D1C65EC00372AE2 /* ThemedNSScrollView.swift */; };
+		9A59074C1D295DF50085EBF8 /* UIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A59074B1D295DF50085EBF8 /* UIModels.swift */; };
 		9A6B311A1D282FF60035DB4C /* KemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */; };
 		9A6B311B1D282FF60035DB4C /* KemoCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B065DBEDECB16F18CEA71E0A /* Pods_KemoAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 742309F436B665FB67F0ED9E /* Pods_KemoAppTests.framework */; };
@@ -71,6 +72,7 @@
 		9A3988C81D1B1B3800372AE2 /* UIComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIComponents.swift; sourceTree = "<group>"; };
 		9A3988CC1D1C65EC00372AE2 /* ThemedNSScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemedNSScrollView.swift; sourceTree = "<group>"; };
 		9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KemoCore.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Kemo-cjxjdnpqzccphyfurikoqpvuvirs/Build/Products/Debug/KemoCore.framework"; sourceTree = "<group>"; };
+		9A59074B1D295DF50085EBF8 /* UIModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIModels.swift; sourceTree = "<group>"; };
 		9A7204851D02B39E00B9B67E /* Pods_KemoCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_KemoCore.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Kemo-cjxjdnpqzccphyfurikoqpvuvirs/Build/Products/Debug/Pods_KemoCore.framework"; sourceTree = "<group>"; };
 		9AD1F1691D1FD859002BCEAC /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = CryptoSwift.framework; path = "/Users/krablak/Library/Developer/Xcode/DerivedData/Kemo-cjxjdnpqzccphyfurikoqpvuvirs/Build/Products/Debug/CryptoSwift/CryptoSwift.framework"; sourceTree = "<absolute>"; };
 		D45337BA8F85584124549EC3 /* Pods-KemoAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KemoAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KemoAppTests/Pods-KemoAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				9A3988C51D1560EC00372AE2 /* UITheme.swift */,
 				9A3988C81D1B1B3800372AE2 /* UIComponents.swift */,
 				9A3988CC1D1C65EC00372AE2 /* ThemedNSScrollView.swift */,
+				9A59074B1D295DF50085EBF8 /* UIModels.swift */,
 			);
 			path = KemoApp;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				9A3988C91D1B1B3800372AE2 /* UIComponents.swift in Sources */,
 				9A275B471C6A7B67001EB564 /* ViewController.swift in Sources */,
 				9A275B451C6A7B67001EB564 /* AppDelegate.swift in Sources */,
+				9A59074C1D295DF50085EBF8 /* UIModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

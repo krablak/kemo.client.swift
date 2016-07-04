@@ -85,20 +85,39 @@ public class ChatTextView: NSTextView {
 }
 
 /*
- Mini-helper for marking and resolving sent messages.
+ Provides functions related showing/hiding notifications about new messages.
  */
-class SentMessageMarker {
+public struct Notifications {
 
-	private var sentMessage = ""
+	/*
+	 Performs all actions required to show notification about new message.
+	 */
+	public static func onReceived(message: String, window: NSWindow) {
+		// Show notification only when related window is not key/active
+		if !window.keyWindow {
+			// Clean up old notificatios
+			NSUserNotificationCenter.defaultUserNotificationCenter().removeAllDeliveredNotifications()
 
-	init() { }
+			// Show only new last notification
+			let notification = NSUserNotification()
+			notification.title = "⚡️ Hey! ⚡️"
+			notification.informativeText = "New message"
+			notification.soundName = NSUserNotificationDefaultSoundName
+			NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
 
-	func isSent(message: String) -> Bool {
-		return self.sentMessage == message
+			// Show badge on dock icon
+			NSApplication.sharedApplication().dockTile.badgeLabel = "✉️"
+			NSApplication.sharedApplication().dockTile.display()
+		}
 	}
 
-	func markAsSent(message: String) {
-		self.sentMessage = message
+	public static func hide(window: NSWindow) {
+		// Clean up old notificatios
+		NSUserNotificationCenter.defaultUserNotificationCenter().removeAllDeliveredNotifications()
+
+		// Hide badge on dock icon
+		NSApplication.sharedApplication().dockTile.badgeLabel = ""
+		NSApplication.sharedApplication().dockTile.display()
 	}
 
 }
