@@ -89,6 +89,16 @@ public class ChatTextView: NSTextView {
  */
 public struct Notifications {
 
+	// Greetings used by notification
+	static let GREETINGS: [String] = ["Pst!", "Hola!", "Bok!", "Hallo!", "Saluton!", "Hei!", "Aloha!", "안녕하세요!", "Hai!", "Olá!", "Oi!", "Hallå!", "Hej!", "Chào!", "Hullo!"]
+
+	/*
+	 Returns random item from given strings array.
+	 */
+	static func randomFrom(options: [String]) -> String {
+		return options[Int(arc4random_uniform(UInt32(options.count)))]
+	}
+
 	/*
 	 Performs all actions required to show notification about new message.
 	 */
@@ -100,8 +110,8 @@ public struct Notifications {
 
 			// Show only new last notification
 			let notification = NSUserNotification()
-			notification.title = "⚡️ Hey! ⚡️"
-			notification.informativeText = "New message"
+			notification.title = randomFrom(GREETINGS)
+			notification.informativeText = "📨‼️"
 			notification.soundName = NSUserNotificationDefaultSoundName
 			NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
 
