@@ -55,6 +55,19 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="File" id="6RK-nV-asz">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="File" id="VTR-1w-eEl">
+                                    <items>
+                                        <menuItem title="New" keyEquivalent="n" id="0o9-C0-Enw">
+                                            <connections>
+                                                <action selector="newDocument:" target="Ady-hI-5gd" id="vcE-Nn-bFI"/>
+                                                <segue destination="B8D-0N-5wS" kind="show" id="SZj-LI-Ng9"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="Edit" id="kFY-ft-I3Q">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Edit" id="cnd-A7-MVY">

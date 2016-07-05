@@ -60,7 +60,9 @@ class ViewController: NSViewController, UIComponents, NSWindowDelegate {
 				self.messageTextView.addSent(message)
 			} else {
 				self.messageTextView.addReceived(message)
-				Notifications.onReceived(message, window: self.view.window!)
+				if self.view.window != nil {
+					Notifications.onReceived(message, window: self.view.window!)
+				}
 			}
 		}
 	}
