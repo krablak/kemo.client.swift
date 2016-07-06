@@ -358,11 +358,11 @@
             <objects>
                 <viewController title="kemo.rocks" id="XfG-lQ-9wD" customClass="ViewController" customModule="KemoApp" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="521" height="390"/>
+                        <rect key="frame" x="0.0" y="0.0" width="700" height="400"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView identifier="messagesTextBox" focusRingType="none" misplaced="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="allowed" scrollerKnobStyle="light" translatesAutoresizingMaskIntoConstraints="NO" id="TrE-HS-o5t" customClass="ThemedNSScrollView" customModule="KemoApp" customModuleProvider="target">
-                                <rect key="frame" x="133" y="121" width="266" height="148"/>
+                                <rect key="frame" x="133" y="131" width="266" height="148"/>
                                 <clipView key="contentView" focusRingType="none" drawsBackground="NO" copiesOnScroll="NO" id="Boh-x3-415">
                                     <rect key="frame" x="0.0" y="0.0" width="266" height="148"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -390,7 +390,7 @@
                                 </scroller>
                             </scrollView>
                             <textField identifier="messageTextFld" focusRingType="none" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dbw-lW-F4R">
-                                <rect key="frame" x="26" y="20" width="481" height="33"/>
+                                <rect key="frame" x="26" y="30" width="481" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="2ry-My-o3l"/>
                                 </constraints>
@@ -404,7 +404,7 @@
                                 </connections>
                             </textField>
                             <secureTextField identifier="kemoKeyFld" focusRingType="none" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zRk-v8-vrg">
-                                <rect key="frame" x="231" y="343" width="276" height="33"/>
+                                <rect key="frame" x="231" y="353" width="276" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="fLx-2N-lUZ"/>
                                 </constraints>
@@ -418,7 +418,7 @@
                                 </connections>
                             </secureTextField>
                             <textField identifier="nickFld" focusRingType="none" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2MW-t0-WKc">
-                                <rect key="frame" x="14" y="343" width="182" height="33"/>
+                                <rect key="frame" x="14" y="353" width="182" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="xlG-IX-Pz0"/>
                                 </constraints>
