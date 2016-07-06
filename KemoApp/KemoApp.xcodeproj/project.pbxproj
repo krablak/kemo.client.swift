@@ -19,6 +19,7 @@
 		9A3988C61D1560EC00372AE2 /* UITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3988C51D1560EC00372AE2 /* UITheme.swift */; };
 		9A3988C91D1B1B3800372AE2 /* UIComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3988C81D1B1B3800372AE2 /* UIComponents.swift */; };
 		9A3988CD1D1C65EC00372AE2 /* ThemedNSScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3988CC1D1C65EC00372AE2 /* ThemedNSScrollView.swift */; };
+		9A556C701D2CEA720043A993 /* PresentationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A556C6F1D2CEA720043A993 /* PresentationUtils.swift */; };
 		9A59074C1D295DF50085EBF8 /* UIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A59074B1D295DF50085EBF8 /* UIModels.swift */; };
 		9A6B311A1D282FF60035DB4C /* KemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */; };
 		9A6B311B1D282FF60035DB4C /* KemoCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -72,6 +73,7 @@
 		9A3988C81D1B1B3800372AE2 /* UIComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIComponents.swift; sourceTree = "<group>"; };
 		9A3988CC1D1C65EC00372AE2 /* ThemedNSScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemedNSScrollView.swift; sourceTree = "<group>"; };
 		9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KemoCore.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Kemo-cjxjdnpqzccphyfurikoqpvuvirs/Build/Products/Debug/KemoCore.framework"; sourceTree = "<group>"; };
+		9A556C6F1D2CEA720043A993 /* PresentationUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationUtils.swift; sourceTree = "<group>"; };
 		9A59074B1D295DF50085EBF8 /* UIModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIModels.swift; sourceTree = "<group>"; };
 		9A7204851D02B39E00B9B67E /* Pods_KemoCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_KemoCore.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Kemo-cjxjdnpqzccphyfurikoqpvuvirs/Build/Products/Debug/Pods_KemoCore.framework"; sourceTree = "<group>"; };
 		9AD1F1691D1FD859002BCEAC /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = CryptoSwift.framework; path = "/Users/krablak/Library/Developer/Xcode/DerivedData/Kemo-cjxjdnpqzccphyfurikoqpvuvirs/Build/Products/Debug/CryptoSwift/CryptoSwift.framework"; sourceTree = "<absolute>"; };
@@ -165,6 +167,7 @@
 				9A3988C81D1B1B3800372AE2 /* UIComponents.swift */,
 				9A3988CC1D1C65EC00372AE2 /* ThemedNSScrollView.swift */,
 				9A59074B1D295DF50085EBF8 /* UIModels.swift */,
+				9A556C6F1D2CEA720043A993 /* PresentationUtils.swift */,
 			);
 			path = KemoApp;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A556C701D2CEA720043A993 /* PresentationUtils.swift in Sources */,
 				9A3988C61D1560EC00372AE2 /* UITheme.swift in Sources */,
 				9A3988CD1D1C65EC00372AE2 /* ThemedNSScrollView.swift in Sources */,
 				9A3988C91D1B1B3800372AE2 /* UIComponents.swift in Sources */,

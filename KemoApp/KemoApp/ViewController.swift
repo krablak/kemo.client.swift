@@ -85,31 +85,12 @@ class ViewController: NSViewController, UIComponents, NSWindowDelegate {
 		self.view.window?.title = "kemo.rocks"
 		self.view.window?.delegate = self
 
-		// messageTextFld.lockFocus()
-
 		// Messaging with empty default key
 		messaging = Messaging(key: "", onMessage: self.onReceivedMessage)
 
 		// View content for presentation mode
 		if PRESENTATION_MODE {
-			// Preview default values
-			kemoKeyFld.stringValue = "some super secret key"
-
-			self.messageTextView.addReceived("[🦀] Hello?")
-			self.messageTextView.addSent("[🐼] Montag, here.")
-			self.messageTextView.addReceived("[🦀] Well... What sort were these then, Montag?")
-			self.messageTextView.addSent("[🐼] I didn't really look, sir. A little bit of everything.")
-			self.messageTextView.addSent("[🐼] Novels, biographies, adventure stories.")
-			self.messageTextView.addReceived("[🦀] Oh, routine, eh?")
-			self.messageTextView.addReceived("[🐼] Why will they do it? It's sheer perversity.")
-			self.messageTextView.addReceived("[🦀] What does Montag do with his day off duty?")
-			self.messageTextView.addSent("[🐼] Not very much, sir. Mow the lawn.")
-			self.messageTextView.addReceived("[🦀] And what if the law forbids that?")
-			self.messageTextView.addSent("[🐼] Just watch it grow, sir.")
-			self.messageTextView.addReceived("[🦀] Uh-huh.")
-			self.messageTextView.addReceived("[🦀] Good.")
-
-			messageTextFld.stringValue = "Just watch it grow, sir."
+			fillWithConversation(self)
 		}
 	}
 
@@ -117,7 +98,9 @@ class ViewController: NSViewController, UIComponents, NSWindowDelegate {
 	 NSWindowDelegate methods.
 	 */
 	func windowDidBecomeKey(notification: NSNotification) {
-		Notifications.hide(self.view.window!)
+		if self.view.window != nil {
+			Notifications.hide(self.view.window!)
+		}
 	}
 
 	/*
