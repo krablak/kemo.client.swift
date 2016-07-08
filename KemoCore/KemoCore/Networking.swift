@@ -49,7 +49,7 @@ public class KemoClient: WebSocketDelegate {
 	private var sendQueue: [String] = []
 
 	// Client state
-	private var readyState: ReadyState = ReadyState.CLOSED
+	private(set) var readyState: ReadyState = ReadyState.CLOSED
 
 	public init(host: String, sessionPath: String, onMessage: (message: String) -> Void) {
 		log.debug("Creating kemo.client for host '\(host)' and session path '\(sessionPath)'")
