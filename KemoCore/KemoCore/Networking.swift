@@ -18,7 +18,7 @@ public class KemoClient: WebSocketDelegate {
 	/*
 	 Websocket state inspired by https://developer.mozilla.org/en-US/docs/Web/API/WebSocket ready state constants.
 	 */
-	enum ReadyState: String {
+	public enum ReadyState: String {
 		// The connection is not yet open.
 		case CONNECTING
 		// The connection is open and ready to communicate.

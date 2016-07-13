@@ -9,7 +9,7 @@
 import Cocoa
 import KemoCore
 
-class ViewController: NSViewController, UIComponents, NSWindowDelegate {
+public class ViewController: NSViewController, UIComponents, NSWindowDelegate {
 
 	// Temporary flag for case of making screenshots filled content
 	let PRESENTATION_MODE = false
@@ -27,7 +27,10 @@ class ViewController: NSViewController, UIComponents, NSWindowDelegate {
 	@IBOutlet weak var messageTextScrollView: NSScrollView!
 
 	// Instance of messaging component
-	var messaging: Messaging?
+	lazy var messaging: Messaging = {
+		// Messaging with empty default key
+		return Messaging(key: "", onMessage: self.onReceivedMessage)
+	}()
 
 	// Helper for identification of sent and received messages
 	var sentMarker = SentMessageMarker()
@@ -35,14 +38,28 @@ class ViewController: NSViewController, UIComponents, NSWindowDelegate {
 	// View theme instance
 	var theme = UIThemeWhite()
 
+	// Popover with messaging state/statistics
+	lazy var popover: NSPopover = {
+		return infoViewPopover(self)
+	}()
+
+	// Info button click shows/hides popover with messaging state and statistics
+	@IBAction func infoBtnClick(sender: NSButton) {
+		if (popover.shown) {
+			popover.close()
+		} else {
+			popover.showRelativeToRect(NSZeroRect, ofView: sender, preferredEdge: NSRectEdge.MinY)
+		}
+	}
+
 	@IBAction func onKeyChange(sender: NSSecureTextField) {
-		self.messaging!.changeKey(sender.stringValue)
+		self.messaging.changeKey(sender.stringValue)
 	}
 
 	@IBAction func onMessageEnter(sender: NSTextField) {
 		let message = nickFld.stringValue != "" ? "[\(nickFld.stringValue)] \(sender.stringValue)" : sender.stringValue
 		// Try to send message
-		self.messaging!.send(message)
+		self.messaging.send(message)
 		// Mark message as sent
 		sentMarker.markAsSent(message)
 
@@ -67,11 +84,11 @@ class ViewController: NSViewController, UIComponents, NSWindowDelegate {
 		}
 	}
 
-	override func viewDidLoad() {
+	override public func viewDidLoad() {
 		super.viewDidLoad()
 	}
 
-	override func viewDidAppear() {
+	override public func viewDidAppear() {
 		super.viewDidAppear()
 
 		// Apply theme on current view
@@ -85,19 +102,19 @@ class ViewController: NSViewController, UIComponents, NSWindowDelegate {
 		self.view.window?.title = "kemo.rocks"
 		self.view.window?.delegate = self
 
-		// Messaging with empty default key
-		messaging = Messaging(key: "", onMessage: self.onReceivedMessage)
-
 		// View content for presentation mode
 		if PRESENTATION_MODE {
 			fillWithConversation(self)
 		}
+
+		// Check messaging connection on view appearance
+		self.messaging.checkConnection()
 	}
 
 	/*
 	 NSWindowDelegate methods.
 	 */
-	func windowDidBecomeKey(notification: NSNotification) {
+	public func windowDidBecomeKey(notification: NSNotification) {
 		if self.view.window != nil {
 			Notifications.hide(self.view.window!)
 		}

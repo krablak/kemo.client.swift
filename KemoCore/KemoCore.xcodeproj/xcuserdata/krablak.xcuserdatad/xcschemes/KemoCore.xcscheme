@@ -28,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9A275B741C6A7BED001EB564"
-               BuildableName = "KemoCoreTests.xctest"
-               BlueprintName = "KemoCoreTests"
-               ReferencedContainer = "container:KemoCore.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9A275B6A1C6A7BED001EB564"
-            BuildableName = "KemoCore.framework"
-            BlueprintName = "KemoCore"
-            ReferencedContainer = "container:KemoCore.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

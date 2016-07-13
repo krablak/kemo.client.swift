@@ -20,9 +20,12 @@
 		9A3988C91D1B1B3800372AE2 /* UIComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3988C81D1B1B3800372AE2 /* UIComponents.swift */; };
 		9A3988CD1D1C65EC00372AE2 /* ThemedNSScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3988CC1D1C65EC00372AE2 /* ThemedNSScrollView.swift */; };
 		9A556C701D2CEA720043A993 /* PresentationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A556C6F1D2CEA720043A993 /* PresentationUtils.swift */; };
+		9A556C721D30B57D0043A993 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A556C711D30B57D0043A993 /* InfoViewController.swift */; };
+		9A556C761D3176F90043A993 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A556C751D3176F90043A993 /* InfoView.xib */; };
 		9A59074C1D295DF50085EBF8 /* UIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A59074B1D295DF50085EBF8 /* UIModels.swift */; };
-		9A6B311A1D282FF60035DB4C /* KemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */; };
-		9A6B311B1D282FF60035DB4C /* KemoCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9AAEAF091D34245800F2DADC /* Pods_KemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7204851D02B39E00B9B67E /* Pods_KemoCore.framework */; };
+		9AAEAF0A1D34246800F2DADC /* KemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A275B871C6A7EE6001EB564 /* KemoCore.framework */; };
+		9AAEAF0B1D34246800F2DADC /* KemoCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A275B871C6A7EE6001EB564 /* KemoCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B065DBEDECB16F18CEA71E0A /* Pods_KemoAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 742309F436B665FB67F0ED9E /* Pods_KemoAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,13 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9A6B311C1D282FF60035DB4C /* Embed Frameworks */ = {
+		9AAEAF0C1D34246900F2DADC /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9A6B311B1D282FF60035DB4C /* KemoCore.framework in Embed Frameworks */,
+				9AAEAF0B1D34246800F2DADC /* KemoCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +77,8 @@
 		9A3988CC1D1C65EC00372AE2 /* ThemedNSScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemedNSScrollView.swift; sourceTree = "<group>"; };
 		9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KemoCore.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Kemo-cjxjdnpqzccphyfurikoqpvuvirs/Build/Products/Debug/KemoCore.framework"; sourceTree = "<group>"; };
 		9A556C6F1D2CEA720043A993 /* PresentationUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationUtils.swift; sourceTree = "<group>"; };
+		9A556C711D30B57D0043A993 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		9A556C751D3176F90043A993 /* InfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
 		9A59074B1D295DF50085EBF8 /* UIModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIModels.swift; sourceTree = "<group>"; };
 		9A7204851D02B39E00B9B67E /* Pods_KemoCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_KemoCore.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Kemo-cjxjdnpqzccphyfurikoqpvuvirs/Build/Products/Debug/Pods_KemoCore.framework"; sourceTree = "<group>"; };
 		9AD1F1691D1FD859002BCEAC /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = CryptoSwift.framework; path = "/Users/krablak/Library/Developer/Xcode/DerivedData/Kemo-cjxjdnpqzccphyfurikoqpvuvirs/Build/Products/Debug/CryptoSwift/CryptoSwift.framework"; sourceTree = "<absolute>"; };
@@ -87,10 +92,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AAEAF091D34245800F2DADC /* Pods_KemoCore.framework in Frameworks */,
 				9A0895C21D20035D00255D45 /* Starscream.framework in Frameworks */,
 				9A0895C31D20035D00255D45 /* XCGLogger.framework in Frameworks */,
 				9A0895BE1D20035D00255D45 /* CryptoSwift.framework in Frameworks */,
-				9A6B311A1D282FF60035DB4C /* KemoCore.framework in Frameworks */,
+				9AAEAF0A1D34246800F2DADC /* KemoCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +174,8 @@
 				9A3988CC1D1C65EC00372AE2 /* ThemedNSScrollView.swift */,
 				9A59074B1D295DF50085EBF8 /* UIModels.swift */,
 				9A556C6F1D2CEA720043A993 /* PresentationUtils.swift */,
+				9A556C711D30B57D0043A993 /* InfoViewController.swift */,
+				9A556C751D3176F90043A993 /* InfoView.xib */,
 			);
 			path = KemoApp;
 			sourceTree = "<group>";
@@ -194,7 +202,7 @@
 				9A275B3F1C6A7B67001EB564 /* Resources */,
 				233638A821F1E4ADA828CFDE /* 📦 Embed Pods Frameworks */,
 				2821126E29E06657391D7B8E /* 📦 Copy Pods Resources */,
-				9A6B311C1D282FF60035DB4C /* Embed Frameworks */,
+				9AAEAF0C1D34246900F2DADC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -269,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A556C761D3176F90043A993 /* InfoView.xib in Resources */,
 				9A275B491C6A7B67001EB564 /* Assets.xcassets in Resources */,
 				9A275B4C1C6A7B67001EB564 /* Main.storyboard in Resources */,
 			);
@@ -387,6 +396,7 @@
 				9A3988C91D1B1B3800372AE2 /* UIComponents.swift in Sources */,
 				9A275B471C6A7B67001EB564 /* ViewController.swift in Sources */,
 				9A275B451C6A7B67001EB564 /* AppDelegate.swift in Sources */,
+				9A556C721D30B57D0043A993 /* InfoViewController.swift in Sources */,
 				9A59074C1D295DF50085EBF8 /* UIModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
