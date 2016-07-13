@@ -9,7 +9,7 @@
 import Cocoa
 import KemoCore
 
-public class ViewController: NSViewController, UIComponents, NSWindowDelegate {
+public class ViewController: NSViewController, NSWindowDelegate {
 
 	// Temporary flag for case of making screenshots filled content
 	let PRESENTATION_MODE = false
@@ -26,6 +26,8 @@ public class ViewController: NSViewController, UIComponents, NSWindowDelegate {
 
 	@IBOutlet weak var messageTextScrollView: NSScrollView!
 
+	@IBOutlet weak var infoBtn: NSButton!
+	
 	// Instance of messaging component
 	lazy var messaging: Messaging = {
 		// Messaging with empty default key
@@ -118,32 +120,5 @@ public class ViewController: NSViewController, UIComponents, NSWindowDelegate {
 		if self.view.window != nil {
 			Notifications.hide(self.view.window!)
 		}
-	}
-
-	/*
-	 UIComponents required functions.
-	 */
-	func getMainView() -> NSView {
-		return self.mainView!
-	}
-
-	func getNickFld() -> NSTextField {
-		return self.nickFld
-	}
-
-	func getKeyField() -> NSSecureTextField {
-		return self.kemoKeyFld
-	}
-
-	func getMessageTextView() -> NSTextView {
-		return self.messageTextView
-	}
-
-	func getMessageField() -> NSTextField {
-		return self.messageTextFld;
-	}
-
-	func getMessageTextScrollView() -> NSScrollView {
-		return self.messageTextScrollView;
 	}
 }

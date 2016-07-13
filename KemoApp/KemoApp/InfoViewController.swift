@@ -56,15 +56,28 @@ public class InfoViewController: NSViewController, NSPopoverDelegate {
 
 	public func update(state: MessagingState) {
 		self.connStateValueLbl!.stringValue = state.clientState.rawValue
+		if state.clientState == .OPEN {
+			self.connStateValueLbl!.textColor = self.parentControler?.theme.uiColorTypes.success
+			self.parentControler?.infoBtn.image = NSImage.init(named: "NSStatusAvailable")
+		} else if state.clientState == .CLOSING || state.clientState == .CLOSED {
+			self.connStateValueLbl!.textColor = self.parentControler?.theme.uiColorTypes.error
+			self.parentControler?.infoBtn.image = NSImage.init(named: "NSStatusUnavailable")
+		} else if state.clientState == .CONNECTING {
+			self.connStateValueLbl!.textColor = self.parentControler?.theme.uiColorTypes.active
+			self.parentControler?.infoBtn.image = NSImage.init(named: "NSStatusPartiallyAvailable")
+		}else {
+			self.connStateValueLbl!.textColor = self.parentControler?.theme.uiColorTypes.defaultFont
+			self.parentControler?.infoBtn.image = NSImage.init(named: "NSStatusNone")
+		}
 
 		self.receivedBytesValueLbl!.stringValue = "\(state.receivedBytes)"
 		self.receivedMessagesValueLbl!.stringValue = "\(state.receivedMessagesCount)"
 		self.lastReceivedValueLbl!.stringValue = dateFormatter.stringFromDate(state.receivedDate)
 
-	self.sentBytesValueLbl!.stringValue = "\(state.sentBytes)"
-	self.sentMessagesValueLbl!.stringValue = "\(state.sentMessagesCount)"
-	self.lastSentValueLbl!.stringValue = dateFormatter.stringFromDate(state.sentDate)
-}
+		self.sentBytesValueLbl!.stringValue = "\(state.sentBytes)"
+		self.sentMessagesValueLbl!.stringValue = "\(state.sentMessagesCount)"
+		self.lastSentValueLbl!.stringValue = dateFormatter.stringFromDate(state.sentDate)
+	}
 
 }
 

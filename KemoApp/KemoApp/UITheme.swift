@@ -10,34 +10,17 @@ import Foundation
 import Cocoa
 
 /*
- Methods proviging UI components which could be themed.
- */
-protocol UIComponents {
-
-	func getMainView() -> NSView
-
-	func getNickFld() -> NSTextField
-
-	func getKeyField() -> NSSecureTextField
-
-	func getMessageTextView() -> NSTextView
-
-	func getMessageField() -> NSTextField
-
-	func getMessageTextScrollView() -> NSScrollView
-
-}
-
-/*
  Defines behavior of theming component for UI look modifications.
  */
 protocol UITheme {
 
-	func apply(uiComponents: UIComponents)
+	func apply(mainController: ViewController)
 
 	func receiveTextAttrs() -> [String: AnyObject]
 
 	func sentTextAttrs() -> [String: AnyObject]
+	
+	var uiColorTypes: UIColorTypes { get }
 
 }
 
@@ -57,50 +40,69 @@ public class UIThemeWhite: UITheme {
 	var receivedTextColor = NSColor.init(SRGBRed: 51.0 / 255.0, green: 51.0 / 255.0, blue: 51.0 / 255.0, alpha: 1.0)
 	var sentTextColor = NSColor.init(SRGBRed: 130.0 / 255.0, green: 130.0 / 255.0, blue: 130.0 / 255.0, alpha: 1.0)
 
-	func apply(uiComponents: UIComponents) {
+	// Basic color types
+	let uiColorTypes = UIColorTypes(
+		success: NSColor.greenColor(),
+		error: NSColor.redColor(),
+		neutral: NSColor.init(SRGBRed: 138.0 / 255.0, green: 138.0 / 255.0, blue: 138.0 / 255.0, alpha: 0.3),
+		active: NSColor.init(SRGBRed: 85.0 / 255.0, green: 86.0 / 255.0, blue: 149.0 / 255.0, alpha: 1.0),
+		defaultFont: NSColor.init(SRGBRed: 51.0 / 255.0, green: 51.0 / 255.0, blue: 51.0 / 255.0, alpha: 1.0)
+	)
+
+	func apply(mainController: ViewController) {
 		// Window style
-		uiComponents.getMainView().window?.backgroundColor = bgColor
-		uiComponents.getMainView().window?.alphaValue = 1
-		
+
+		mainController.mainView!.window?.backgroundColor = bgColor
+		mainController.mainView!.window?.alphaValue = 1
+
 		// Nickname field style
-		uiComponents.getNickFld().wantsLayer = true
-		uiComponents.getNickFld().layer?.borderColor = fieldLightBorderColor.CGColor
-		uiComponents.getNickFld().layer?.backgroundColor = bgColor.CGColor
-		uiComponents.getNickFld().layer?.cornerRadius = 3
-		uiComponents.getNickFld().layer?.borderWidth = 0
-		uiComponents.getNickFld().frame.size.height = 33
+		mainController.nickFld!.wantsLayer = true
+		mainController.nickFld!.layer?.borderColor = fieldLightBorderColor.CGColor
+		mainController.nickFld!.layer?.backgroundColor = bgColor.CGColor
+		mainController.nickFld!.layer?.cornerRadius = 3
+		mainController.nickFld!.layer?.borderWidth = 0
+		mainController.nickFld!.frame.size.height = 33
 
 		// Key field style
-		uiComponents.getKeyField().wantsLayer = true
-		uiComponents.getKeyField().layer?.borderColor = fieldLightBorderColor.CGColor
-		uiComponents.getKeyField().layer?.backgroundColor = bgColor.CGColor
-		uiComponents.getKeyField().layer?.cornerRadius = 3
-		uiComponents.getKeyField().layer?.borderWidth = 1
-		uiComponents.getKeyField().frame.size.height = 33
-		uiComponents.getKeyField().textColor = fontColor
+		mainController.kemoKeyFld!.wantsLayer = true
+		mainController.kemoKeyFld!.layer?.borderColor = fieldLightBorderColor.CGColor
+		mainController.kemoKeyFld!.layer?.backgroundColor = bgColor.CGColor
+		mainController.kemoKeyFld!.layer?.cornerRadius = 3
+		mainController.kemoKeyFld!.layer?.borderWidth = 1
+		mainController.kemoKeyFld!.frame.size.height = 33
+		mainController.kemoKeyFld!.textColor = fontColor
 
 		// Message text view style
-		uiComponents.getMessageTextView().wantsLayer = true
-		uiComponents.getMessageTextView().layer?.borderColor = NSColor.clearColor().CGColor
-		uiComponents.getMessageTextView().layer?.borderWidth = 1
-		uiComponents.getMessageTextView().layer?.cornerRadius = 3
+		mainController.messageTextView!.wantsLayer = true
+		mainController.messageTextView!.layer?.borderColor = NSColor.clearColor().CGColor
+		mainController.messageTextView!.layer?.borderWidth = 1
+		mainController.messageTextView!.layer?.cornerRadius = 3
 		// Style scroll view around message text view component
-		uiComponents.getMessageTextScrollView().borderType = NSBorderType.NoBorder
-		uiComponents.getMessageTextScrollView().wantsLayer = true
-		uiComponents.getMessageTextScrollView().layer?.borderColor = textViewBorderColor.CGColor
-		uiComponents.getMessageTextScrollView().layer?.backgroundColor = bgColor.CGColor
-		uiComponents.getMessageTextScrollView().layer?.borderWidth = 1
-		uiComponents.getMessageTextScrollView().layer?.cornerRadius = 3
-		uiComponents.getMessageTextScrollView().layer?.displayIfNeeded()
+		mainController.messageTextScrollView!.borderType = NSBorderType.NoBorder
+		mainController.messageTextScrollView!.wantsLayer = true
+		mainController.messageTextScrollView!.layer?.borderColor = textViewBorderColor.CGColor
+		mainController.messageTextScrollView!.layer?.backgroundColor = bgColor.CGColor
+		mainController.messageTextScrollView!.layer?.borderWidth = 1
+		mainController.messageTextScrollView!.layer?.cornerRadius = 3
+		mainController.messageTextScrollView!.layer?.displayIfNeeded()
 
 		// New message field style
-		uiComponents.getMessageField().wantsLayer = true
-		uiComponents.getMessageField().layer?.borderColor = fieldMessageBorderColor.CGColor
-		uiComponents.getMessageField().layer?.backgroundColor = bgColor.CGColor
-		uiComponents.getMessageField().layer?.cornerRadius = 3
-		uiComponents.getMessageField().layer?.borderWidth = 1
-		uiComponents.getMessageField().frame.size.height = 33
-		uiComponents.getMessageField().textColor = fontColor
+		mainController.messageTextFld!.wantsLayer = true
+		mainController.messageTextFld!.layer?.borderColor = fieldMessageBorderColor.CGColor
+		mainController.messageTextFld!.layer?.backgroundColor = bgColor.CGColor
+		mainController.messageTextFld!.layer?.cornerRadius = 3
+		mainController.messageTextFld!.layer?.borderWidth = 1
+		mainController.messageTextFld!.frame.size.height = 33
+		mainController.messageTextFld!.textColor = uiColorTypes.defaultFont
+
+		// Info view button
+		mainController.infoBtn!.wantsLayer = true
+		mainController.infoBtn!.layer?.backgroundColor = bgColor.CGColor
+		mainController.infoBtn!.layer?.displayIfNeeded()
+		mainController.infoBtn!.image = NSImage.init(named: "NSStatusAvailable")
+		
+		//mainController.infoBtn!.color = uiColorTypes.defaultFont
+
 	}
 
 	func receiveTextAttrs() -> [String: AnyObject] {
@@ -118,5 +120,21 @@ public class UIThemeWhite: UITheme {
 			NSBaselineOffsetAttributeName: 5
 		]
 	}
+}
+
+/*
+ UITheme specific color types.
+ */
+public struct UIColorTypes {
+	// Represents succesful operation or state
+	let success: NSColor
+	// Represents error states
+	let error: NSColor
+	// Represents neutral states
+	let neutral: NSColor
+	// Represents active or important states
+	let active: NSColor
+	// Default font color
+	let defaultFont: NSColor
 }
 
