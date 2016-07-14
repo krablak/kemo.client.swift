@@ -36,7 +36,7 @@ public class InfoViewController: NSViewController, NSPopoverDelegate {
 	let dateFormatter: NSDateFormatter = {
 		let dateFormatter = NSDateFormatter()
 		dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
-		dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+		dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
 		return dateFormatter
 	}()
 
@@ -92,8 +92,8 @@ func infoViewPopover(parentControler: ViewController) -> NSPopover {
 	popover.delegate = infoViewController
 
 	// Set popover visual style
-	popover.behavior = .Semitransient
-	popover.appearance = NSAppearance(named: NSAppearanceNameAqua)!
+	popover.behavior = .Transient
+	popover.appearance = NSAppearance(named: NSAppearanceNameVibrantLight)!
 
 	// Register updates from messaging to controler
 	parentControler.messaging.onStateUpdate = infoViewController!.update

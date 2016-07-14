@@ -34,7 +34,7 @@
                 <textField identifier="connStateValueLbl" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HOP-KL-vvO">
                     <rect key="frame" x="149" y="170" width="140" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="CLOSED" id="Ras-8F-i2V">
-                        <font key="font" metaFont="systemLight" size="13"/>
+                        <font key="font" metaFont="systemMedium" size="13"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>

@@ -103,21 +103,24 @@ public struct Notifications {
 	 Performs all actions required to show notification about new message.
 	 */
 	public static func onReceived(message: String, window: NSWindow) {
+		// Clean up old notificatios
+		NSUserNotificationCenter.defaultUserNotificationCenter().removeAllDeliveredNotifications()
+
 		// Show notification only when related window is not key/active
 		if !window.keyWindow {
-			// Clean up old notificatios
-			NSUserNotificationCenter.defaultUserNotificationCenter().removeAllDeliveredNotifications()
-
 			// Show only new last notification
 			let notification = NSUserNotification()
 			notification.title = randomFrom(GREETINGS)
-			notification.informativeText = "📨‼️"
+			notification.informativeText = "📨"
 			notification.soundName = NSUserNotificationDefaultSoundName
 			NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
 
 			// Show badge on dock icon
 			NSApplication.sharedApplication().dockTile.badgeLabel = "✉️"
 			NSApplication.sharedApplication().dockTile.display()
+			
+			// Change window title
+			window.title = "kemo✉️rocks"
 		}
 	}
 
@@ -128,6 +131,9 @@ public struct Notifications {
 		// Hide badge on dock icon
 		NSApplication.sharedApplication().dockTile.badgeLabel = ""
 		NSApplication.sharedApplication().dockTile.display()
+		
+		// Change window title
+		window.title = "kemo.rocks"
 	}
 
 }

@@ -42,7 +42,7 @@ public class UIThemeWhite: UITheme {
 
 	// Basic color types
 	let uiColorTypes = UIColorTypes(
-		success: NSColor.greenColor(),
+		success: NSColor.init(SRGBRed: 62.0 / 255.0, green: 169.0 / 255.0, blue: 23.0 / 255.0, alpha: 1.0),
 		error: NSColor.redColor(),
 		neutral: NSColor.init(SRGBRed: 138.0 / 255.0, green: 138.0 / 255.0, blue: 138.0 / 255.0, alpha: 0.3),
 		active: NSColor.init(SRGBRed: 85.0 / 255.0, green: 86.0 / 255.0, blue: 149.0 / 255.0, alpha: 1.0),
@@ -60,7 +60,7 @@ public class UIThemeWhite: UITheme {
 		mainController.nickFld!.layer?.borderColor = fieldLightBorderColor.CGColor
 		mainController.nickFld!.layer?.backgroundColor = bgColor.CGColor
 		mainController.nickFld!.layer?.cornerRadius = 3
-		mainController.nickFld!.layer?.borderWidth = 0
+		mainController.nickFld!.layer?.borderWidth = 1
 		mainController.nickFld!.frame.size.height = 33
 
 		// Key field style
