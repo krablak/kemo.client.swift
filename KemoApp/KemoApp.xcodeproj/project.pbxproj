@@ -20,12 +20,6 @@
 		9A556C721D30B57D0043A993 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A556C711D30B57D0043A993 /* InfoViewController.swift */; };
 		9A556C761D3176F90043A993 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A556C751D3176F90043A993 /* InfoView.xib */; };
 		9A59074C1D295DF50085EBF8 /* UIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A59074B1D295DF50085EBF8 /* UIModels.swift */; };
-		9AAEAF151D36CCA700F2DADC /* KemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */; };
-		9AAEAF161D36CCA700F2DADC /* KemoCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9AAEAF181D36CCB100F2DADC /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD1F1691D1FD859002BCEAC /* CryptoSwift.framework */; };
-		9AAEAF191D36CCB100F2DADC /* Pods_KemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A7204851D02B39E00B9B67E /* Pods_KemoCore.framework */; };
-		9AAEAF1A1D36CCB100F2DADC /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0895C01D20035D00255D45 /* Starscream.framework */; };
-		9AAEAF1B1D36CCB100F2DADC /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0895C11D20035D00255D45 /* XCGLogger.framework */; };
 		9AAEAF231D38040100F2DADC /* UIThemeWhite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAEAF221D38040100F2DADC /* UIThemeWhite.swift */; };
 		B065DBEDECB16F18CEA71E0A /* Pods_KemoAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 742309F436B665FB67F0ED9E /* Pods_KemoAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -39,20 +33,6 @@
 			remoteInfo = KemoApp;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		9AAEAF171D36CCA800F2DADC /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				9AAEAF161D36CCA700F2DADC /* KemoCore.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1FFD435E7D2E235273C1A528 /* Pods-KemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KemoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KemoApp/Pods-KemoApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -95,11 +75,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AAEAF181D36CCB100F2DADC /* CryptoSwift.framework in Frameworks */,
-				9AAEAF191D36CCB100F2DADC /* Pods_KemoCore.framework in Frameworks */,
-				9AAEAF1A1D36CCB100F2DADC /* Starscream.framework in Frameworks */,
-				9AAEAF1B1D36CCB100F2DADC /* XCGLogger.framework in Frameworks */,
-				9AAEAF151D36CCA700F2DADC /* KemoCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,7 +190,6 @@
 				9A275B3F1C6A7B67001EB564 /* Resources */,
 				233638A821F1E4ADA828CFDE /* 📦 Embed Pods Frameworks */,
 				2821126E29E06657391D7B8E /* 📦 Copy Pods Resources */,
-				9AAEAF171D36CCA800F2DADC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

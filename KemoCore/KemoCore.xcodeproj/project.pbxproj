@@ -23,6 +23,9 @@
 		9A9940941C8ADA1500FB0559 /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9940931C8ADA1500FB0559 /* NetworkingTests.swift */; };
 		9AA641851C6BC6DC00DB83A1 /* EncryptionBasicImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA641841C6BC6DC00DB83A1 /* EncryptionBasicImpl.swift */; };
 		9AA641871C6BD9BC00DB83A1 /* EncryptionBasicImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA641861C6BD9BC00DB83A1 /* EncryptionBasicImplTests.swift */; };
+		9AAEAF251D3AA1B500F2DADC /* MessagingAddons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAEAF241D3AA1B500F2DADC /* MessagingAddons.swift */; };
+		9AAEAF2C1D3B8BF300F2DADC /* MessagingStateAddon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAEAF2B1D3B8BF300F2DADC /* MessagingStateAddon.swift */; };
+		9AAEAF2E1D3D4C2F00F2DADC /* MesssagingStateAddonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAEAF2D1D3D4C2F00F2DADC /* MesssagingStateAddonTests.swift */; };
 		D254A3A5C5DB9B80720C153B /* Pods_KemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB09B74D9ECA5BE769948D1D /* Pods_KemoCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +105,9 @@
 		9AA641841C6BC6DC00DB83A1 /* EncryptionBasicImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncryptionBasicImpl.swift; sourceTree = "<group>"; };
 		9AA641861C6BD9BC00DB83A1 /* EncryptionBasicImplTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncryptionBasicImplTests.swift; sourceTree = "<group>"; };
 		9AA6418A1C6D0CEE00DB83A1 /* Experiments.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Experiments.playground; path = ../KemoCorePlaygrounds/Experiments.playground; sourceTree = "<group>"; };
+		9AAEAF241D3AA1B500F2DADC /* MessagingAddons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingAddons.swift; sourceTree = "<group>"; };
+		9AAEAF2B1D3B8BF300F2DADC /* MessagingStateAddon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagingStateAddon.swift; sourceTree = "<group>"; };
+		9AAEAF2D1D3D4C2F00F2DADC /* MesssagingStateAddonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MesssagingStateAddonTests.swift; sourceTree = "<group>"; };
 		9AC0CBDD1CE26B7D001AB297 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		A7E264DC07B861CA16B614FD /* Pods-KemoCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KemoCore.release.xcconfig"; path = "Pods/Target Support Files/Pods-KemoCore/Pods-KemoCore.release.xcconfig"; sourceTree = "<group>"; };
 		ABE6169B235D5FCACF62F690 /* Pods-KemoCore-KemoCoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KemoCore-KemoCoreTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KemoCore-KemoCoreTests/Pods-KemoCore-KemoCoreTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -168,6 +174,7 @@
 		9A275B6D1C6A7BED001EB564 /* KemoCore */ = {
 			isa = PBXGroup;
 			children = (
+				9AAEAF2A1D3B887100F2DADC /* MessagingAddons */,
 				9A275B6E1C6A7BED001EB564 /* KemoCore.h */,
 				9A275B701C6A7BED001EB564 /* Info.plist */,
 				9A275B851C6A7E7D001EB564 /* EncryptionApi.swift */,
@@ -175,8 +182,8 @@
 				9A0EFD6B1C6FBB130070A6F7 /* Utils.swift */,
 				9A34BF721C73C63200C013FF /* Networking.swift */,
 				9A9940911C84E17100FB0559 /* Logging.swift */,
-				9A3EF2101C935E7E00E4AF8C /* Messaging.swift */,
 				9A72047F1D02AF0100B9B67E /* Salts.swift */,
+				9A3EF2101C935E7E00E4AF8C /* Messaging.swift */,
 			);
 			path = KemoCore;
 			sourceTree = "<group>";
@@ -192,9 +199,19 @@
 				9A9940931C8ADA1500FB0559 /* NetworkingTests.swift */,
 				9A3EF20E1C8F618300E4AF8C /* UtilsConversionTest.swift */,
 				9A92CC031CFE158E0071C27B /* MessagingTests.swift */,
+				9AAEAF2D1D3D4C2F00F2DADC /* MesssagingStateAddonTests.swift */,
 			);
 			path = KemoCoreTests;
 			sourceTree = SOURCE_ROOT;
+		};
+		9AAEAF2A1D3B887100F2DADC /* MessagingAddons */ = {
+			isa = PBXGroup;
+			children = (
+				9AAEAF241D3AA1B500F2DADC /* MessagingAddons.swift */,
+				9AAEAF2B1D3B8BF300F2DADC /* MessagingStateAddon.swift */,
+			);
+			name = MessagingAddons;
+			sourceTree = "<group>";
 		};
 		9AC0CBDE1CE26B7D001AB297 /* Products */ = {
 			isa = PBXGroup;
@@ -456,11 +473,13 @@
 			files = (
 				9A3EF2111C935E7E00E4AF8C /* Messaging.swift in Sources */,
 				9A9940921C84E17100FB0559 /* Logging.swift in Sources */,
+				9AAEAF2C1D3B8BF300F2DADC /* MessagingStateAddon.swift in Sources */,
 				9A0EFD6C1C6FBB130070A6F7 /* Utils.swift in Sources */,
 				9AA641851C6BC6DC00DB83A1 /* EncryptionBasicImpl.swift in Sources */,
 				9A275B861C6A7E7E001EB564 /* EncryptionApi.swift in Sources */,
 				9A7204801D02AF0100B9B67E /* Salts.swift in Sources */,
 				9A34BF731C73C63200C013FF /* Networking.swift in Sources */,
+				9AAEAF251D3AA1B500F2DADC /* MessagingAddons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +492,7 @@
 				9A92CC041CFE158E0071C27B /* MessagingTests.swift in Sources */,
 				9AA641871C6BD9BC00DB83A1 /* EncryptionBasicImplTests.swift in Sources */,
 				9A8331351C6FA1040082B2AE /* TestUtils.swift in Sources */,
+				9AAEAF2E1D3D4C2F00F2DADC /* MesssagingStateAddonTests.swift in Sources */,
 				9A9940941C8ADA1500FB0559 /* NetworkingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
