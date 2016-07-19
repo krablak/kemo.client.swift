@@ -51,32 +51,36 @@ public class InfoViewController: NSViewController, NSPopoverDelegate {
 	}
 
 	public override func viewDidAppear() {
-		self.update(parentControler!.messaging.state)
+		//self.update(KemoClient.ReadyState.CLOSED, newState: parentControler!.stateAddon.clientState)
 	}
 
-	public func update(state: MessagingState) {
-		self.connStateValueLbl!.stringValue = state.clientState.rawValue
-		if state.clientState == .OPEN {
+	public func update(stateAddon: MesssagingStateAddon) {
+		// Get current client state
+		let newState = stateAddon.clientState
+		self.connStateValueLbl!.stringValue = newState.rawValue
+		// Display correct state label and icon
+		if newState == .OPEN {
 			self.connStateValueLbl!.textColor = self.parentControler?.theme.uiColorTypes.success
 			self.parentControler?.infoBtn.image = NSImage.init(named: "NSStatusAvailable")
-		} else if state.clientState == .CLOSING || state.clientState == .CLOSED {
+		} else if newState == .CLOSING || newState == .CLOSED {
 			self.connStateValueLbl!.textColor = self.parentControler?.theme.uiColorTypes.error
 			self.parentControler?.infoBtn.image = NSImage.init(named: "NSStatusUnavailable")
-		} else if state.clientState == .CONNECTING {
+		} else if newState == .CONNECTING {
 			self.connStateValueLbl!.textColor = self.parentControler?.theme.uiColorTypes.active
 			self.parentControler?.infoBtn.image = NSImage.init(named: "NSStatusPartiallyAvailable")
-		}else {
+		} else {
 			self.connStateValueLbl!.textColor = self.parentControler?.theme.uiColorTypes.defaultFont
 			self.parentControler?.infoBtn.image = NSImage.init(named: "NSStatusNone")
 		}
 
-		self.receivedBytesValueLbl!.stringValue = "\(state.receivedBytes)"
-		self.receivedMessagesValueLbl!.stringValue = "\(state.receivedMessagesCount)"
-		self.lastReceivedValueLbl!.stringValue = dateFormatter.stringFromDate(state.receivedDate)
+		// Update statics values
+		self.receivedBytesValueLbl!.stringValue = "\(stateAddon.receivedBytes)"
+		self.receivedMessagesValueLbl!.stringValue = "\(stateAddon.receivedMessagesCount)"
+		self.lastReceivedValueLbl!.stringValue = dateFormatter.stringFromDate(stateAddon.receivedDate)
 
-		self.sentBytesValueLbl!.stringValue = "\(state.sentBytes)"
-		self.sentMessagesValueLbl!.stringValue = "\(state.sentMessagesCount)"
-		self.lastSentValueLbl!.stringValue = dateFormatter.stringFromDate(state.sentDate)
+		self.sentBytesValueLbl!.stringValue = "\(stateAddon.sentBytes)"
+		self.sentMessagesValueLbl!.stringValue = "\(stateAddon.sentMessagesCount)"
+		self.lastSentValueLbl!.stringValue = dateFormatter.stringFromDate(stateAddon.sentDate)
 	}
 
 }
@@ -96,7 +100,7 @@ func infoViewPopover(parentControler: ViewController) -> NSPopover {
 	popover.appearance = NSAppearance(named: NSAppearanceNameVibrantLight)!
 
 	// Register updates from messaging to controler
-	parentControler.messaging.onStateUpdate = infoViewController!.update
+	parentControler.stateAddon.onStateChangeFns.append(infoViewController!.update)
 
 	return popover
 }

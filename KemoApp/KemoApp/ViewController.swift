@@ -10,6 +10,9 @@ import Cocoa
 import KemoCore
 
 public class ViewController: NSViewController, NSWindowDelegate {
+	
+	// View theme instance
+	var theme = UIThemeWhite()
 
 	// Temporary flag for case of making screenshots filled content
 	let PRESENTATION_MODE = false
@@ -31,17 +34,20 @@ public class ViewController: NSViewController, NSWindowDelegate {
 	// Instance of messaging component
 	lazy var messaging: Messaging = {
 		// Messaging with empty default key
-		return Messaging(key: "", onMessage: self.onReceivedMessage)
+		var newMessaging = Messaging(key: "", onMessage: self.onReceivedMessage)
+		// Add messaging state addon to observe
+		newMessaging.addons.append(self.stateAddon)
+		return newMessaging
 	}()
+	
+	// Messaging state addon
+	let stateAddon = MesssagingStateAddon()
 
 	// Helper for identification of sent and received messages
 	var sentMarker = SentMessageMarker()
 
-	// View theme instance
-	var theme = UIThemeWhite()
-
 	// Popover with messaging state/statistics
-	lazy var popover: NSPopover = {
+	lazy var popover: NSPopover = {		
 		return infoViewPopover(self)
 	}()
 

@@ -35,7 +35,7 @@ public class MesssagingStateAddon: BasicMessagingAddon {
 	public var sentDate = NSDate()
 
 	// Functions called in case of state change
-	public var onStateChangeFns: [(oldState: KemoClient.ReadyState, newState: KemoClient.ReadyState) -> Void] = []
+	public var onStateChangeFns: [(stateAddon: MesssagingStateAddon) -> Void] = []
 
 	override public init() { }
 
@@ -43,21 +43,19 @@ public class MesssagingStateAddon: BasicMessagingAddon {
 		self.sentMessagesCount += 1
 		self.sentBytes += encData.count
 		self.sentDate = NSDate()
+		for fn in onStateChangeFns { fn(stateAddon: self) }
 	}
 
 	override public func messageWillReceive(encData: [UInt8]) {
 		self.receivedMessagesCount += 1
 		self.receivedBytes += encData.count
 		self.receivedDate = NSDate()
+		for fn in onStateChangeFns { fn(stateAddon: self) }
 	}
 
 	override public func onStateUpdate(state: KemoClient.ReadyState) {
-		let oldState = self.clientState
-		// Call state change handler only when state is changed
-		if state != oldState {
-			for fn in onStateChangeFns { fn(oldState: oldState, newState: state) }
-		}
 		self.clientState = state
+		for fn in onStateChangeFns { fn(stateAddon: self) }
 	}
 
 }

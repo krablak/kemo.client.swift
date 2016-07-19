@@ -16,6 +16,11 @@ class MesssagingStateAddonTests: XCTestCase {
 		let dataBytes: [UInt8] = Conversions.toBytes(data)
 
 		let stateAddon = MesssagingStateAddon()
+		
+		func onChange(stateAddon: MesssagingStateAddon){
+			XCTAssertTrue(true)
+		}
+		stateAddon.onStateChangeFns.append(onChange)
 
 		// Send message string(no effect)
 		stateAddon.messageDidReceive(data)
@@ -36,19 +41,6 @@ class MesssagingStateAddonTests: XCTestCase {
 		
 		XCTAssertEqual(3, stateAddon.receivedMessagesCount)
 		XCTAssertEqual(3 * dataBytes.count, stateAddon.receivedBytes)
-	}
-	
-	func testStateChange() {		
-		func onStateChangeDifferent(oldState: KemoClient.ReadyState, newState: KemoClient.ReadyState){
-			XCTAssertTrue(oldState != newState)
-		}
-		
-		let stateAddon = MesssagingStateAddon()
-		stateAddon.onStateChangeFns.insert(onStateChangeDifferent,atIndex: 0)
-		
-		stateAddon.onStateUpdate(KemoClient.ReadyState.CLOSED)
-		stateAddon.onStateUpdate(KemoClient.ReadyState.CLOSING)
-		stateAddon.onStateUpdate(KemoClient.ReadyState.CONNECTING)
 	}
 
 }
