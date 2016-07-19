@@ -51,7 +51,7 @@ public class InfoViewController: NSViewController, NSPopoverDelegate {
 	}
 
 	public override func viewDidAppear() {
-		//self.update(KemoClient.ReadyState.CLOSED, newState: parentControler!.stateAddon.clientState)
+		self.update(self.parentControler!.stateAddon)
 	}
 
 	public func update(stateAddon: MesssagingStateAddon) {
