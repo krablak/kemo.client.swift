@@ -47,9 +47,7 @@ public class ViewController: NSViewController, NSWindowDelegate {
 	var sentMarker = SentMessageMarker()
 
 	// Popover with messaging state/statistics
-	lazy var popover: NSPopover = {		
-		return infoViewPopover(self)
-	}()
+	var popover: NSPopover!
 
 	// Info button click shows/hides popover with messaging state and statistics
 	@IBAction func infoBtnClick(sender: NSButton) {
@@ -70,7 +68,6 @@ public class ViewController: NSViewController, NSWindowDelegate {
 		self.messaging.send(message)
 		// Mark message as sent
 		sentMarker.markAsSent(message)
-
 		// Clean message text field
 		sender.stringValue = ""
 	}
@@ -94,6 +91,8 @@ public class ViewController: NSViewController, NSWindowDelegate {
 
 	override public func viewDidLoad() {
 		super.viewDidLoad()
+		// Init infoview popover
+		self.popover = infoViewPopover(self)
 	}
 
 	override public func viewDidAppear() {
@@ -109,6 +108,9 @@ public class ViewController: NSViewController, NSWindowDelegate {
 		// Initial values
 		self.view.window?.title = "kemo.rocks"
 		self.view.window?.delegate = self
+		
+		// Update info button icon
+		updateInfoBtn()
 
 		// View content for presentation mode
 		if PRESENTATION_MODE {
@@ -117,6 +119,19 @@ public class ViewController: NSViewController, NSWindowDelegate {
 
 		// Check messaging connection on view appearance
 		self.messaging.checkConnection()
+	}
+	
+	// Updates state of info view button
+	public func updateInfoBtn(){
+		if self.stateAddon.clientState == .OPEN {
+			self.infoBtn.image = NSImage.init(named: "NSStatusAvailable")
+		} else if self.stateAddon.clientState == .CLOSING || self.stateAddon.clientState == .CLOSED {
+			self.infoBtn.image = NSImage.init(named: "NSStatusUnavailable")
+		} else if self.stateAddon.clientState == .CONNECTING {
+			self.infoBtn.image = NSImage.init(named: "NSStatusPartiallyAvailable")
+		} else {
+			self.infoBtn.image = NSImage.init(named: "NSStatusNone")
+		}
 	}
 
 	/*

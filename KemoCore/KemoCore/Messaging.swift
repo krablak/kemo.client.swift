@@ -24,7 +24,7 @@ public class Messaging {
 
 	// Timer for checking messaging state
 	lazy var stateTimer: NSTimer = {
-		return NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: #selector(Messaging.updateTick), userInfo: nil, repeats: true)
+		return NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: #selector(Messaging.updateTick), userInfo: nil, repeats: true)
 	}()
 
 	// Messaging addon components extending basic messaging functionality
@@ -42,6 +42,11 @@ public class Messaging {
 		self.client = KemoClient(host: "kemoundertow-krablak.rhcloud.com", sessionPath: sessionPath, onMessage: self.onMessageInternal)
 		// Connect in background thread
 		dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+			// Check connection on client state check
+			self.client.onConnectionChange = { state in
+				for addon in self.addons { addon.onStateUpdate(state) }
+			}
+			// Connect
 			self.client.connect()
 		}
 		// Start messaging state update timer
@@ -58,9 +63,6 @@ public class Messaging {
 		dispatch_async(dispatch_get_main_queue()) {
 			// Check connection
 			self.client.checkConnection()
-
-			// Propagate receive message to addons
-			for addon in self.addons { addon.onStateUpdate(self.client.readyState) }
 		}
 	}
 

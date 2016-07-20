@@ -45,6 +45,9 @@ public class KemoClient: WebSocketDelegate {
 	// Function called on received message
 	private var onMessage: (message: String) -> Void
 
+	// Function called on changed connection state
+	public var onConnectionChange: (state: ReadyState) -> Void
+
 	// Messages queued when client was not yet connected
 	private var sendQueue: [String] = []
 
@@ -55,6 +58,7 @@ public class KemoClient: WebSocketDelegate {
 		log.debug("Creating kemo.client for host '\(host)' and session path '\(sessionPath)'")
 		self.socket = WebSocket(url: NSURL(string: "wss://\(host):8443/messaging/\(sessionPath)")!)
 		self.onMessage = onMessage
+		self.onConnectionChange = { state in }
 		self.socket.delegate = self
 	}
 
@@ -93,6 +97,9 @@ public class KemoClient: WebSocketDelegate {
 
 	public func checkConnection() {
 		log.debug("Checking connection fo client.")
+		// Send ping request
+		self.socket.writePing(NSData())
+		// Check the state
 		if (self.readyState == .OPEN) {
 			log.debug("Client connection is open. Check complete.")
 		} else if (self.readyState == .CONNECTING) {
@@ -118,16 +125,19 @@ public class KemoClient: WebSocketDelegate {
 		}
 		// Set proper inner state
 		self.readyState = ReadyState.OPEN
+		self.onConnectionChange(state: self.readyState)
 		log.debug("Ready state changed to '\(self.readyState.rawValue)'")
 	}
 
 	public func websocketDidDisconnect(socket: WebSocket, error: NSError?) {
 		log.debug("Disconnected socket: '\(socket)' with error: '\(error)'")
 		self.readyState = ReadyState.CLOSED
+		self.onConnectionChange(state: self.readyState)
 	}
 
 	public func websocketDidReceiveMessage(socket: WebSocket, text: String) {
 		self.onMessage(message: text)
+		self.onConnectionChange(state: self.readyState)
 	}
 
 	public func websocketDidReceiveData(socket: WebSocket, data: NSData) {

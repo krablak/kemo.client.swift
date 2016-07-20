@@ -11,8 +11,8 @@
 		9A0D1C381D3E9BB7000B77DD /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD1F1691D1FD859002BCEAC /* CryptoSwift.framework */; };
 		9A0D1C391D3E9BB7000B77DD /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0895C01D20035D00255D45 /* Starscream.framework */; };
 		9A0D1C3A1D3E9BB7000B77DD /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0895C11D20035D00255D45 /* XCGLogger.framework */; };
-		9A0D1C3E1D3EA02F000B77DD /* KemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */; };
-		9A0D1C3F1D3EA02F000B77DD /* KemoCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9A0D1C451D3EAF65000B77DD /* KemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */; };
+		9A0D1C461D3EAF65000B77DD /* KemoCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9A275B451C6A7B67001EB564 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A275B441C6A7B67001EB564 /* AppDelegate.swift */; };
 		9A275B471C6A7B67001EB564 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A275B461C6A7B67001EB564 /* ViewController.swift */; };
 		9A275B491C6A7B67001EB564 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A275B481C6A7B67001EB564 /* Assets.xcassets */; };
@@ -40,13 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9A0D1C401D3EA030000B77DD /* Embed Frameworks */ = {
+		9A0D1C471D3EAF65000B77DD /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9A0D1C3F1D3EA02F000B77DD /* KemoCore.framework in Embed Frameworks */,
+				9A0D1C461D3EAF65000B77DD /* KemoCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,7 +97,7 @@
 				9A0D1C381D3E9BB7000B77DD /* CryptoSwift.framework in Frameworks */,
 				9A0D1C391D3E9BB7000B77DD /* Starscream.framework in Frameworks */,
 				9A0D1C3A1D3E9BB7000B77DD /* XCGLogger.framework in Frameworks */,
-				9A0D1C3E1D3EA02F000B77DD /* KemoCore.framework in Frameworks */,
+				9A0D1C451D3EAF65000B77DD /* KemoCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +213,7 @@
 				9A275B3F1C6A7B67001EB564 /* Resources */,
 				233638A821F1E4ADA828CFDE /* 📦 Embed Pods Frameworks */,
 				2821126E29E06657391D7B8E /* 📦 Copy Pods Resources */,
-				9A0D1C401D3EA030000B77DD /* Embed Frameworks */,
+				9A0D1C471D3EAF65000B77DD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

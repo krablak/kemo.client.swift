@@ -57,30 +57,30 @@ public class InfoViewController: NSViewController, NSPopoverDelegate {
 	public func update(stateAddon: MesssagingStateAddon) {
 		// Get current client state
 		let newState = stateAddon.clientState
-		self.connStateValueLbl!.stringValue = newState.rawValue
-		// Display correct state label and icon
-		if newState == .OPEN {
-			self.connStateValueLbl!.textColor = self.parentControler?.theme.uiColorTypes.success
-			self.parentControler?.infoBtn.image = NSImage.init(named: "NSStatusAvailable")
-		} else if newState == .CLOSING || newState == .CLOSED {
-			self.connStateValueLbl!.textColor = self.parentControler?.theme.uiColorTypes.error
-			self.parentControler?.infoBtn.image = NSImage.init(named: "NSStatusUnavailable")
-		} else if newState == .CONNECTING {
-			self.connStateValueLbl!.textColor = self.parentControler?.theme.uiColorTypes.active
-			self.parentControler?.infoBtn.image = NSImage.init(named: "NSStatusPartiallyAvailable")
-		} else {
-			self.connStateValueLbl!.textColor = self.parentControler?.theme.uiColorTypes.defaultFont
-			self.parentControler?.infoBtn.image = NSImage.init(named: "NSStatusNone")
+		// Update info button on parent controller
+		self.parentControler?.updateInfoBtn()
+		if self.connStateValueLbl != nil {
+			self.connStateValueLbl!.stringValue = newState.rawValue
+			// Display correct state label and icon
+			if newState == .OPEN {
+				self.connStateValueLbl!.textColor = self.parentControler?.theme.uiColorTypes.success
+			} else if newState == .CLOSING || newState == .CLOSED {
+				self.connStateValueLbl!.textColor = self.parentControler?.theme.uiColorTypes.error
+			} else if newState == .CONNECTING {
+				self.connStateValueLbl!.textColor = self.parentControler?.theme.uiColorTypes.active
+			} else {
+				self.connStateValueLbl!.textColor = self.parentControler?.theme.uiColorTypes.defaultFont
+			}
+
+			// Update statics values
+			self.receivedBytesValueLbl!.stringValue = "\(stateAddon.receivedBytes)"
+			self.receivedMessagesValueLbl!.stringValue = "\(stateAddon.receivedMessagesCount)"
+			self.lastReceivedValueLbl!.stringValue = dateFormatter.stringFromDate(stateAddon.receivedDate)
+
+			self.sentBytesValueLbl!.stringValue = "\(stateAddon.sentBytes)"
+			self.sentMessagesValueLbl!.stringValue = "\(stateAddon.sentMessagesCount)"
+			self.lastSentValueLbl!.stringValue = dateFormatter.stringFromDate(stateAddon.sentDate)
 		}
-
-		// Update statics values
-		self.receivedBytesValueLbl!.stringValue = "\(stateAddon.receivedBytes)"
-		self.receivedMessagesValueLbl!.stringValue = "\(stateAddon.receivedMessagesCount)"
-		self.lastReceivedValueLbl!.stringValue = dateFormatter.stringFromDate(stateAddon.receivedDate)
-
-		self.sentBytesValueLbl!.stringValue = "\(stateAddon.sentBytes)"
-		self.sentMessagesValueLbl!.stringValue = "\(stateAddon.sentMessagesCount)"
-		self.lastSentValueLbl!.stringValue = dateFormatter.stringFromDate(stateAddon.sentDate)
 	}
 
 }
