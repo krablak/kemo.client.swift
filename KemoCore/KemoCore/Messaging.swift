@@ -24,7 +24,12 @@ public class Messaging {
 
 	// Timer for checking messaging state
 	lazy var stateTimer: NSTimer = {
-		return NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: #selector(Messaging.updateTick), userInfo: nil, repeats: true)
+		return NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: #selector(Messaging.updateTick), userInfo: nil, repeats: true)
+	}()
+
+	// Timer for pinging server when connected to ensure that connection is alive
+	lazy var pingTimer: NSTimer = {
+		return NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: #selector(Messaging.pingConnected), userInfo: nil, repeats: true)
 	}()
 
 	// Messaging addon components extending basic messaging functionality
@@ -51,6 +56,8 @@ public class Messaging {
 		}
 		// Start messaging state update timer
 		self.stateTimer.fire()
+		// Start ping timer
+		pingTimer.fire();
 	}
 
 	public func checkConnection() {
@@ -60,9 +67,13 @@ public class Messaging {
 	}
 
 	@objc public func updateTick() {
-		dispatch_async(dispatch_get_main_queue()) {
+		self.client.checkConnection()
+	}
+	
+	@objc public func pingConnected() {
+		dispatch_async(dispatch_get_global_queue(QOS_CLASS_UTILITY, 0)) {
 			// Check connection
-			self.client.checkConnection()
+			self.client.ping()
 		}
 	}
 

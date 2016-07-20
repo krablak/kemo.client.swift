@@ -97,8 +97,6 @@ public class KemoClient: WebSocketDelegate {
 
 	public func checkConnection() {
 		log.debug("Checking connection fo client.")
-		// Send ping request
-		self.socket.writePing(NSData())
 		// Check the state
 		if (self.readyState == .OPEN) {
 			log.debug("Client connection is open. Check complete.")
@@ -110,6 +108,17 @@ public class KemoClient: WebSocketDelegate {
 			log.debug("Client is closed and needs to be connected.")
 			self.connect()
 			log.debug("Connection performed. Client state: '\(self.readyState.rawValue)' ")
+		}
+	}
+
+	// When connected sends PING request to server
+	public func ping() {
+		log.debug("Connection ping.")
+		if (self.readyState == .OPEN) {
+			self.socket.writePing(NSData())
+			log.debug("PING sent to server.")
+		} else {
+			log.debug("Client is not connected and PING was skipped.")
 		}
 	}
 
