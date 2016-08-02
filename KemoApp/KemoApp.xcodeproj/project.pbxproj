@@ -24,8 +24,8 @@
 		9A556C761D3176F90043A993 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A556C751D3176F90043A993 /* InfoView.xib */; };
 		9A59074C1D295DF50085EBF8 /* UIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A59074B1D295DF50085EBF8 /* UIModels.swift */; };
 		9AAEAF231D38040100F2DADC /* UIThemeWhite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAEAF221D38040100F2DADC /* UIThemeWhite.swift */; };
-		9ABF32081D4009FE00F50B34 /* KemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */; };
-		9ABF32091D4009FE00F50B34 /* KemoCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9AE532ED1D512186001B8D79 /* KemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */; };
+		9AE532EE1D512186001B8D79 /* KemoCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3988CE1D1E4AEE00372AE2 /* KemoCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B065DBEDECB16F18CEA71E0A /* Pods_KemoAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 742309F436B665FB67F0ED9E /* Pods_KemoAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,13 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9ABF320A1D4009FE00F50B34 /* Embed Frameworks */ = {
+		9AE532EF1D512186001B8D79 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9ABF32091D4009FE00F50B34 /* KemoCore.framework in Embed Frameworks */,
+				9AE532EE1D512186001B8D79 /* KemoCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,7 +98,7 @@
 				9A0D1C381D3E9BB7000B77DD /* CryptoSwift.framework in Frameworks */,
 				9A0D1C391D3E9BB7000B77DD /* Starscream.framework in Frameworks */,
 				9A0D1C3A1D3E9BB7000B77DD /* XCGLogger.framework in Frameworks */,
-				9ABF32081D4009FE00F50B34 /* KemoCore.framework in Frameworks */,
+				9AE532ED1D512186001B8D79 /* KemoCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,7 +215,7 @@
 				9A275B3F1C6A7B67001EB564 /* Resources */,
 				233638A821F1E4ADA828CFDE /* 📦 Embed Pods Frameworks */,
 				2821126E29E06657391D7B8E /* 📦 Copy Pods Resources */,
-				9ABF320A1D4009FE00F50B34 /* Embed Frameworks */,
+				9AE532EF1D512186001B8D79 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

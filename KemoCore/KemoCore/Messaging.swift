@@ -49,7 +49,9 @@ public class Messaging {
 		dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
 			// Check connection on client state check
 			self.client.onConnectionChange = { state in
-				for addon in self.addons { addon.onStateUpdate(state) }
+				dispatch_async(dispatch_get_global_queue(QOS_CLASS_UTILITY, 0)) {
+					for addon in self.addons { addon.onStateUpdate(state) }
+				}
 			}
 			// Connect
 			self.client.connect()
@@ -67,9 +69,13 @@ public class Messaging {
 	}
 
 	@objc public func updateTick() {
-		self.client.checkConnection()
+		dispatch_async(dispatch_get_global_queue(QOS_CLASS_UTILITY, 0)) {
+			self.client.checkConnection()
+			// Propagate receive message to addons
+			for addon in self.addons { addon.onStateUpdate(self.client.readyState) }
+		}
 	}
-	
+
 	@objc public func pingConnected() {
 		dispatch_async(dispatch_get_global_queue(QOS_CLASS_UTILITY, 0)) {
 			// Check connection

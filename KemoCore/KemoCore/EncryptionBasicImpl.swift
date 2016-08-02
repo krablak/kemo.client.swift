@@ -70,9 +70,9 @@ public class DefaultEncryption: EncryptionApi {
 
 	public static func toSessionPath(key: [UInt8], saltFn: (key: [UInt8]) -> [UInt8]) -> String {
 		// Perform basic salting
-		let saltedKey = Conversions.toStr(saltFn(key: key))
+		let saltedKey = saltFn(key: key)
 		// Convert salted key to base64
-		let saltedKeyBase64 = Conversions.toBase64Str(Conversions.toBytes(saltedKey))
+		let saltedKeyBase64 = Conversions.toBase64Str(saltedKey)
 		// Create hash in hexa string
 		let hashStr = saltedKeyBase64.sha256()
 		// Convert hash to bytes
