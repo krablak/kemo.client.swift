@@ -1,6 +1,0 @@
-framework module Pods_KemoApp {
-  umbrella header "Pods-KemoApp-umbrella.h"
-
-  export *
-  module * { export * }
-}

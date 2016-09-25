@@ -8,3 +8,6 @@ KemoServer/undertow/kemo-performance/.settings
 KemoServer/undertow/kemo-server/.gradle
 KemoServer/undertow/kemo-server/.settings
 KemoCore/build
+KemoAll/.build
+KemoAll/KemoAll.xcodeproj/project.xcworkspace/xcuserdata
+KemoAll/KemoAll.xcodeproj/xcuserdata

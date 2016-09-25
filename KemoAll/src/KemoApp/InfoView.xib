@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+        <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="InfoViewController" customModule="KemoApp" customModuleProvider="target">
+            <connections>
+                <outlet property="connStateValueLbl" destination="HOP-KL-vvO" id="AnP-V3-VDe"/>
+                <outlet property="lastReceivedValueLbl" destination="D5u-xw-5CG" id="lC1-eo-KfG"/>
+                <outlet property="lastSentValueLbl" destination="o1i-wO-w2a" id="t6V-YY-KV5"/>
+                <outlet property="receivedBytesValueLbl" destination="paT-UC-M93" id="9wI-JC-NIm"/>
+                <outlet property="receivedMessagesValueLbl" destination="09i-BJ-3P9" id="rzW-Xb-zBc"/>
+                <outlet property="sentBytesValueLbl" destination="jjn-f4-CHM" id="xpe-kQ-qhm"/>
+                <outlet property="sentMessagesValueLbl" destination="rHf-jZ-q6u" id="9Dg-sR-gk5"/>
+                <outlet property="view" destination="c22-O7-iKe" id="ulG-MP-S2b"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="307" height="207"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField identifier="connStateTitleLbl" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g7j-mB-6xM">
+                    <rect key="frame" x="33" y="170" width="112" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Connection state:" id="r3S-4v-ZID">
+                        <font key="font" metaFont="systemLight" size="13"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField identifier="connStateValueLbl" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HOP-KL-vvO">
+                    <rect key="frame" x="149" y="170" width="140" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="CLOSED" id="Ras-8F-i2V">
+                        <font key="font" metaFont="systemMedium" size="13"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField identifier="receivedBytesTitleLbl" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rME-jv-PbV">
+                    <rect key="frame" x="45" y="145" width="100" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Received bytes:" id="BIP-1t-Fth">
+                        <font key="font" metaFont="systemLight" size="13"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField identifier="receivedBytesValueLbl" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="paT-UC-M93">
+                    <rect key="frame" x="149" y="145" width="140" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0" id="xZx-31-a8X">
+                        <font key="font" metaFont="systemLight" size="13"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField identifier="sentBytesValueLbl" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jjn-f4-CHM">
+                    <rect key="frame" x="149" y="45" width="140" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0" id="rMi-oV-fre">
+                        <font key="font" metaFont="systemLight" size="13"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField identifier="sentMessagesValueLbl" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rHf-jZ-q6u">
+                    <rect key="frame" x="149" y="70" width="140" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0" id="YGt-yV-NF1">
+                        <font key="font" metaFont="systemLight" size="13"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField identifier="receivedMessagesValueLbl" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="09i-BJ-3P9">
+                    <rect key="frame" x="149" y="120" width="140" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="0" id="heV-qn-lXQ">
+                        <font key="font" metaFont="systemLight" size="13"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField identifier="lastReceivedValueLbl" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D5u-xw-5CG">
+                    <rect key="frame" x="149" y="95" width="140" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="-" id="AM1-RQ-lda">
+                        <font key="font" metaFont="systemLight" size="13"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField identifier="sentBytesTitleLbl" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="87Y-fa-p4j">
+                    <rect key="frame" x="72" y="45" width="73" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sent bytes:" id="e8p-6B-EUu">
+                        <font key="font" metaFont="systemLight" size="13"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField identifier="sentMessagesTitleLbl" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FpN-wN-BJv">
+                    <rect key="frame" x="45" y="70" width="101" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sent messages:" id="efo-7z-N8o">
+                        <font key="font" metaFont="systemLight" size="13"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField identifier="receivedMessagesTitleLbl" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qvD-tA-0n2">
+                    <rect key="frame" x="18" y="120" width="128" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Received messages:" id="iUR-Fm-Tye">
+                        <font key="font" metaFont="systemLight" size="13"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField identifier="lastReceivedTitleLbl" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yU1-nM-Sgm">
+                    <rect key="frame" x="56" y="95" width="89" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Last received:" id="Cfh-Hf-uHH">
+                        <font key="font" metaFont="systemLight" size="13"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField identifier="lastSentValueLbl" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o1i-wO-w2a">
+                    <rect key="frame" x="149" y="20" width="140" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="-" id="eKX-cu-c73">
+                        <font key="font" metaFont="systemLight" size="13"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField identifier="lastSentTitleLbl" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yaO-pi-ayU">
+                    <rect key="frame" x="82" y="20" width="64" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Last sent:" id="vxN-I4-56i">
+                        <font key="font" metaFont="systemLight" size="13"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="paT-UC-M93" firstAttribute="leading" secondItem="HOP-KL-vvO" secondAttribute="leading" id="7tA-PS-qJW"/>
+                <constraint firstItem="jjn-f4-CHM" firstAttribute="leading" secondItem="HOP-KL-vvO" secondAttribute="leading" id="Bgt-cG-eqn"/>
+                <constraint firstItem="rME-jv-PbV" firstAttribute="trailing" secondItem="g7j-mB-6xM" secondAttribute="trailing" id="Eq9-v5-XCb"/>
+                <constraint firstItem="87Y-fa-p4j" firstAttribute="trailing" secondItem="g7j-mB-6xM" secondAttribute="trailing" id="RPy-4v-uNh"/>
+                <constraint firstItem="yaO-pi-ayU" firstAttribute="trailing" secondItem="g7j-mB-6xM" secondAttribute="trailing" id="Tn6-wA-4Mv"/>
+                <constraint firstItem="o1i-wO-w2a" firstAttribute="leading" secondItem="HOP-KL-vvO" secondAttribute="leading" id="XK3-L4-mJg"/>
+                <constraint firstItem="rHf-jZ-q6u" firstAttribute="leading" secondItem="HOP-KL-vvO" secondAttribute="leading" id="ZDb-jS-LYY"/>
+                <constraint firstItem="09i-BJ-3P9" firstAttribute="leading" secondItem="HOP-KL-vvO" secondAttribute="leading" id="eLt-8F-Gyt"/>
+                <constraint firstItem="FpN-wN-BJv" firstAttribute="trailing" secondItem="g7j-mB-6xM" secondAttribute="trailing" id="k3p-If-UOq"/>
+                <constraint firstItem="yU1-nM-Sgm" firstAttribute="trailing" secondItem="g7j-mB-6xM" secondAttribute="trailing" id="lwr-Vu-WuB"/>
+                <constraint firstItem="qvD-tA-0n2" firstAttribute="trailing" secondItem="g7j-mB-6xM" secondAttribute="trailing" id="nen-34-sJE"/>
+                <constraint firstItem="D5u-xw-5CG" firstAttribute="leading" secondItem="HOP-KL-vvO" secondAttribute="leading" id="ql4-9O-yrg"/>
+            </constraints>
+            <point key="canvasLocation" x="185.5" y="173.5"/>
+        </customView>
+    </objects>
+</document>

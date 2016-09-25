@@ -1,6 +1,0 @@
-framework module Pods_KemoCore_KemoCoreTests {
-  umbrella header "Pods-KemoCore-KemoCoreTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
