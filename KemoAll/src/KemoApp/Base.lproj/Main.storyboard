@@ -406,7 +406,6 @@
                                 <rect key="frame" x="159" y="253" width="486" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="fLx-2N-lUZ"/>
-                                    <constraint firstAttribute="width" constant="486" id="kuD-oW-ttT"/>
                                 </constraints>
                                 <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" placeholderString="" usesSingleLineMode="YES" bezelStyle="round" echosBullets="NO" id="neG-3H-peU">
                                     <font key="font" metaFont="system"/>
@@ -437,6 +436,7 @@
                             <textField identifier="nickFld" focusRingType="none" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2MW-t0-WKc">
                                 <rect key="frame" x="20" y="253" width="131" height="33"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="Nqc-WP-Lj0"/>
                                     <constraint firstAttribute="height" constant="33" id="xlG-IX-Pz0"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" placeholderString="" bezelStyle="round" id="ESR-GE-Lt2">
@@ -459,6 +459,7 @@
                             <constraint firstItem="zRk-v8-vrg" firstAttribute="baseline" secondItem="2MW-t0-WKc" secondAttribute="baseline" id="YOS-nm-IEt"/>
                             <constraint firstAttribute="trailing" secondItem="JMn-Ro-eeL" secondAttribute="trailing" constant="14" id="a3p-k3-CBa"/>
                             <constraint firstItem="2MW-t0-WKc" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="14" id="d6h-x4-E8f"/>
+                            <constraint firstAttribute="trailing" secondItem="JMn-Ro-eeL" secondAttribute="trailing" constant="20" id="dLq-Wz-e6J"/>
                             <constraint firstItem="TrE-HS-o5t" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="14" id="kO9-df-p44"/>
                             <constraint firstItem="JMn-Ro-eeL" firstAttribute="leading" secondItem="zRk-v8-vrg" secondAttribute="trailing" id="pK9-nz-kci"/>
                             <constraint firstItem="dbw-lW-F4R" firstAttribute="top" secondItem="TrE-HS-o5t" secondAttribute="bottom" constant="14" id="qGT-rC-rff"/>
