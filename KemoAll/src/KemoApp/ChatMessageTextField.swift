@@ -9,11 +9,9 @@
 import Foundation
 import Cocoa
 
-public class ChatMessageTextField: NSTextField {
-	
+public class ChatMessageTextField: NSTextField {	
 	
 	public override func becomeFirstResponder() -> Bool {
-		debugPrint("XXX")
 		return super.becomeFirstResponder()
 	}
 	
