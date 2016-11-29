@@ -16,7 +16,9 @@ open class ViewController: NSViewController, NSWindowDelegate {
 
 	// Temporary flag for case of making screenshots filled content
 	let PRESENTATION_MODE = false
-
+	
+	@IBOutlet weak var innerScrollView: NSView!
+	
 	@IBOutlet var messageTextView: ChatTextView!
 
 	@IBOutlet weak var messageTextFld: NSTextField!
@@ -30,6 +32,8 @@ open class ViewController: NSViewController, NSWindowDelegate {
 	@IBOutlet weak var messageTextScrollView: NSScrollView!
 
 	@IBOutlet weak var infoBtn: NSButton!
+	
+	@IBOutlet weak var kemoListView: KemoListView!
 	
 	// Instance of messaging component
 	lazy var messaging: Messaging = {
@@ -109,10 +113,14 @@ open class ViewController: NSViewController, NSWindowDelegate {
 		self.view.window?.title = "kemo.rocks"
 		self.view.window?.delegate = self
 		
+		DispatchQueue.main.async {
+			debugPrint(self.kemoListView)
+		}
+		
 		// Update info button icon
-		updateInfoBtn()
+		self.updateInfoBtn()
 
-		// View content for presentation mode
+		// View content for id mode
 		if PRESENTATION_MODE {
 			fillWithConversation(self)
 		}
@@ -123,14 +131,16 @@ open class ViewController: NSViewController, NSWindowDelegate {
 	
 	// Updates state of info view button
 	open func updateInfoBtn(){
-		if self.stateAddon.clientState == .OPEN {
-			self.infoBtn.image = NSImage.init(named: "NSStatusAvailable")
-		} else if self.stateAddon.clientState == .CLOSING || self.stateAddon.clientState == .CLOSED {
-			self.infoBtn.image = NSImage.init(named: "NSStatusUnavailable")
-		} else if self.stateAddon.clientState == .CONNECTING {
-			self.infoBtn.image = NSImage.init(named: "NSStatusPartiallyAvailable")
-		} else {
-			self.infoBtn.image = NSImage.init(named: "NSStatusNone")
+		DispatchQueue.main.async {
+			if self.stateAddon.clientState == .OPEN {
+				self.infoBtn.image = NSImage.init(named: "NSStatusAvailable")
+			} else if self.stateAddon.clientState == .CLOSING || self.stateAddon.clientState == .CLOSED {
+				self.infoBtn.image = NSImage.init(named: "NSStatusUnavailable")
+			} else if self.stateAddon.clientState == .CONNECTING {
+				self.infoBtn.image = NSImage.init(named: "NSStatusPartiallyAvailable")
+			} else {
+				self.infoBtn.image = NSImage.init(named: "NSStatusNone")
+			}
 		}
 	}
 

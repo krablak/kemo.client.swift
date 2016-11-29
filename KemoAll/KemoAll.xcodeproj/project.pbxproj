@@ -24,6 +24,10 @@
 		9A04BF6B1D982CEA005FCA75 /* KemoCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_KemoCore" /* KemoCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9A04BF6E1D982CEA005FCA75 /* KemoLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_KemoLogger" /* KemoLogger.framework */; };
 		9A04BF6F1D982CEA005FCA75 /* KemoLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_KemoLogger" /* KemoLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9A1656E71DB1535600687D39 /* MessagesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1656E61DB1535600687D39 /* MessagesDataSource.swift */; };
+		9A1656E81DB1617E00687D39 /* MessagesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1656E61DB1535600687D39 /* MessagesDataSource.swift */; };
+		9A1656EA1DC929BF00687D39 /* MessageCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A1656E91DC926C300687D39 /* MessageCellView.xib */; };
+		9A1656EC1DC9356C00687D39 /* ChatFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1656EB1DC9356C00687D39 /* ChatFieldCell.swift */; };
 		9A293C9E1DAC163A001D2A47 /* KemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_KemoCore" /* KemoCore.framework */; };
 		9A293CC11DAD70B2001D2A47 /* EncryptionBasicImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A293CB91DAD70B2001D2A47 /* EncryptionBasicImplTests.swift */; };
 		9A293CC21DAD70B2001D2A47 /* MessagingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A293CBA1DAD70B2001D2A47 /* MessagingTests.swift */; };
@@ -31,6 +35,8 @@
 		9A293CC41DAD70B2001D2A47 /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A293CBC1DAD70B2001D2A47 /* NetworkingTests.swift */; };
 		9A293CC51DAD70B2001D2A47 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A293CBD1DAD70B2001D2A47 /* TestUtils.swift */; };
 		9A293CC61DAD70B2001D2A47 /* UtilsConversionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A293CBE1DAD70B2001D2A47 /* UtilsConversionTest.swift */; };
+		9A3466B01DECAB0900EB34AF /* KemoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466AF1DECAB0900EB34AF /* KemoListView.swift */; };
+		9A3466B11DECC0F200EB34AF /* KemoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466AF1DECAB0900EB34AF /* KemoListView.swift */; };
 		9ACD27B71D97F1060029AB32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACD27B61D97F1060029AB32 /* AppDelegate.swift */; };
 		9ACD27B91D97F1060029AB32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACD27B81D97F1060029AB32 /* ViewController.swift */; };
 		9ACD27BB1D97F1060029AB32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ACD27BA1D97F1060029AB32 /* Assets.xcassets */; };
@@ -190,6 +196,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9A1656E61DB1535600687D39 /* MessagesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesDataSource.swift; sourceTree = "<group>"; };
+		9A1656E91DC926C300687D39 /* MessageCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCellView.xib; sourceTree = "<group>"; };
+		9A1656EB1DC9356C00687D39 /* ChatFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatFieldCell.swift; sourceTree = "<group>"; };
 		9A293C991DAC1639001D2A47 /* KemoCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KemoCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A293C9D1DAC163A001D2A47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A293CB71DAD70B1001D2A47 /* KemoCoreTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KemoCoreTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -199,6 +208,7 @@
 		9A293CBC1DAD70B2001D2A47 /* NetworkingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
 		9A293CBD1DAD70B2001D2A47 /* TestUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 		9A293CBE1DAD70B2001D2A47 /* UtilsConversionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsConversionTest.swift; sourceTree = "<group>"; };
+		9A3466AF1DECAB0900EB34AF /* KemoListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KemoListView.swift; sourceTree = "<group>"; };
 		9A8F7FE31D97F3DB00D75B20 /* ChatMessageTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageTextField.swift; sourceTree = "<group>"; };
 		9A8F7FE41D97F3DB00D75B20 /* InfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
 		9A8F7FE51D97F3DB00D75B20 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
@@ -385,6 +395,10 @@
 				9ACD27BA1D97F1060029AB32 /* Assets.xcassets */,
 				9ACD27BC1D97F1070029AB32 /* Main.storyboard */,
 				9ACD27BF1D97F1070029AB32 /* Info.plist */,
+				9A1656E61DB1535600687D39 /* MessagesDataSource.swift */,
+				9A1656E91DC926C300687D39 /* MessageCellView.xib */,
+				9A1656EB1DC9356C00687D39 /* ChatFieldCell.swift */,
+				9A3466AF1DECAB0900EB34AF /* KemoListView.swift */,
 			);
 			name = KemoApp;
 			path = src/KemoApp;
@@ -712,6 +726,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A1656EA1DC929BF00687D39 /* MessageCellView.xib in Resources */,
 				9ACD27BB1D97F1060029AB32 /* Assets.xcassets in Resources */,
 				9ACD27BE1D97F1070029AB32 /* Main.storyboard in Resources */,
 			);
@@ -737,8 +752,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A3466B11DECC0F200EB34AF /* KemoListView.swift in Sources */,
+				9A1656E81DB1617E00687D39 /* MessagesDataSource.swift in Sources */,
 				9ACD27B91D97F1060029AB32 /* ViewController.swift in Sources */,
 				9A04BF601D9827B4005FCA75 /* UITheme.swift in Sources */,
+				9A1656EC1DC9356C00687D39 /* ChatFieldCell.swift in Sources */,
 				9A04BF591D98277C005FCA75 /* UIComponents.swift in Sources */,
 				9A04BF5C1D98279F005FCA75 /* Messaging.swift in Sources */,
 				9A04BF5D1D9827A4005FCA75 /* PresentationUtils.swift in Sources */,
@@ -762,6 +780,7 @@
 				"__src_cc_ref_Packages/CryptoSwift-0.6.0/Sources/CryptoSwift/BlockCipher.swift" /* BlockCipher.swift in Sources */,
 				"__src_cc_ref_Packages/CryptoSwift-0.6.0/Sources/CryptoSwift/BytesSequence.swift" /* BytesSequence.swift in Sources */,
 				"__src_cc_ref_Packages/CryptoSwift-0.6.0/Sources/CryptoSwift/CSArrayType+Extensions.swift" /* CSArrayType+Extensions.swift in Sources */,
+				9A3466B01DECAB0900EB34AF /* KemoListView.swift in Sources */,
 				"__src_cc_ref_Packages/CryptoSwift-0.6.0/Sources/CryptoSwift/ChaCha20.swift" /* ChaCha20.swift in Sources */,
 				"__src_cc_ref_Packages/CryptoSwift-0.6.0/Sources/CryptoSwift/Checksum.swift" /* Checksum.swift in Sources */,
 				"__src_cc_ref_Packages/CryptoSwift-0.6.0/Sources/CryptoSwift/Cipher.swift" /* Cipher.swift in Sources */,
@@ -773,6 +792,7 @@
 				"__src_cc_ref_Packages/CryptoSwift-0.6.0/Sources/CryptoSwift/HMAC.swift" /* HMAC.swift in Sources */,
 				"__src_cc_ref_Packages/CryptoSwift-0.6.0/Sources/CryptoSwift/Int+Extension.swift" /* Int+Extension.swift in Sources */,
 				"__src_cc_ref_Packages/CryptoSwift-0.6.0/Sources/CryptoSwift/IntegerConvertible.swift" /* IntegerConvertible.swift in Sources */,
+				9A1656E71DB1535600687D39 /* MessagesDataSource.swift in Sources */,
 				"__src_cc_ref_Packages/CryptoSwift-0.6.0/Sources/CryptoSwift/MD5.swift" /* MD5.swift in Sources */,
 				"__src_cc_ref_Packages/CryptoSwift-0.6.0/Sources/CryptoSwift/Multiplatform.swift" /* Multiplatform.swift in Sources */,
 				"__src_cc_ref_Packages/CryptoSwift-0.6.0/Sources/CryptoSwift/NoPadding.swift" /* NoPadding.swift in Sources */,
@@ -1287,6 +1307,7 @@
 				9A293CA21DAC163A001D2A47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 		9ACD27C21D97F1070029AB32 /* Build configuration list for PBXNativeTarget "KemoApp" */ = {
 			isa = XCConfigurationList;

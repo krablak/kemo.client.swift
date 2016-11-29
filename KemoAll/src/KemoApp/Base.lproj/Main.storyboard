@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -363,16 +363,16 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView identifier="messagesTextBox" focusRingType="none" misplaced="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="allowed" scrollerKnobStyle="light" translatesAutoresizingMaskIntoConstraints="NO" id="TrE-HS-o5t" customClass="ThemedNSScrollView" customModule="KemoApp" customModuleProvider="target">
-                                <rect key="frame" x="20" y="61" width="660" height="184"/>
+                                <rect key="frame" x="20" y="61" width="400" height="184"/>
                                 <clipView key="contentView" focusRingType="none" drawsBackground="NO" copiesOnScroll="NO" id="Boh-x3-415">
-                                    <rect key="frame" x="0.0" y="0.0" width="660" height="184"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="184"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView identifier="messageTextView" editable="NO" verticallyResizable="NO" findStyle="panel" allowsNonContiguousLayout="YES" quoteSubstitution="YES" linkDetection="YES" id="7gi-Uf-8AF" customClass="ChatTextView" customModule="KemoApp" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="660" height="184"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="184"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <size key="minSize" width="660" height="184"/>
+                                            <size key="minSize" width="400" height="184"/>
                                             <size key="maxSize" width="672" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
@@ -384,7 +384,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="cQu-VO-cCB">
-                                    <rect key="frame" x="644" y="0.0" width="16" height="184"/>
+                                    <rect key="frame" x="384" y="0.0" width="16" height="184"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -445,14 +445,42 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <scrollView misplaced="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dT-0Y-zya">
+                                <rect key="frame" x="428" y="61" width="252" height="184"/>
+                                <clipView key="contentView" id="pr0-Xb-BlW">
+                                    <rect key="frame" x="1" y="1" width="250" height="182"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t0B-Cs-cNr">
+                                            <rect key="frame" x="0.0" y="0.0" width="235" height="167"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQe-b8-5yW" customClass="KemoListView" customModule="KemoApp" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="15" width="235" height="152"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </customView>
+                                            </subviews>
+                                        </view>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="rGy-ox-WzP">
+                                    <rect key="frame" x="1" y="167" width="250" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="SYg-nW-5SN">
+                                    <rect key="frame" x="235" y="1" width="16" height="182"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="7dT-0Y-zya" firstAttribute="top" secondItem="JMn-Ro-eeL" secondAttribute="bottom" constant="8" id="06z-Tq-W0u"/>
                             <constraint firstItem="TrE-HS-o5t" firstAttribute="top" secondItem="2MW-t0-WKc" secondAttribute="bottom" constant="14" id="1iZ-kz-41g"/>
-                            <constraint firstAttribute="trailing" secondItem="TrE-HS-o5t" secondAttribute="trailing" constant="14" id="2sV-0v-dMh"/>
                             <constraint firstItem="JMn-Ro-eeL" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="14" id="5bP-Ka-R7W"/>
                             <constraint firstAttribute="bottom" secondItem="dbw-lW-F4R" secondAttribute="bottom" constant="14" id="7vv-bP-HS1"/>
                             <constraint firstItem="TrE-HS-o5t" firstAttribute="top" secondItem="JMn-Ro-eeL" secondAttribute="bottom" constant="14" id="FBV-sn-dJE"/>
                             <constraint firstItem="zRk-v8-vrg" firstAttribute="firstBaseline" secondItem="JMn-Ro-eeL" secondAttribute="firstBaseline" id="JQ4-9x-1Bh"/>
+                            <constraint firstAttribute="trailing" secondItem="7dT-0Y-zya" secondAttribute="trailing" constant="20" id="TZH-i5-oji"/>
                             <constraint firstItem="2MW-t0-WKc" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="14" id="U5h-Us-b1S"/>
                             <constraint firstItem="dbw-lW-F4R" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="14" id="Ugw-TA-EAX"/>
                             <constraint firstItem="JMn-Ro-eeL" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="14" id="Wh7-nz-30X"/>
@@ -460,16 +488,21 @@
                             <constraint firstAttribute="trailing" secondItem="JMn-Ro-eeL" secondAttribute="trailing" constant="14" id="a3p-k3-CBa"/>
                             <constraint firstItem="2MW-t0-WKc" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="14" id="d6h-x4-E8f"/>
                             <constraint firstAttribute="trailing" secondItem="JMn-Ro-eeL" secondAttribute="trailing" constant="20" id="dLq-Wz-e6J"/>
+                            <constraint firstAttribute="trailing" secondItem="TrE-HS-o5t" secondAttribute="trailing" constant="300" id="iWz-ke-8lx"/>
                             <constraint firstItem="TrE-HS-o5t" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="14" id="kO9-df-p44"/>
+                            <constraint firstItem="dbw-lW-F4R" firstAttribute="top" secondItem="7dT-0Y-zya" secondAttribute="bottom" constant="8" id="p2r-zn-hrC"/>
                             <constraint firstItem="JMn-Ro-eeL" firstAttribute="leading" secondItem="zRk-v8-vrg" secondAttribute="trailing" id="pK9-nz-kci"/>
                             <constraint firstItem="dbw-lW-F4R" firstAttribute="top" secondItem="TrE-HS-o5t" secondAttribute="bottom" constant="14" id="qGT-rC-rff"/>
+                            <constraint firstItem="7dT-0Y-zya" firstAttribute="leading" secondItem="TrE-HS-o5t" secondAttribute="trailing" constant="8" id="tq0-TS-9Qt"/>
                             <constraint firstAttribute="trailing" secondItem="dbw-lW-F4R" secondAttribute="trailing" constant="14" id="x8p-KW-6v6"/>
                             <constraint firstItem="zRk-v8-vrg" firstAttribute="leading" secondItem="2MW-t0-WKc" secondAttribute="trailing" constant="14" id="xUD-aY-Vfv"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="infoBtn" destination="JMn-Ro-eeL" id="Uts-85-4Ye"/>
+                        <outlet property="innerScrollView" destination="t0B-Cs-cNr" id="GIL-CF-nq5"/>
                         <outlet property="kemoKeyFld" destination="zRk-v8-vrg" id="xDe-Ut-fHZ"/>
+                        <outlet property="kemoListView" destination="sQe-b8-5yW" id="pGS-Tl-bcm"/>
                         <outlet property="mainView" destination="m2S-Jp-Qdl" id="0Zn-I7-46Z"/>
                         <outlet property="messageTextFld" destination="dbw-lW-F4R" id="dhW-Ke-Hlp"/>
                         <outlet property="messageTextScrollView" destination="TrE-HS-o5t" id="22q-DP-6ar"/>
