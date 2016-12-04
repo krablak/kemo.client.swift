@@ -1,0 +1,407 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9A3466E91DEE061600EB34AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466D21DEE061600EB34AF /* AppDelegate.swift */; };
+		9A3466EA1DEE061600EB34AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A3466D31DEE061600EB34AF /* Assets.xcassets */; };
+		9A3466EB1DEE061600EB34AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A3466D51DEE061600EB34AF /* Main.storyboard */; };
+		9A3466EC1DEE061600EB34AF /* ChatFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466D71DEE061600EB34AF /* ChatFieldCell.swift */; };
+		9A3466ED1DEE061600EB34AF /* ChatMessageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466D81DEE061600EB34AF /* ChatMessageTextField.swift */; };
+		9A3466EE1DEE061600EB34AF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A3466DA1DEE061600EB34AF /* Info.plist */; };
+		9A3466EF1DEE061600EB34AF /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A3466DB1DEE061600EB34AF /* InfoView.xib */; };
+		9A3466F01DEE061600EB34AF /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466DC1DEE061600EB34AF /* InfoViewController.swift */; };
+		9A3466F11DEE061600EB34AF /* KemoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466DE1DEE061600EB34AF /* KemoListView.swift */; };
+		9A3466F21DEE061600EB34AF /* MessageCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A3466DF1DEE061600EB34AF /* MessageCellView.xib */; };
+		9A3466F51DEE061600EB34AF /* PresentationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466E21DEE061600EB34AF /* PresentationUtils.swift */; };
+		9A3466F61DEE061600EB34AF /* ThemedNSScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466E31DEE061600EB34AF /* ThemedNSScrollView.swift */; };
+		9A3466F71DEE061600EB34AF /* UIComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466E41DEE061600EB34AF /* UIComponents.swift */; };
+		9A3466F81DEE061600EB34AF /* UIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466E51DEE061600EB34AF /* UIModels.swift */; };
+		9A3466F91DEE061600EB34AF /* UITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466E61DEE061600EB34AF /* UITheme.swift */; };
+		9A3466FA1DEE061600EB34AF /* UIThemeWhite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466E71DEE061600EB34AF /* UIThemeWhite.swift */; };
+		9A3466FB1DEE061600EB34AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466E81DEE061600EB34AF /* ViewController.swift */; };
+		9A3467011DEE077100EB34AF /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3466FE1DEE077100EB34AF /* CryptoSwift.framework */; };
+		9A3467021DEE077100EB34AF /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3466FE1DEE077100EB34AF /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9A3467031DEE077100EB34AF /* KemoCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3466FF1DEE077100EB34AF /* KemoCore.framework */; };
+		9A3467041DEE077100EB34AF /* KemoCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3466FF1DEE077100EB34AF /* KemoCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9A3467051DEE077100EB34AF /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3467001DEE077100EB34AF /* Starscream.framework */; };
+		9A3467061DEE077100EB34AF /* Starscream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3467001DEE077100EB34AF /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9A3467071DEE077100EB34AF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9A3467021DEE077100EB34AF /* CryptoSwift.framework in Embed Frameworks */,
+				9A3467061DEE077100EB34AF /* Starscream.framework in Embed Frameworks */,
+				9A3467041DEE077100EB34AF /* KemoCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9A3466BD1DEE037D00EB34AF /* KemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A3466D21DEE061600EB34AF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9A3466D31DEE061600EB34AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9A3466D61DEE061600EB34AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		9A3466D71DEE061600EB34AF /* ChatFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatFieldCell.swift; sourceTree = "<group>"; };
+		9A3466D81DEE061600EB34AF /* ChatMessageTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageTextField.swift; sourceTree = "<group>"; };
+		9A3466DA1DEE061600EB34AF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A3466DB1DEE061600EB34AF /* InfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
+		9A3466DC1DEE061600EB34AF /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		9A3466DD1DEE061600EB34AF /* KemoApp.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = KemoApp.entitlements; sourceTree = "<group>"; };
+		9A3466DE1DEE061600EB34AF /* KemoListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KemoListView.swift; sourceTree = "<group>"; };
+		9A3466DF1DEE061600EB34AF /* MessageCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCellView.xib; sourceTree = "<group>"; };
+		9A3466E21DEE061600EB34AF /* PresentationUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationUtils.swift; sourceTree = "<group>"; };
+		9A3466E31DEE061600EB34AF /* ThemedNSScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemedNSScrollView.swift; sourceTree = "<group>"; };
+		9A3466E41DEE061600EB34AF /* UIComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIComponents.swift; sourceTree = "<group>"; };
+		9A3466E51DEE061600EB34AF /* UIModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIModels.swift; sourceTree = "<group>"; };
+		9A3466E61DEE061600EB34AF /* UITheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITheme.swift; sourceTree = "<group>"; };
+		9A3466E71DEE061600EB34AF /* UIThemeWhite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIThemeWhite.swift; sourceTree = "<group>"; };
+		9A3466E81DEE061600EB34AF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9A3466FE1DEE077100EB34AF /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = KemoApp/Dependencies/CryptoSwift.framework; sourceTree = "<group>"; };
+		9A3466FF1DEE077100EB34AF /* KemoCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KemoCore.framework; path = KemoApp/Dependencies/KemoCore.framework; sourceTree = "<group>"; };
+		9A3467001DEE077100EB34AF /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = KemoApp/Dependencies/Starscream.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A3466BA1DEE037D00EB34AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A3467011DEE077100EB34AF /* CryptoSwift.framework in Frameworks */,
+				9A3467051DEE077100EB34AF /* Starscream.framework in Frameworks */,
+				9A3467031DEE077100EB34AF /* KemoCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9A3466B41DEE037D00EB34AF = {
+			isa = PBXGroup;
+			children = (
+				9A3466FE1DEE077100EB34AF /* CryptoSwift.framework */,
+				9A3466FF1DEE077100EB34AF /* KemoCore.framework */,
+				9A3467001DEE077100EB34AF /* Starscream.framework */,
+				9A3466CF1DEE03A500EB34AF /* Dependencies */,
+				9A3466BF1DEE037D00EB34AF /* KemoApp */,
+				9A3466BE1DEE037D00EB34AF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9A3466BE1DEE037D00EB34AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A3466BD1DEE037D00EB34AF /* KemoApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A3466BF1DEE037D00EB34AF /* KemoApp */ = {
+			isa = PBXGroup;
+			children = (
+				9A3466D21DEE061600EB34AF /* AppDelegate.swift */,
+				9A3466D31DEE061600EB34AF /* Assets.xcassets */,
+				9A3466D41DEE061600EB34AF /* Base.lproj */,
+				9A3466D71DEE061600EB34AF /* ChatFieldCell.swift */,
+				9A3466D81DEE061600EB34AF /* ChatMessageTextField.swift */,
+				9A3466DA1DEE061600EB34AF /* Info.plist */,
+				9A3466DB1DEE061600EB34AF /* InfoView.xib */,
+				9A3466DC1DEE061600EB34AF /* InfoViewController.swift */,
+				9A3466DD1DEE061600EB34AF /* KemoApp.entitlements */,
+				9A3466DE1DEE061600EB34AF /* KemoListView.swift */,
+				9A3466DF1DEE061600EB34AF /* MessageCellView.xib */,
+				9A3466E21DEE061600EB34AF /* PresentationUtils.swift */,
+				9A3466E31DEE061600EB34AF /* ThemedNSScrollView.swift */,
+				9A3466E41DEE061600EB34AF /* UIComponents.swift */,
+				9A3466E51DEE061600EB34AF /* UIModels.swift */,
+				9A3466E61DEE061600EB34AF /* UITheme.swift */,
+				9A3466E71DEE061600EB34AF /* UIThemeWhite.swift */,
+				9A3466E81DEE061600EB34AF /* ViewController.swift */,
+			);
+			path = KemoApp;
+			sourceTree = "<group>";
+		};
+		9A3466CF1DEE03A500EB34AF /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Dependencies;
+			path = KemoApp/Dependencies;
+			sourceTree = "<group>";
+		};
+		9A3466D41DEE061600EB34AF /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				9A3466D51DEE061600EB34AF /* Main.storyboard */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9A3466BC1DEE037D00EB34AF /* KemoApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A3466CC1DEE037E00EB34AF /* Build configuration list for PBXNativeTarget "KemoApp" */;
+			buildPhases = (
+				9A3466B91DEE037D00EB34AF /* Sources */,
+				9A3466BA1DEE037D00EB34AF /* Frameworks */,
+				9A3466BB1DEE037D00EB34AF /* Resources */,
+				9A3467071DEE077100EB34AF /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KemoApp;
+			productName = KemoApp;
+			productReference = 9A3466BD1DEE037D00EB34AF /* KemoApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A3466B51DEE037D00EB34AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = PyJunkies;
+				TargetAttributes = {
+					9A3466BC1DEE037D00EB34AF = {
+						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9A3466B81DEE037D00EB34AF /* Build configuration list for PBXProject "KemoApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9A3466B41DEE037D00EB34AF;
+			productRefGroup = 9A3466BE1DEE037D00EB34AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A3466BC1DEE037D00EB34AF /* KemoApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9A3466BB1DEE037D00EB34AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A3466EF1DEE061600EB34AF /* InfoView.xib in Resources */,
+				9A3466EA1DEE061600EB34AF /* Assets.xcassets in Resources */,
+				9A3466F21DEE061600EB34AF /* MessageCellView.xib in Resources */,
+				9A3466EB1DEE061600EB34AF /* Main.storyboard in Resources */,
+				9A3466EE1DEE061600EB34AF /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A3466B91DEE037D00EB34AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A3466FA1DEE061600EB34AF /* UIThemeWhite.swift in Sources */,
+				9A3466EC1DEE061600EB34AF /* ChatFieldCell.swift in Sources */,
+				9A3466FB1DEE061600EB34AF /* ViewController.swift in Sources */,
+				9A3466F81DEE061600EB34AF /* UIModels.swift in Sources */,
+				9A3466F71DEE061600EB34AF /* UIComponents.swift in Sources */,
+				9A3466F61DEE061600EB34AF /* ThemedNSScrollView.swift in Sources */,
+				9A3466ED1DEE061600EB34AF /* ChatMessageTextField.swift in Sources */,
+				9A3466F11DEE061600EB34AF /* KemoListView.swift in Sources */,
+				9A3466F01DEE061600EB34AF /* InfoViewController.swift in Sources */,
+				9A3466F91DEE061600EB34AF /* UITheme.swift in Sources */,
+				9A3466E91DEE061600EB34AF /* AppDelegate.swift in Sources */,
+				9A3466F51DEE061600EB34AF /* PresentationUtils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9A3466D51DEE061600EB34AF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A3466D61DEE061600EB34AF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9A3466CA1DEE037E00EB34AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9A3466CB1DEE037E00EB34AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		9A3466CD1DEE037E00EB34AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KemoApp/Dependencies",
+				);
+				INFOPLIST_FILE = KemoApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pyjunkies.KemoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9A3466CE1DEE037E00EB34AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KemoApp/Dependencies",
+				);
+				INFOPLIST_FILE = KemoApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pyjunkies.KemoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A3466B81DEE037D00EB34AF /* Build configuration list for PBXProject "KemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A3466CA1DEE037E00EB34AF /* Debug */,
+				9A3466CB1DEE037E00EB34AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A3466CC1DEE037E00EB34AF /* Build configuration list for PBXNativeTarget "KemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A3466CD1DEE037E00EB34AF /* Debug */,
+				9A3466CE1DEE037E00EB34AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A3466B51DEE037D00EB34AF /* Project object */;
+}

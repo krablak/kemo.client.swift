@@ -1,0 +1,3 @@
+framework module KemoCore {
+    header "KemoCore-Swift.h"
+}
