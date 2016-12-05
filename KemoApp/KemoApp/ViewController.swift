@@ -63,6 +63,9 @@ open class ViewController: NSViewController, NSWindowDelegate {
 	}
 
 	@IBAction func onKeyChange(_ sender: NSSecureTextField) {
+		if sender.stringValue.characters.count < 5 {
+			self.kemoListView.addLine(lineView: KLInfoView.warn(" Ops! Your key seems to be little bit short... "))
+		}
 		self.messaging.changeKey(sender.stringValue)
 	}
 
@@ -120,6 +123,10 @@ open class ViewController: NSViewController, NSWindowDelegate {
 		if PRESENTATION_MODE {
 			fillWithConversation(self)
 		}
+		
+		// Display welcome message on start
+		self.kemoListView.addLine(lineView: KLInfoView.light(" Welcome to kemo.rock OS X app! "))
+		self.kemoListView.addLine(lineView: KLInfoView.light(" Choose wisely your key and pass it to your buddy to start conversation."))
 
 		// Check messaging connection on view appearance
 		self.messaging.checkConnection()

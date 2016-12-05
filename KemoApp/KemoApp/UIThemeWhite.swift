@@ -36,5 +36,12 @@ public class UIThemeWhite: UITheme {
 		receivedTextColor: NSColor.init(srgbRed: 51.0 / 255.0, green: 51.0 / 255.0, blue: 51.0 / 255.0, alpha: 1.0),
 		sentTextColor: NSColor.init(srgbRed: 130.0 / 255.0, green: 130.0 / 255.0, blue: 130.0 / 255.0, alpha: 1.0)
 	)
+	
+	// Special messages colors
+	let uiColorMessages = UIColorMessages(
+		errorBgColor: NSColor.init(srgbRed: 213.0 / 255.0, green: 107.0 / 255.0, blue: 107.0 / 255.0, alpha: 0.9),
+		infoBgColor: NSColor.init(srgbRed: 85.0 / 255.0, green: 86.0 / 255.0, blue: 149.0 / 255.0, alpha: 0.9),
+		warnBgColor: NSColor.init(srgbRed: 212.0 / 255.0, green: 119.0 / 255.0, blue: 24.0 / 255.0, alpha: 0.9)
+	)
 
 }

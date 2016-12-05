@@ -83,15 +83,17 @@ open class KemoListView: NSView {
 	open override func setFrameSize(_ newSize: NSSize) {
 		if let supView = self.superview {
 			// Set parent frame height to computed height
-			supView.frame = NSRect(x: supView.frame.origin.x, y: supView.frame.origin.x, width: supView.frame.width, height: self.frame.height)
+			let superHeight = self.frame.height+60
+			supView.frame = NSRect(x: supView.frame.origin.x, y: supView.frame.origin.x, width: supView.frame.width, height: superHeight)
 		}
 		super.setFrameSize(newSize)
+		
 	}
 
     // Resize line heights of all lines
     private func resizeLines() {
         // Variable with current Y position of line
-        var curOriginY = CGFloat(0)
+        var curOriginY = CGFloat(4)
         for curLine in self.linesViews.reversed() {
             // Set current position to view
             curLine.frame.origin.y = curOriginY
@@ -122,6 +124,140 @@ open class KemoListView: NSView {
         }
     }
 
+}
+
+//
+// Single line for displaying information and warnings in message list.
+//
+class KLInfoView: NSView {
+	
+	enum InfoType {
+		case info
+		case warn
+		case error
+		case light
+	}
+	
+	// Inner label view for text
+	lazy var label: NSTextField = {
+			let lazyLabel = NSTextField()
+			lazyLabel.isEditable = false
+			return lazyLabel
+	}()
+	
+	// Thin wraper over label whic defines bg anc padding of label
+	var labelWrapper = NSView()
+	
+	// View theme instance with default white theme
+	open var theme = UIThemeWhite()
+	
+	// Type of view information
+	var infoType = InfoType.info
+	
+	// Shortcut for creation info line
+	public static func info(_ content: String) -> KLInfoView {
+		return KLInfoView().update(content, type: InfoType.info)
+	}
+	
+	// Shortcut for creation error info line
+	public static func error(_ content: String) -> KLInfoView {
+		return KLInfoView().update(content, type: InfoType.error)
+	}
+	
+	// Shortcut for creation warning info line
+	public static func warn(_ content: String) -> KLInfoView {
+		return KLInfoView().update(content, type: InfoType.warn)
+	}
+	
+	// Shortcut for creation of light message
+	public static func light(_ content: String) -> KLInfoView {
+		return KLInfoView().update(content, type: InfoType.light)
+	}
+	
+	public func update(_ content: String, type: InfoType) -> KLInfoView {
+		self.label.stringValue = content
+		self.infoType = type
+		initUI(self.infoType)
+		updateSize()
+		return self
+	}
+	
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		initUI(self.infoType)
+		updateSize()
+	}
+	
+	public required init?(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+		initUI(self.infoType)
+		updateSize()
+	}
+	
+	func updateSize(){
+		self.label.sizeToFit()
+		
+		self.frame.size = NSSize(width: self.label.frame.size.width+19, height: self.label.frame.size.height+19)
+		
+		self.labelWrapper.frame.origin = NSPoint(x: 5, y: 0)
+		self.labelWrapper.frame.size = NSSize(width: self.label.frame.size.width+8, height: self.label.frame.size.height+19)
+		
+		self.label.frame.origin = NSPoint(x: 0, y: 9)
+		self.label.frame.size = NSSize(width: self.label.frame.size.width, height: self.label.frame.size.height)
+	}
+	
+	func initUI(_ type: InfoType) {
+		// Label wrapper colors
+		self.wantsLayer = true
+		self.layer?.backgroundColor = NSColor.clear.cgColor
+		self.layer?.borderColor = NSColor.clear.cgColor
+		self.layer?.borderWidth = 0
+		self.layer?.cornerRadius = 0
+		self.layer?.displayIfNeeded()
+		
+		
+		// Label view colors
+		var lableBg = theme.uiColorMessages.infoBgColor
+		var borderClr = theme.uiColorMessages.infoBgColor
+		var fontClr = NSColor.white
+		switch type {
+		case .error:
+			lableBg = NSColor.clear
+			fontClr = theme.uiColorMessages.errorBgColor
+			borderClr = theme.uiColorMessages.errorBgColor
+		case .warn:
+			lableBg = NSColor.clear
+			fontClr = theme.uiColorMessages.warnBgColor
+			borderClr = theme.uiColorMessages.warnBgColor
+		case .light:
+			lableBg = NSColor.clear
+			borderClr = theme.uiColorMessages.infoBgColor
+			fontClr = theme.uiColorMessages.infoBgColor
+		default:
+			lableBg = theme.uiColorMessages.infoBgColor
+		}
+		
+		self.label.backgroundColor = NSColor.clear
+		self.label.textColor = fontClr
+		self.label.isBordered = false
+		self.label.wantsLayer = true
+		self.label.layer?.borderColor = NSColor.clear.cgColor
+		self.label.layer?.borderWidth = 1
+		self.label.layer?.cornerRadius = 3
+		self.label.layer?.displayIfNeeded()
+		
+		
+		self.labelWrapper.wantsLayer = true
+		self.labelWrapper.layer?.backgroundColor = lableBg.cgColor
+		self.labelWrapper.layer?.borderColor = borderClr.cgColor
+		self.labelWrapper.layer?.borderWidth = 1
+		self.labelWrapper.layer?.cornerRadius = 3
+		self.labelWrapper.layer?.displayIfNeeded()
+		
+		// Compose views hierarchy
+		self.addSubview(self.labelWrapper)
+		self.labelWrapper.addSubview(self.label)
+	}
 }
 
 //

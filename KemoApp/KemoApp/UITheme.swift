@@ -30,6 +30,9 @@ protocol UITheme {
 
 	// Set of messages content colors
 	var uiColorContent: UIColorContent { get }
+	
+	// Set of info messages colors
+	var uiColorMessages: UIColorMessages {get}
 }
 
 /*
@@ -60,6 +63,15 @@ public struct UIColorComponents {
 	let readOnlyBorderColor: NSColor
 	// Border color of important/highlighted fields
 	let importantBorderColor: NSColor
+}
+
+/*
+UITheme information messages colors.
+*/
+public struct UIColorMessages {
+	let errorBgColor: NSColor
+	let infoBgColor: NSColor
+	let warnBgColor: NSColor
 }
 
 /*
@@ -102,6 +114,7 @@ extension UITheme {
 		mainController.kemoListView!.layer?.borderColor = NSColor.clear.cgColor
 		mainController.kemoListView!.layer?.borderWidth = 1
 		mainController.kemoListView!.layer?.cornerRadius = 3
+		
 		// Style scroll view around message text view component
 		mainController.kemoListScrollView!.borderType = NSBorderType.noBorder
 		
