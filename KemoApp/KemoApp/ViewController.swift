@@ -64,7 +64,7 @@ open class ViewController: NSViewController, NSWindowDelegate {
 
 	@IBAction func onKeyChange(_ sender: NSSecureTextField) {
 		if sender.stringValue.characters.count < 5 {
-			self.kemoListView.addLine(lineView: KLInfoView.warn(" Ops! Your key seems to be little bit short... "))
+			self.kemoListView.addLine(lineView: KLInfoView.warn(" Ops! Your secret key seems to be little bit short... "))
 		}
 		self.messaging.changeKey(sender.stringValue)
 	}
@@ -116,6 +116,9 @@ open class ViewController: NSViewController, NSWindowDelegate {
 		self.view.window?.title = "kemo.rocks"
 		self.view.window?.delegate = self
 		
+		// Set default nick on startup
+		nickFld.stringValue = RandomLabels.randomFrom(RandomLabels.NICKS)
+		
 		// Update info button icon
 		self.updateInfoBtn()
 
@@ -125,8 +128,11 @@ open class ViewController: NSViewController, NSWindowDelegate {
 		}
 		
 		// Display welcome message on start
-		self.kemoListView.addLine(lineView: KLInfoView.light(" Welcome to kemo.rock OS X app! "))
-		self.kemoListView.addLine(lineView: KLInfoView.light(" Choose wisely your key and pass it to your buddy to start conversation."))
+		let welcomeMsg = " Welcome to kemo.rocks OS X app! \n" +
+						 " 1. 🔑 Choose wisely your secret key \n" +
+						 " 2. ☎️ Pass secret key to your buddy (by using another communication channel) \n" +
+						 " 3. 🚀 Set your secret key and start chat"
+		self.kemoListView.addLine(lineView: KLInfoView.light(welcomeMsg))
 
 		// Check messaging connection on view appearance
 		self.messaging.checkConnection()

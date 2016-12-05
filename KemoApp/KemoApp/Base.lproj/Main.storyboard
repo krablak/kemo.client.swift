@@ -382,7 +382,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="fLx-2N-lUZ"/>
                                 </constraints>
-                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" placeholderString="" usesSingleLineMode="YES" bezelStyle="round" echosBullets="NO" id="neG-3H-peU">
+                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" placeholderString="Place your secret key here..." usesSingleLineMode="YES" bezelStyle="round" echosBullets="NO" id="neG-3H-peU">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
