@@ -13,7 +13,6 @@
 		9A3466EE1DEE061600EB34AF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A3466DA1DEE061600EB34AF /* Info.plist */; };
 		9A3466EF1DEE061600EB34AF /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A3466DB1DEE061600EB34AF /* InfoView.xib */; };
 		9A3466F01DEE061600EB34AF /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466DC1DEE061600EB34AF /* InfoViewController.swift */; };
-		9A3466F21DEE061600EB34AF /* MessageCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A3466DF1DEE061600EB34AF /* MessageCellView.xib */; };
 		9A3466F51DEE061600EB34AF /* PresentationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466E21DEE061600EB34AF /* PresentationUtils.swift */; };
 		9A3466F61DEE061600EB34AF /* ThemedNSScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466E31DEE061600EB34AF /* ThemedNSScrollView.swift */; };
 		9A3466F71DEE061600EB34AF /* UIComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466E41DEE061600EB34AF /* UIComponents.swift */; };
@@ -54,7 +53,6 @@
 		9A3466DB1DEE061600EB34AF /* InfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
 		9A3466DC1DEE061600EB34AF /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		9A3466DD1DEE061600EB34AF /* KemoApp.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = KemoApp.entitlements; sourceTree = "<group>"; };
-		9A3466DF1DEE061600EB34AF /* MessageCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCellView.xib; sourceTree = "<group>"; };
 		9A3466E21DEE061600EB34AF /* PresentationUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationUtils.swift; sourceTree = "<group>"; };
 		9A3466E31DEE061600EB34AF /* ThemedNSScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemedNSScrollView.swift; sourceTree = "<group>"; };
 		9A3466E41DEE061600EB34AF /* UIComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIComponents.swift; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 				9A3466DB1DEE061600EB34AF /* InfoView.xib */,
 				9A3466DC1DEE061600EB34AF /* InfoViewController.swift */,
 				9A3466DD1DEE061600EB34AF /* KemoApp.entitlements */,
-				9A3466DF1DEE061600EB34AF /* MessageCellView.xib */,
 				9A3466E21DEE061600EB34AF /* PresentationUtils.swift */,
 				9A3466E31DEE061600EB34AF /* ThemedNSScrollView.swift */,
 				9A3466E41DEE061600EB34AF /* UIComponents.swift */,
@@ -202,7 +199,6 @@
 			files = (
 				9A3466EF1DEE061600EB34AF /* InfoView.xib in Resources */,
 				9A3466EA1DEE061600EB34AF /* Assets.xcassets in Resources */,
-				9A3466F21DEE061600EB34AF /* MessageCellView.xib in Resources */,
 				9A3466EB1DEE061600EB34AF /* Main.storyboard in Resources */,
 				9A3466EE1DEE061600EB34AF /* Info.plist in Resources */,
 			);

@@ -67,6 +67,7 @@ open class KemoListView: NSView {
 		resizeLines()
 		// Update view height
 		updateListViewHeight()
+		updateListViewWidth()
 	}
 	
 	public func reset() {
@@ -77,13 +78,15 @@ open class KemoListView: NSView {
 		self.linesViews = []
 		// Update to empty height
 		updateListViewHeight()
+		updateListViewWidth()
 	}
 	
 	open override func setFrameSize(_ newSize: NSSize) {
 		if let supView = self.superview {
 			// Set parent frame height to computed height
 			let superHeight = self.frame.height+60
-			supView.frame = NSRect(x: supView.frame.origin.x, y: supView.frame.origin.x, width: supView.frame.width, height: superHeight)
+			let superWidth = self.frame.width+30
+			supView.frame = NSRect(x: supView.frame.origin.x, y: supView.frame.origin.x, width: superWidth, height: superHeight)
 		}
 		super.setFrameSize(newSize)
 		
@@ -121,6 +124,17 @@ open class KemoListView: NSView {
 		if let topLine = self.linesViews.first {
 			self.frame = NSRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.width, height: topLine.frame.origin.y + topLine.frame.height)
 		}
+	}
+	
+	// Updates list view width by line with highes width
+	private func updateListViewWidth(){
+		var maxWidth = CGFloat(500)
+		for curLine in self.linesViews {
+			if curLine.frame.width > maxWidth {
+				maxWidth = curLine.frame.width
+			}
+		}
+		self.frame = NSRect(x: self.frame.origin.x, y: self.frame.origin.y, width: maxWidth, height: self.frame.height)
 	}
 	
 }

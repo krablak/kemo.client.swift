@@ -426,13 +426,13 @@
                                     <rect key="frame" x="1" y="1" width="658" height="182"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <view autoresizesSubviews="NO" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t0B-Cs-cNr">
-                                            <rect key="frame" x="0.0" y="0.0" width="643" height="100"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t0B-Cs-cNr">
+                                            <rect key="frame" x="15" y="82" width="643" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQe-b8-5yW" customClass="KemoListView" customModule="KemoApp" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="643" height="300"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="800" height="300"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 </customView>
                                             </subviews>
                                         </view>
@@ -442,7 +442,7 @@
                                     <rect key="frame" x="1" y="167" width="658" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="SYg-nW-5SN">
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="SYg-nW-5SN">
                                     <rect key="frame" x="643" y="1" width="16" height="182"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
