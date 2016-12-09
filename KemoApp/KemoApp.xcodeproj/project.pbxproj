@@ -26,6 +26,8 @@
 		9A3467041DEE077100EB34AF /* KemoCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3466FF1DEE077100EB34AF /* KemoCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9A3467051DEE077100EB34AF /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3467001DEE077100EB34AF /* Starscream.framework */; };
 		9A3467061DEE077100EB34AF /* Starscream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3467001DEE077100EB34AF /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9AAFDF411DF89C3E00F7929D /* js in Resources */ = {isa = PBXBuildFile; fileRef = 9AAFDF401DF89C3E00F7929D /* js */; };
+		9AAFDF451DF89F9800F7929D /* KeyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAFDF441DF89F9800F7929D /* KeyUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,6 +65,8 @@
 		9A3466FE1DEE077100EB34AF /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = KemoApp/Dependencies/CryptoSwift.framework; sourceTree = "<group>"; };
 		9A3466FF1DEE077100EB34AF /* KemoCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KemoCore.framework; path = KemoApp/Dependencies/KemoCore.framework; sourceTree = "<group>"; };
 		9A3467001DEE077100EB34AF /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = KemoApp/Dependencies/Starscream.framework; sourceTree = "<group>"; };
+		9AAFDF401DF89C3E00F7929D /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = js; sourceTree = "<group>"; };
+		9AAFDF441DF89F9800F7929D /* KeyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 		9A3466BF1DEE037D00EB34AF /* KemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				9AAFDF401DF89C3E00F7929D /* js */,
 				9A3466D21DEE061600EB34AF /* AppDelegate.swift */,
 				9A3466D31DEE061600EB34AF /* Assets.xcassets */,
 				9A3466D41DEE061600EB34AF /* Base.lproj */,
@@ -116,6 +121,7 @@
 				9A3466E61DEE061600EB34AF /* UITheme.swift */,
 				9A3466E71DEE061600EB34AF /* UIThemeWhite.swift */,
 				9A3466E81DEE061600EB34AF /* ViewController.swift */,
+				9AAFDF441DF89F9800F7929D /* KeyUtils.swift */,
 			);
 			path = KemoApp;
 			sourceTree = "<group>";
@@ -197,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AAFDF411DF89C3E00F7929D /* js in Resources */,
 				9A3466EF1DEE061600EB34AF /* InfoView.xib in Resources */,
 				9A3466EA1DEE061600EB34AF /* Assets.xcassets in Resources */,
 				9A3466EB1DEE061600EB34AF /* Main.storyboard in Resources */,
@@ -220,6 +227,7 @@
 				9A3466F91DEE061600EB34AF /* UITheme.swift in Sources */,
 				9A3466E91DEE061600EB34AF /* AppDelegate.swift in Sources */,
 				9A3466F51DEE061600EB34AF /* PresentationUtils.swift in Sources */,
+				9AAFDF451DF89F9800F7929D /* KeyUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

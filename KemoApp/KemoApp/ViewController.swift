@@ -63,9 +63,14 @@ open class ViewController: NSViewController, NSWindowDelegate {
 	}
 
 	@IBAction func onKeyChange(_ sender: NSSecureTextField) {
-		if sender.stringValue.characters.count < 5 {
-			self.kemoListView.addLine(lineView: KLInfoView.warn(" Ops! Your secret key seems to be little bit short... "))
+		// Secret key guessability score
+		let score = KeyUtils.zxcvbn(sender.stringValue)
+		// Only two worst scores are displayed as warning messages
+		if score.score <= 2 {
+			self.kemoListView.addLine(lineView: KLInfoView.warn(score.scoreMessage))
 		}
+		
+		// Send message
 		self.messaging.changeKey(sender.stringValue)
 	}
 
