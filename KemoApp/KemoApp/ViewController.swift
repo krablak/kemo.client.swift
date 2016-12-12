@@ -13,9 +13,9 @@ open class ViewController: NSViewController, NSWindowDelegate {
 	
 	// View theme instance
 	var theme = UIThemeWhite()
-
-	// Temporary flag for case of making screenshots filled content
-	let PRESENTATION_MODE = false
+	
+	// View state
+	var state = ChatViewState()
 	
 	@IBOutlet weak var innerScrollView: NSView!
 	
@@ -63,6 +63,8 @@ open class ViewController: NSViewController, NSWindowDelegate {
 	}
 
 	@IBAction func onKeyChange(_ sender: NSSecureTextField) {
+		// Mark key as changed
+		self.state.defaultKeyWarning = false
 		// Secret key guessability score
 		let score = KeyUtils.zxcvbn(sender.stringValue)
 		// Only two worst scores are displayed as warning messages
@@ -75,6 +77,14 @@ open class ViewController: NSViewController, NSWindowDelegate {
 	}
 
 	@IBAction func onMessageEnter(_ sender: NSTextField) {
+		// Check if default key was changed
+		if self.state.defaultKeyWarning {
+			// Display error message
+			self.kemoListView.addLine(lineView: KLInfoView.error("Ops! It seems that you are using default key. Be careful!"))
+			// Show only first time
+			self.state.defaultKeyWarning = false
+		}
+		
 		let message = nickFld.stringValue != "" ? "[\(nickFld.stringValue)] \(sender.stringValue)" : sender.stringValue
 		// Try to send message
 		self.messaging.send(message)
@@ -127,11 +137,6 @@ open class ViewController: NSViewController, NSWindowDelegate {
 		// Update info button icon
 		self.updateInfoBtn()
 
-		// View content for id mode
-		if PRESENTATION_MODE {
-			fillWithConversation(self)
-		}
-		
 		// Display welcome message on start
 		let welcomeMsg = " Welcome to kemo.rocks OS X app! \n" +
 						 " 1. 🔑 Choose wisely your secret key \n" +
@@ -141,6 +146,12 @@ open class ViewController: NSViewController, NSWindowDelegate {
 
 		// Check messaging connection on view appearance
 		self.messaging.checkConnection()
+	}
+	
+	open override func viewDidDisappear() {
+		if self.view.window != nil {
+			Notifications.hide(self.view.window!)
+		}
 	}
 	
 	// Updates state of info view button

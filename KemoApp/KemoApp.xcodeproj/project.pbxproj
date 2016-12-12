@@ -13,7 +13,6 @@
 		9A3466EE1DEE061600EB34AF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A3466DA1DEE061600EB34AF /* Info.plist */; };
 		9A3466EF1DEE061600EB34AF /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A3466DB1DEE061600EB34AF /* InfoView.xib */; };
 		9A3466F01DEE061600EB34AF /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466DC1DEE061600EB34AF /* InfoViewController.swift */; };
-		9A3466F51DEE061600EB34AF /* PresentationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466E21DEE061600EB34AF /* PresentationUtils.swift */; };
 		9A3466F61DEE061600EB34AF /* ThemedNSScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466E31DEE061600EB34AF /* ThemedNSScrollView.swift */; };
 		9A3466F71DEE061600EB34AF /* UIComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466E41DEE061600EB34AF /* UIComponents.swift */; };
 		9A3466F81DEE061600EB34AF /* UIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466E51DEE061600EB34AF /* UIModels.swift */; };
@@ -28,6 +27,7 @@
 		9A3467061DEE077100EB34AF /* Starscream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3467001DEE077100EB34AF /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9AAFDF411DF89C3E00F7929D /* js in Resources */ = {isa = PBXBuildFile; fileRef = 9AAFDF401DF89C3E00F7929D /* js */; };
 		9AAFDF451DF89F9800F7929D /* KeyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAFDF441DF89F9800F7929D /* KeyUtils.swift */; };
+		9AD20AD71DFF302D00511553 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD20AD61DFF302D00511553 /* ViewState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,7 +55,6 @@
 		9A3466DB1DEE061600EB34AF /* InfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
 		9A3466DC1DEE061600EB34AF /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		9A3466DD1DEE061600EB34AF /* KemoApp.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = KemoApp.entitlements; sourceTree = "<group>"; };
-		9A3466E21DEE061600EB34AF /* PresentationUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationUtils.swift; sourceTree = "<group>"; };
 		9A3466E31DEE061600EB34AF /* ThemedNSScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemedNSScrollView.swift; sourceTree = "<group>"; };
 		9A3466E41DEE061600EB34AF /* UIComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIComponents.swift; sourceTree = "<group>"; };
 		9A3466E51DEE061600EB34AF /* UIModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIModels.swift; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		9A3467001DEE077100EB34AF /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = KemoApp/Dependencies/Starscream.framework; sourceTree = "<group>"; };
 		9AAFDF401DF89C3E00F7929D /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = js; sourceTree = "<group>"; };
 		9AAFDF441DF89F9800F7929D /* KeyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyUtils.swift; sourceTree = "<group>"; };
+		9AD20AD61DFF302D00511553 /* ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +114,6 @@
 				9A3466DB1DEE061600EB34AF /* InfoView.xib */,
 				9A3466DC1DEE061600EB34AF /* InfoViewController.swift */,
 				9A3466DD1DEE061600EB34AF /* KemoApp.entitlements */,
-				9A3466E21DEE061600EB34AF /* PresentationUtils.swift */,
 				9A3466E31DEE061600EB34AF /* ThemedNSScrollView.swift */,
 				9A3466E41DEE061600EB34AF /* UIComponents.swift */,
 				9A3466E51DEE061600EB34AF /* UIModels.swift */,
@@ -122,6 +121,7 @@
 				9A3466E71DEE061600EB34AF /* UIThemeWhite.swift */,
 				9A3466E81DEE061600EB34AF /* ViewController.swift */,
 				9AAFDF441DF89F9800F7929D /* KeyUtils.swift */,
+				9AD20AD61DFF302D00511553 /* ViewState.swift */,
 			);
 			path = KemoApp;
 			sourceTree = "<group>";
@@ -221,12 +221,12 @@
 				9A3466FA1DEE061600EB34AF /* UIThemeWhite.swift in Sources */,
 				9A3466FB1DEE061600EB34AF /* ViewController.swift in Sources */,
 				9A3466F81DEE061600EB34AF /* UIModels.swift in Sources */,
+				9AD20AD71DFF302D00511553 /* ViewState.swift in Sources */,
 				9A3466F71DEE061600EB34AF /* UIComponents.swift in Sources */,
 				9A3466F61DEE061600EB34AF /* ThemedNSScrollView.swift in Sources */,
 				9A3466F01DEE061600EB34AF /* InfoViewController.swift in Sources */,
 				9A3466F91DEE061600EB34AF /* UITheme.swift in Sources */,
 				9A3466E91DEE061600EB34AF /* AppDelegate.swift in Sources */,
-				9A3466F51DEE061600EB34AF /* PresentationUtils.swift in Sources */,
 				9AAFDF451DF89F9800F7929D /* KeyUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
