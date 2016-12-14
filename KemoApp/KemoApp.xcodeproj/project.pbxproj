@@ -28,6 +28,7 @@
 		9AAFDF411DF89C3E00F7929D /* js in Resources */ = {isa = PBXBuildFile; fileRef = 9AAFDF401DF89C3E00F7929D /* js */; };
 		9AAFDF451DF89F9800F7929D /* KeyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAFDF441DF89F9800F7929D /* KeyUtils.swift */; };
 		9AD20AD71DFF302D00511553 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD20AD61DFF302D00511553 /* ViewState.swift */; };
+		9AD20AD91DFF375E00511553 /* ChatCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD20AD81DFF375E00511553 /* ChatCommands.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,6 +68,7 @@
 		9AAFDF401DF89C3E00F7929D /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = js; sourceTree = "<group>"; };
 		9AAFDF441DF89F9800F7929D /* KeyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyUtils.swift; sourceTree = "<group>"; };
 		9AD20AD61DFF302D00511553 /* ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
+		9AD20AD81DFF375E00511553 /* ChatCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCommands.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				9A3466E81DEE061600EB34AF /* ViewController.swift */,
 				9AAFDF441DF89F9800F7929D /* KeyUtils.swift */,
 				9AD20AD61DFF302D00511553 /* ViewState.swift */,
+				9AD20AD81DFF375E00511553 /* ChatCommands.swift */,
 			);
 			path = KemoApp;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				9A3466FB1DEE061600EB34AF /* ViewController.swift in Sources */,
 				9A3466F81DEE061600EB34AF /* UIModels.swift in Sources */,
 				9AD20AD71DFF302D00511553 /* ViewState.swift in Sources */,
+				9AD20AD91DFF375E00511553 /* ChatCommands.swift in Sources */,
 				9A3466F71DEE061600EB34AF /* UIComponents.swift in Sources */,
 				9A3466F61DEE061600EB34AF /* ThemedNSScrollView.swift in Sources */,
 				9A3466F01DEE061600EB34AF /* InfoViewController.swift in Sources */,

@@ -17,18 +17,21 @@ open class ViewController: NSViewController, NSWindowDelegate {
 	// View state
 	var state = ChatViewState()
 	
+	// Chat commands holders
+	var chatCommands = ChatCommands()
+	
 	@IBOutlet weak var innerScrollView: NSView!
 	
 	@IBOutlet weak var kemoListView: KemoListView!
-
+	
 	@IBOutlet weak var messageTextFld: NSTextField!
-
+	
 	@IBOutlet weak var kemoKeyFld: NSSecureTextField!
-
+	
 	@IBOutlet weak var nickFld: NSTextField!
-
+	
 	@IBOutlet var mainView: NSView!
-
+	
 	@IBOutlet weak var kemoListScrollView: NSScrollView!
 	
 	@IBOutlet weak var infoBtn: NSButton!
@@ -46,13 +49,13 @@ open class ViewController: NSViewController, NSWindowDelegate {
 	
 	// Messaging state addon
 	let stateAddon = MesssagingStateAddon()
-
+	
 	// Helper for identification of sent and received messages
 	var sentMarker = SentMessageMarker()
-
+	
 	// Popover with messaging state/statistics
 	var popover: NSPopover!
-
+	
 	// Info button click shows/hides popover with messaging state and statistics
 	@IBAction func infoBtnClick(_ sender: NSButton) {
 		if (popover.isShown) {
@@ -61,7 +64,7 @@ open class ViewController: NSViewController, NSWindowDelegate {
 			popover.show(relativeTo: NSZeroRect, of: sender, preferredEdge: NSRectEdge.minY)
 		}
 	}
-
+	
 	@IBAction func onKeyChange(_ sender: NSSecureTextField) {
 		// Mark key as changed
 		self.state.defaultKeyWarning = false
@@ -75,28 +78,38 @@ open class ViewController: NSViewController, NSWindowDelegate {
 		// Send message
 		self.messaging.changeKey(sender.stringValue)
 	}
-
+	
 	@IBAction func onMessageEnter(_ sender: NSTextField) {
-		// Check if default key was changed
-		if self.state.defaultKeyWarning {
-			// Display error message
-			self.kemoListView.addLine(lineView: KLInfoView.error("Ops! It seems that you are using default key. Be careful!"))
-			// Show only first time
-			self.state.defaultKeyWarning = false
-		}
+		// Execute commands
+		let commandsRes = chatCommands.run(sender.stringValue)
 		
-		let message = nickFld.stringValue != "" ? "[\(nickFld.stringValue)] \(sender.stringValue)" : sender.stringValue
-		// Try to send message
-		self.messaging.send(message)
-		// Mark message as sent
-		sentMarker.markAsSent(message)
+		// Send message when no command was executed or commands returns own message version
+		if !commandsRes.executed || commandsRes.message != nil {
+			// Get message updated by command or value from field
+			let commandMessage = commandsRes.message != nil ? commandsRes.message! : sender.stringValue
+			
+			// Check if default key was changed
+			if self.state.defaultKeyWarning {
+				// Display error message
+				self.kemoListView.addLine(lineView: KLInfoView.error(" Ops! It seems that you are using default key. Be careful!"))
+				// Show only first time
+				self.state.defaultKeyWarning = false
+			}
+			
+			let message = nickFld.stringValue != "" ? "[\(nickFld.stringValue)] \(commandMessage)" : commandMessage
+			// Try to send message
+			self.messaging.send(message)
+			// Mark message as sent
+			sentMarker.markAsSent(message)
+			
+		}
 		// Clean message text field
 		sender.stringValue = ""
 	}
-
+	
 	/*
-	 Internal method for adding received message into chat view.
-	 */
+	Internal method for adding received message into chat view.
+	*/
 	fileprivate func onReceivedMessage(_ message: String) {
 		// dispatch_sync(
 		DispatchQueue.main.async {
@@ -110,23 +123,33 @@ open class ViewController: NSViewController, NSWindowDelegate {
 			}
 		}
 	}
-
+	
 	override open func viewDidLoad() {
 		super.viewDidLoad()
 		// Init infoview popover
 		self.popover = infoViewPopover(self)
+		
+		// Init special chat commands
+		chatCommands.register(matchMessage(["/s","/stat","/stats"]), command: StatsChatCommand(self))
+		chatCommands.register(matchMessage(["/k","/key"]), command: KeyQualityChatCommand(self))
+		chatCommands.register(matchMessage(["/c","/clear","/cls","/clr"]), command: ClearChatCommand(self))
+		chatCommands.register(matchMessage(["/h","/help"]), command: HelpChatCommand(self, commands: chatCommands))
+		
+		
+		//HelpChatCommand
+		
 	}
-
+	
 	override open func viewDidAppear() {
 		super.viewDidAppear()
-
+		
 		// Apply theme on current view
 		theme.apply(self)
 		// Set theme to chat view
 		self.kemoListView.theme = theme
 		// Reset view content
 		self.kemoListView.reset()
-
+		
 		// Initial values
 		self.view.window?.title = "kemo.rocks"
 		self.view.window?.delegate = self
@@ -136,14 +159,14 @@ open class ViewController: NSViewController, NSWindowDelegate {
 		
 		// Update info button icon
 		self.updateInfoBtn()
-
+		
 		// Display welcome message on start
 		let welcomeMsg = " Welcome to kemo.rocks OS X app! \n" +
-						 " 1. 🔑 Choose wisely your secret key \n" +
-						 " 2. ☎️ Pass secret key to your buddy (by using another communication channel) \n" +
-						 " 3. 🚀 Set your secret key and start chat"
+			" 1. 🔑 Choose wisely your secret key \n" +
+			" 2. ☎️ Pass secret key to your buddy (by using another communication channel) \n" +
+		" 3. 🚀 Set your secret key and start chat"
 		self.kemoListView.addLine(lineView: KLInfoView.light(welcomeMsg))
-
+		
 		// Check messaging connection on view appearance
 		self.messaging.checkConnection()
 	}
@@ -168,10 +191,10 @@ open class ViewController: NSViewController, NSWindowDelegate {
 			}
 		}
 	}
-
+	
 	/*
-	 NSWindowDelegate methods.
-	 */
+	NSWindowDelegate methods.
+	*/
 	open func windowDidBecomeKey(_ notification: Notification) {
 		if self.view.window != nil {
 			Notifications.hide(self.view.window!)

@@ -187,7 +187,7 @@ class KLInfoView: NSView {
 		return KLInfoView().update(content, type: InfoType.light)
 	}
 	
-	public func update(_ content: String, type: InfoType) -> KLInfoView {
+	@discardableResult public func update(_ content: String, type: InfoType) -> KLInfoView {
 		self.label.stringValue = content
 		self.infoType = type
 		initUI(self.infoType)
@@ -220,6 +220,7 @@ class KLInfoView: NSView {
 	}
 	
 	func initUI(_ type: InfoType) {
+		self.label.font = NSFont.systemFont(ofSize: 13.0, weight: NSFontWeightLight)
 		// Label wrapper colors
 		self.wantsLayer = true
 		self.layer?.backgroundColor = NSColor.clear.cgColor
@@ -301,7 +302,7 @@ class KemoListLineView: NSView {
 	}
 	
 	// Sets content into line and resize component
-	public func update(content: String, sent: Bool) -> KemoListLineView {
+	@discardableResult public func update(content: String, sent: Bool) -> KemoListLineView {
 		// Prepare new line attributed string (with proper colors etc.)
 		let lineAttrs = sent ? UIThemeWhite().sentTextAttrs() : UIThemeWhite().receiveTextAttrs()
 		let lineMessage =  NSMutableAttributedString(string: "\(content)", attributes: lineAttrs)
