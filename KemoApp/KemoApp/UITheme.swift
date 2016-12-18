@@ -82,6 +82,8 @@ public struct UIColorContent {
 	let receivedTextColor: NSColor
 	// Color of sent messages
 	let sentTextColor: NSColor
+	// Link color
+	let linkTextColor: NSColor
 }
 
 /*

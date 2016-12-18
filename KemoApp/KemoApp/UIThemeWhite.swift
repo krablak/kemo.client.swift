@@ -34,7 +34,8 @@ public class UIThemeWhite: UITheme {
 	// Messages content colors
 	let uiColorContent = UIColorContent(
 		receivedTextColor: NSColor.init(srgbRed: 51.0 / 255.0, green: 51.0 / 255.0, blue: 51.0 / 255.0, alpha: 1.0),
-		sentTextColor: NSColor.init(srgbRed: 130.0 / 255.0, green: 130.0 / 255.0, blue: 130.0 / 255.0, alpha: 1.0)
+		sentTextColor: NSColor.init(srgbRed: 130.0 / 255.0, green: 130.0 / 255.0, blue: 130.0 / 255.0, alpha: 1.0),
+		linkTextColor: NSColor.init(srgbRed: 85.0 / 255.0, green: 86.0 / 255.0, blue: 149.0 / 255.0, alpha: 1.0)
 	)
 	
 	// Special messages colors

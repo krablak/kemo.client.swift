@@ -306,6 +306,8 @@ class KemoListLineView: NSView {
 		// Prepare new line attributed string (with proper colors etc.)
 		let lineAttrs = sent ? UIThemeWhite().sentTextAttrs() : UIThemeWhite().receiveTextAttrs()
 		let lineMessage =  NSMutableAttributedString(string: "\(content)", attributes: lineAttrs)
+		// Mark links to web in message
+		markLinks(lineMessage)
 		self.textView.textStorage?.append(lineMessage)
 		self.textView.isEditable = false
 		
@@ -321,6 +323,23 @@ class KemoListLineView: NSView {
 		self.textView.frame.origin.y = self.frame.height - self.textView.frame.height
 		
 		return self
+	}
+	
+	// Marks links in attributed string
+	func markLinks(_ lineMessage: NSMutableAttributedString){
+		do {
+			let types: NSTextCheckingResult.CheckingType = [.link]
+			let detector = try NSDataDetector(types: types.rawValue)
+			
+			let matches = detector.matches(in: lineMessage.string, options: [], range: NSRange(location: 0, length: lineMessage.string.utf16.count))
+			
+			let lineMsgStr = (lineMessage.string as NSString)
+			for match in matches {
+				let url = lineMsgStr.substring(with: match.range)
+				lineMessage.addAttribute(NSLinkAttributeName, value: url, range: match.range)
+			}
+		}catch{
+		}
 	}
 	
 	
@@ -349,6 +368,9 @@ class KemoListLineView: NSView {
 	func initUI() {
 		// Text view is transparent to fit any theme
 		self.textView.backgroundColor = NSColor.clear
+		
+		// Set links color
+		self.textView.linkTextAttributes = [NSForegroundColorAttributeName : theme.uiColorContent.linkTextColor, NSUnderlineStyleAttributeName : NSUnderlineStyle.styleNone.rawValue]
 		
 		// View itself is transparent to fit any theme
 		self.wantsLayer = true
@@ -381,17 +403,17 @@ public struct RandomLabels {
 
 
 /*
- Provides functions related showing/hiding notifications about new messages.
- */
+Provides functions related showing/hiding notifications about new messages.
+*/
 public struct Notifications {
-
+	
 	/*
-	 Performs all actions required to show notification about new message.
-	 */
+	Performs all actions required to show notification about new message.
+	*/
 	public static func onReceived(_ message: String, window: NSWindow) {
 		// Clean up old notificatios
 		NSUserNotificationCenter.default.removeAllDeliveredNotifications()
-
+		
 		// Show notification only when related window is not key/active
 		if !window.isKeyWindow {
 			// Show only new last notification
@@ -400,7 +422,7 @@ public struct Notifications {
 			notification.informativeText = "📨"
 			notification.soundName = NSUserNotificationDefaultSoundName
 			NSUserNotificationCenter.default.deliver(notification)
-
+			
 			// Show badge on dock icon
 			NSApplication.shared().dockTile.badgeLabel = "✉️"
 			NSApplication.shared().dockTile.display()
@@ -409,11 +431,11 @@ public struct Notifications {
 			window.title = "kemo✉️rocks"
 		}
 	}
-
+	
 	public static func hide(_ window: NSWindow) {
 		// Clean up old notificatios
 		NSUserNotificationCenter.default.removeAllDeliveredNotifications()
-
+		
 		// Hide badge on dock icon
 		NSApplication.shared().dockTile.badgeLabel = ""
 		NSApplication.shared().dockTile.display()
@@ -421,5 +443,5 @@ public struct Notifications {
 		// Change window title
 		window.title = "kemo.rocks"
 	}
-
+	
 }
