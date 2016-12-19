@@ -10,7 +10,6 @@
 		9A3466E91DEE061600EB34AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466D21DEE061600EB34AF /* AppDelegate.swift */; };
 		9A3466EA1DEE061600EB34AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A3466D31DEE061600EB34AF /* Assets.xcassets */; };
 		9A3466EB1DEE061600EB34AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A3466D51DEE061600EB34AF /* Main.storyboard */; };
-		9A3466EE1DEE061600EB34AF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A3466DA1DEE061600EB34AF /* Info.plist */; };
 		9A3466EF1DEE061600EB34AF /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A3466DB1DEE061600EB34AF /* InfoView.xib */; };
 		9A3466F01DEE061600EB34AF /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466DC1DEE061600EB34AF /* InfoViewController.swift */; };
 		9A3466F61DEE061600EB34AF /* ThemedNSScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3466E31DEE061600EB34AF /* ThemedNSScrollView.swift */; };
@@ -173,7 +172,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = PyJunkies;
 				TargetAttributes = {
 					9A3466BC1DEE037D00EB34AF = {
@@ -210,7 +209,6 @@
 				9A3466EF1DEE061600EB34AF /* InfoView.xib in Resources */,
 				9A3466EA1DEE061600EB34AF /* Assets.xcassets in Resources */,
 				9A3466EB1DEE061600EB34AF /* Main.storyboard in Resources */,
-				9A3466EE1DEE061600EB34AF /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +265,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -316,6 +315,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
