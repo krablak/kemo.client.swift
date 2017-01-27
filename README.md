@@ -13,7 +13,7 @@ Here are some important points in projects structure:
 - **UIComponents.swift** custom UI components (like messages view)
 - **UIComponents.swift** custom UI components (like chat view)
 - **KeyUtils.swift** bridge to [zxcvbn](https://github.com/dropbox/zxcvbn) JS implementation. JS sources are stored within *js/* folder.
-- **Dependencies/** thridparty and Kemo core libraries
+- **Dependencies/** third-party and Kemo core libraries
 
 ### Prerequisities
 
