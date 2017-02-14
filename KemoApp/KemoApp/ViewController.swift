@@ -40,8 +40,10 @@ open class ViewController: NSViewController, NSWindowDelegate {
 	
 	// Instance of messaging component
 	lazy var messaging: Messaging = {
+		let serverUrl = KemoPreferencesService.service.serverUrl()
+		log.debug("Using server URL: '\(serverUrl)'")
 		// Messaging with empty default key
-		var newMessaging = Messaging(key: "", onMessage: self.onReceivedMessage)
+		var newMessaging = Messaging(url: serverUrl, key: "", onMessage: self.onReceivedMessage)
 		// Add messaging state addon to observe
 		newMessaging.addons.append(self.stateAddon)
 		return newMessaging
@@ -113,10 +115,13 @@ open class ViewController: NSViewController, NSWindowDelegate {
 	fileprivate func onReceivedMessage(_ message: String) {
 		// dispatch_sync(
 		DispatchQueue.main.async {
+			// Prepare message for UI according to user preferences
+			let uiMessage = KemoPreferencesService.service.addTime() ? addTimeStamp(message) : message
+			// Display message according to resolved direction
 			if self.sentMarker.isSent(message) {
-				self.kemoListView.addLine(lineView: KemoListLineView.sent(message))
+				self.kemoListView.addLine(lineView: KemoListLineView.sent(uiMessage))
 			} else {
-				self.kemoListView.addLine(lineView: KemoListLineView.received(message))
+				self.kemoListView.addLine(lineView: KemoListLineView.received(uiMessage))
 				if self.view.window != nil {
 					Notifications.onReceived(message, window: self.view.window!)
 				}
@@ -134,9 +139,6 @@ open class ViewController: NSViewController, NSWindowDelegate {
 		chatCommands.register(matchMessage(["/k","/key"]), command: KeyQualityChatCommand(self))
 		chatCommands.register(matchMessage(["/c","/clear","/cls","/clr"]), command: ClearChatCommand(self))
 		chatCommands.register(matchMessage(["/h","/help"]), command: HelpChatCommand(self, commands: chatCommands))
-		
-		
-		//HelpChatCommand
 		
 	}
 	

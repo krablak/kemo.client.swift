@@ -24,6 +24,9 @@
 		9A3467041DEE077100EB34AF /* KemoCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3466FF1DEE077100EB34AF /* KemoCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9A3467051DEE077100EB34AF /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3467001DEE077100EB34AF /* Starscream.framework */; };
 		9A3467061DEE077100EB34AF /* Starscream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3467001DEE077100EB34AF /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9A842FCF1E50BC5500806CA2 /* KemoPreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A842FCE1E50BC5500806CA2 /* KemoPreferencesController.swift */; };
+		9A842FD31E50EE9B00806CA2 /* KemoPreferencesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A842FD21E50EE9B00806CA2 /* KemoPreferencesService.swift */; };
+		9A842FD51E5393B100806CA2 /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A842FD41E5393B100806CA2 /* CommonUtils.swift */; };
 		9AAFDF411DF89C3E00F7929D /* js in Resources */ = {isa = PBXBuildFile; fileRef = 9AAFDF401DF89C3E00F7929D /* js */; };
 		9AAFDF451DF89F9800F7929D /* KeyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAFDF441DF89F9800F7929D /* KeyUtils.swift */; };
 		9AD20AD71DFF302D00511553 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD20AD61DFF302D00511553 /* ViewState.swift */; };
@@ -64,6 +67,9 @@
 		9A3466FE1DEE077100EB34AF /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = KemoApp/Dependencies/CryptoSwift.framework; sourceTree = "<group>"; };
 		9A3466FF1DEE077100EB34AF /* KemoCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KemoCore.framework; path = KemoApp/Dependencies/KemoCore.framework; sourceTree = "<group>"; };
 		9A3467001DEE077100EB34AF /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = KemoApp/Dependencies/Starscream.framework; sourceTree = "<group>"; };
+		9A842FCE1E50BC5500806CA2 /* KemoPreferencesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KemoPreferencesController.swift; sourceTree = "<group>"; };
+		9A842FD21E50EE9B00806CA2 /* KemoPreferencesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KemoPreferencesService.swift; sourceTree = "<group>"; };
+		9A842FD41E5393B100806CA2 /* CommonUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
 		9AAFDF401DF89C3E00F7929D /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = js; sourceTree = "<group>"; };
 		9AAFDF441DF89F9800F7929D /* KeyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyUtils.swift; sourceTree = "<group>"; };
 		9AD20AD61DFF302D00511553 /* ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
@@ -124,6 +130,9 @@
 				9AAFDF441DF89F9800F7929D /* KeyUtils.swift */,
 				9AD20AD61DFF302D00511553 /* ViewState.swift */,
 				9AD20AD81DFF375E00511553 /* ChatCommands.swift */,
+				9A842FCE1E50BC5500806CA2 /* KemoPreferencesController.swift */,
+				9A842FD21E50EE9B00806CA2 /* KemoPreferencesService.swift */,
+				9A842FD41E5393B100806CA2 /* CommonUtils.swift */,
 			);
 			path = KemoApp;
 			sourceTree = "<group>";
@@ -219,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A842FCF1E50BC5500806CA2 /* KemoPreferencesController.swift in Sources */,
 				9A3466FA1DEE061600EB34AF /* UIThemeWhite.swift in Sources */,
 				9A3466FB1DEE061600EB34AF /* ViewController.swift in Sources */,
 				9A3466F81DEE061600EB34AF /* UIModels.swift in Sources */,
@@ -230,6 +240,8 @@
 				9A3466F91DEE061600EB34AF /* UITheme.swift in Sources */,
 				9A3466E91DEE061600EB34AF /* AppDelegate.swift in Sources */,
 				9AAFDF451DF89F9800F7929D /* KeyUtils.swift in Sources */,
+				9A842FD51E5393B100806CA2 /* CommonUtils.swift in Sources */,
+				9A842FD31E50EE9B00806CA2 /* KemoPreferencesService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

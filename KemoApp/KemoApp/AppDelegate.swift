@@ -16,7 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		// Insert code here to initialize your application
-		log.level = LoggerFacade.Level.OFF
+		log.level = LoggerFacade.Level.OFF		
 	}
 
 	func applicationWillTerminate(_ aNotification: Notification) {

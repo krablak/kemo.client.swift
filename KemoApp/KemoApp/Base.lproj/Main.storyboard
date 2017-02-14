@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
@@ -24,7 +25,11 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                            <connections>
+                                                <segue destination="wHf-iv-pao" kind="show" id="2Ms-Eo-Wla"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -334,8 +339,9 @@
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="KemoApp" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="E0p-K2-yzp"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="101" y="-96"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -354,6 +360,71 @@
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="L3Z-dy-OaJ">
+            <objects>
+                <windowController showSeguePresentationStyle="single" id="wHf-iv-pao" sceneMemberID="viewController">
+                    <window key="window" identifier="preferences" title="Kemo Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="0Rw-kO-Uxd">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="163" y="199" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+                        <value key="minSize" type="size" width="480" height="270"/>
+                    </window>
+                    <connections>
+                        <segue destination="iZk-kR-42z" kind="relationship" relationship="window.shadowedContentViewController" id="qHD-vv-EGF"/>
+                    </connections>
+                </windowController>
+                <customObject id="Tl8-en-27p" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="686" y="250"/>
+        </scene>
+        <!--Kemo Preferences-->
+        <scene sceneID="vXV-rW-gZS">
+            <objects>
+                <viewController id="iZk-kR-42z" userLabel="Kemo Preferences" customClass="KemoPreferencesController" customModule="KemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="lUd-cx-4Vb" userLabel="Preferences View">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField identifier="serverUrlFld" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HCw-b5-XqY">
+                                <rect key="frame" x="118" y="63" width="462" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="wss://kemoundertow-krablak.rhcloud.com:8443/messaging" drawsBackground="YES" id="HUe-SB-O9x">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <accessibility help="Url"/>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pvx-dI-Ih8">
+                                <rect key="frame" x="18" y="63" width="77" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Server URL:" id="CZQ-8d-bf1">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button identifier="timeStampFld" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="otg-FW-Yjd">
+                                <rect key="frame" x="116" y="36" width="175" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Display time in messages" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="4Fr-ws-YSk">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="serverUrlFld" destination="HCw-b5-XqY" id="2Hb-ZG-yyR"/>
+                        <outlet property="timeStampFld" destination="otg-FW-Yjd" id="aNI-LE-lWS"/>
+                    </connections>
+                </viewController>
+                <customObject id="k1G-Jx-NLH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1370" y="131"/>
         </scene>
         <!--kemo.rocks-->
         <scene sceneID="hIz-AP-VOD">
@@ -397,7 +468,6 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="15" id="PqA-xp-xC9"/>
                                     <constraint firstAttribute="height" constant="33" id="XNf-kY-uB9"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33" id="Zkl-fe-KBx"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="15" id="x47-ov-cg8"/>
                                     <constraint firstAttribute="width" constant="33" id="xAA-jv-lQt"/>
                                 </constraints>
                                 <buttonCell key="cell" type="inline" bezelStyle="inline" image="NSStatusPartiallyAvailable" imagePosition="overlaps" alignment="center" state="on" inset="2" id="vER-V6-oXz">
