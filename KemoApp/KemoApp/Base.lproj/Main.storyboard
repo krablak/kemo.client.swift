@@ -415,11 +415,20 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HfZ-Yh-zxi">
+                                <rect key="frame" x="116" y="16" width="240" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Send welcome message on connect" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="okB-FA-cy9">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="serverUrlFld" destination="HCw-b5-XqY" id="2Hb-ZG-yyR"/>
                         <outlet property="timeStampFld" destination="otg-FW-Yjd" id="aNI-LE-lWS"/>
+                        <outlet property="welcomeMsgFld" destination="HfZ-Yh-zxi" id="Jcr-2e-tAt"/>
                     </connections>
                 </viewController>
                 <customObject id="k1G-Jx-NLH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -449,7 +458,7 @@
                                 </connections>
                             </textField>
                             <secureTextField identifier="kemoKeyFld" focusRingType="none" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zRk-v8-vrg">
-                                <rect key="frame" x="159" y="253" width="486" height="33"/>
+                                <rect key="frame" x="162" y="252" width="486" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="fLx-2N-lUZ"/>
                                 </constraints>
@@ -528,7 +537,6 @@
                             <constraint firstItem="dbw-lW-F4R" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="14" id="Ugw-TA-EAX"/>
                             <constraint firstItem="JMn-Ro-eeL" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="14" id="Wh7-nz-30X"/>
                             <constraint firstItem="zRk-v8-vrg" firstAttribute="baseline" secondItem="2MW-t0-WKc" secondAttribute="baseline" id="YOS-nm-IEt"/>
-                            <constraint firstAttribute="trailing" secondItem="JMn-Ro-eeL" secondAttribute="trailing" constant="14" id="a3p-k3-CBa"/>
                             <constraint firstItem="2MW-t0-WKc" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="14" id="d6h-x4-E8f"/>
                             <constraint firstAttribute="trailing" secondItem="JMn-Ro-eeL" secondAttribute="trailing" constant="20" id="dLq-Wz-e6J"/>
                             <constraint firstItem="7dT-0Y-zya" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="14" id="m22-13-WMu"/>

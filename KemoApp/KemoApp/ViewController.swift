@@ -46,6 +46,17 @@ open class ViewController: NSViewController, NSWindowDelegate {
 		var newMessaging = Messaging(url: serverUrl, key: "", onMessage: self.onReceivedMessage)
 		// Add messaging state addon to observe
 		newMessaging.addons.append(self.stateAddon)
+		
+		newMessaging.addons.append(OnConnectedMessageAddon(
+			sendMesage: { message in
+				self.messaging.send(message)
+				self.sentMarker.markAsSent(message)
+			},
+			nickProvider: {
+				return self.nickFld.stringValue
+			}
+		))
+		
 		return newMessaging
 	}()
 	
@@ -103,7 +114,6 @@ open class ViewController: NSViewController, NSWindowDelegate {
 			self.messaging.send(message)
 			// Mark message as sent
 			sentMarker.markAsSent(message)
-			
 		}
 		// Clean message text field
 		sender.stringValue = ""
